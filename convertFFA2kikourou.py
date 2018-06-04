@@ -50,8 +50,8 @@ class Runner:
                         except:
                             pass
                     record['temps']=a.td.next_sibling.next_sibling.next_sibling.next_sibling.string
-                    print("Annee: " + record['annee'] + ',' + "Temps: " +
-                          record['temps'])
+                    #print("Annee: " + record['annee'] + ',' + "Temps: " +
+                    #      record['temps'])
                     self.bilans.append(record)
 
 
@@ -61,8 +61,8 @@ class Race:
         self.urlFFA = url
         self.results = []
         self.race_ID=self.parse_url(self.urlFFA)
+        self.errors = []
 
-        #self.extract_runners()
 
     def append_runner(self,runner,time):
         self.results.append({'temps':time,'runner':runner})
@@ -70,10 +70,49 @@ class Race:
     def parse_url(self,urlFFA):
         return urlFFA.split("frmcompetition=")[1].split("&")[0]
 
+    def subrace_bilans(self,rankinf,ranksup,years_list):
+        results_=[]
+        results_runner = []
+
+        for r in self.results[rankinf:ranksup]:
+            if list(r.values())[1].runner_ID != 'unknown':
+                chrono = list(r.values())[0]
+                runner = list(r.values())[1]
+                runner.fetch_bilans()
+                results_runner = []
+
+                if runner.bilans:
+                        for i in runner.bilans:
+                            if i['annee'] in years_list:
+                                results_runner.append(i)
+                        for i,r in enumerate(results_runner):
+                            print('for i,r: ' +  i,r)
+                            for year in years_list:
+                                print('for year: ' + year)
+                                if year not in [j['annee'] for j in
+                                                results_runner]:
+                                    results_runner.insert(i,{'temps':"-",'annee':year})
+
+#                        print(results_runner)
+                        #print([i['annee'] for i in results_runner])
+
+                results_runner.insert(0,runner)
+                results_runner.insert(0,chrono)
+
+                results_.append(results_runner)
+        #results_=[r[2+len(years_list):] for r in results_]
+#        print(results_)
+        return results_
+
+
     def fill_runner(self,line_runner): #line_runner is a <td> line corresponding to a runner
         runner = Runner()
         if line_runner[0][0].string == '-':
-            pass
+            runner.name = 'nom inconnu'
+            runner.category = 'XXX'
+            runner.club='club inconnu'
+            self.append_runner(runner,"--h--'--''")
+            self.errors.append('ligne ' + str(len(self.results)) + ': coureur invalide et remplacé par le coureur inconnu (sacré coureur inconnu!)')
         else:
             #self.append_runner(line_runner[1][0].string.encode('latin-1'), # runner rank
             try:
@@ -86,11 +125,12 @@ class Race:
             runner.category=line_runner[6][0].string # runner category
             # because sometimes, club is defined by a space caracter instead of empty
             # string
-            if line_runner[3][0].string in (None,'\xa0'):
+            #if line_runner[3][0].string in (None,'\xa0'):
+            if line_runner[3][0].string is None:
                 runner.club=''
             else:
                 runner.club=line_runner[3][0].string # runner club
-                print('###' + line_runner[3][0].string + '###')
+                #print('###' + line_runner[3][0].string + '###')
 
             self.append_runner(runner,line_runner[1][0].string)
             #stack runner into race results
@@ -109,8 +149,9 @@ class Race:
             total_page_number = 1
 
         for page_number in range(total_page_number): # check first value in
+            #print(page_number)
             url_page = self.urlFFA + "&frmposition=" + str(page_number)
-
+            #print(url_page)
             soup=extract_soup(url_page)
 
             for a in soup.find_all('tr'): #loop over all tr tags
@@ -124,7 +165,7 @@ class Race:
                     self.fill_runner(runner_tmp)
 
     def write2csv(self,path_output,filename):
-        with open(path_output + filename + '.csv', 'w') as f:
+        with open(path_output + filename + '.csv', 'w',encoding='utf8') as f:
             f.write("class;temps;nom;cat;sexe;club\n")
             for i,rank in enumerate(self.results):
                 f.write(str(i+1) + ";" + rank['temps'] + ";" + rank['runner'].name + ";" + rank['runner'].category[:2] + ";" + rank['runner'].category[2:] + ";" + rank['runner'].club + ";\n")
@@ -133,11 +174,12 @@ class Race:
 
 
 
+
 def check_url(url):
     valid=re.compile(r"^(http://bases.athle.com/asp.net/liste.aspx\?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=[0-9]*&frmepreuve=)")
     return bool(valid.match(url))
 
-def ffa2kikourou(url_base,path_output):
+def convert(url_base,path_output):
     if check_url(url_base):
 
         race=Race(url_base)
@@ -146,8 +188,23 @@ def ffa2kikourou(url_base,path_output):
         race_ID_tmp=random.randint(1,100000)
 
         race.write2csv(path_output,'race_' + str(race_ID_tmp))
-        return (True,'race_' + str(race_ID_tmp) + '.csv')
+        return ('race_' + str(race_ID_tmp) + '.csv',race.errors)
     else:
-        return (False,'')
+        return (False,False)
+
+def analyse(url_base,rankinf,ranksup,years_list=['2018','2017','2016','2015']):
+    if check_url(url_base):
+
+        race=Race(url_base)
+        race.extract_runners()
+        # classement, chrono, objet runner
+        #liste avec classement, chrono, nom, temps pour years_list
+
+        return race.subrace_bilans(rankinf,ranksup, years_list)
+    else:
+        return False
 
 
+def test_bilans():
+    runners_list= analyse('http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=205515&frmepreuve=10+Km+Route',
+            15,25)
