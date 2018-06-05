@@ -34,7 +34,7 @@ class Runner:
         url_runner="http://bases.athle.com/asp.net/athletes.aspx?base=bilans&seq=" + str(strtohex(self.runner_ID))
         soup=extract_soup(url_runner)
 
-        race_type_dict = {'10':"10 Km Route",'15':"15 Km Route",'21':"1/2 Marathon",'42':"Marathon"} 
+        race_type_dict = {'10':"10 Km Route",'15':"15 Km Route",'21':"1/2 Marathon",'42':"Marathon"}
         race_type_str = race_type_dict[str(race_type)] # penser a faire un dictionnaire pour chaque type
         #de course
 
@@ -70,38 +70,37 @@ class Race:
     def parse_url(self,urlFFA):
         return urlFFA.split("frmcompetition=")[1].split("&")[0]
 
-    def subrace_bilans(self,rankinf,ranksup,years_list):
+    def subrace_bilans(self,rankinf,ranksup,years_list,race_type):
         results_=[]
         results_runner = []
 
-        for r in self.results[rankinf:ranksup]:
+        for i,r in enumerate(self.results[rankinf:ranksup]):
             if list(r.values())[1].runner_ID != 'unknown':
                 chrono = list(r.values())[0]
                 runner = list(r.values())[1]
-                runner.fetch_bilans()
+                runner.fetch_bilans(race_type)
                 results_runner = []
 
-                if runner.bilans:
-                        for i in runner.bilans:
-                            if i['annee'] in years_list:
-                                results_runner.append(i)
-                        for i,r in enumerate(results_runner):
-                            print('for i,r: ' +  i,r)
-                            for year in years_list:
-                                print('for year: ' + year)
-                                if year not in [j['annee'] for j in
-                                                results_runner]:
-                                    results_runner.insert(i,{'temps':"-",'annee':year})
 
-#                        print(results_runner)
-                        #print([i['annee'] for i in results_runner])
+                l_bil=runner.bilans[:]
+                #print(runner.bilans[:])
+                #print(list(set(years_list)-set([b['annee'] for b in l_bil])))
+                #print(l_bil)
+                _=[l_bil.append({'temps':'-','annee':b}) for b in list(set(years_list)-set([b['annee'] for b in l_bil]))]
 
-                results_runner.insert(0,runner)
+                results_runner=[b['temps'] for b in sorted([b for b in l_bil if b['annee'] in
+                                       years_list],key=lambda
+                                                     k:k['annee'],reverse=True)]
+
+                #print(results_runner)
+                results_runner.insert(0,runner.name)
                 results_runner.insert(0,chrono)
+                results_runner.insert(0,str(rankinf+i+1))
 
                 results_.append(results_runner)
         #results_=[r[2+len(years_list):] for r in results_]
 #        print(results_)
+        print(results_)
         return results_
 
 
@@ -192,7 +191,8 @@ def convert(url_base,path_output):
     else:
         return (False,False)
 
-def analyse(url_base,rankinf,ranksup,years_list=['2018','2017','2016','2015']):
+def analyse(url_base,rankinf,ranksup,race_type=10,
+            years_list=['2018','2017','2016','2015']):
     if check_url(url_base):
 
         race=Race(url_base)
@@ -200,7 +200,7 @@ def analyse(url_base,rankinf,ranksup,years_list=['2018','2017','2016','2015']):
         # classement, chrono, objet runner
         #liste avec classement, chrono, nom, temps pour years_list
 
-        return race.subrace_bilans(rankinf,ranksup, years_list)
+        return race.subrace_bilans(rankinf,ranksup, years_list,race_type)
     else:
         return False
 
