@@ -46,6 +46,12 @@ def insert_race(race,cursor):
 
 
 @deco_db
+def insert_runners_records(runner,cursor):
+    pass
+
+
+
+@deco_db
 def fetch_race_results(race,cursor):
     cursor.execute("SELECT * from race_results WHERE race_id=%s AND epreuve=%s ORDER BY rank;",(race.race_ID,race.epreuve))
     test = cursor.fetchall()

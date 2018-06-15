@@ -20,7 +20,7 @@ def strtohex(js_ID): # to retrieve runner_ID from javascript input
 def extract_soup(url):
         headers = { 'User-Agent' : 'Mozilla/5.0' }
         req = urllib.request.Request(url, None, headers)
-        html=urllib.request.urlopen(req)
+        html = urllib.request.urlopen(req)
         soup = BeautifulSoup(html,"lxml") # parse html page with lxml and bs
         return soup
 
@@ -61,8 +61,10 @@ class Chrono:
         try:
             dt = datetime.strptime(str_chrono,"%Hh%M'%S''")
         except ValueError:
-            dt = datetime.strptime('00h' + str_chrono,"%Hh%M'%S''")
-
+            try:
+                dt = datetime.strptime('00h' + str_chrono,"%Hh%M'%S''")
+            except ValueError:
+                dt = datetime.strptime('00h' + str_chrono,"%Hh%M:%S''")
         self.chrono = timedelta(hours=dt.hour,minutes=dt.minute,seconds=dt.second)
 
     def __str__(self):
