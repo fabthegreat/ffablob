@@ -38,7 +38,6 @@ def extract_resultlines(urlFFA):
                     # Transform each result line in a runner
                     result_line_flat=[i[0] for i in result_line]
                     result_lines.append(result_line_flat)
-                    i = list(map(lambda x:str(x),result_line_flat))
 
         return result_lines
 
@@ -56,7 +55,9 @@ def correct_resultlines(result_lines):
                 except IndexError:
                     ID=''
 
+                # exctraction of strings (bs4 method)
                 result_line = list(map(lambda x: x.string,result_line))
+
             result_line.insert(3,ID)
             rls.append(result_line)
             print(result_line)
