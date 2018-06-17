@@ -5,6 +5,13 @@ import random
 from datetime import datetime,timedelta
 import sys
 
+import design
+
+def cleanup(str_time):
+        str_time = str_time.split("''")[0].strip()+"''"
+        return str_time
+
+
 def extract_soup(url):
         headers = { 'User-Agent' : 'Mozilla/5.0' }
         req = urllib.request.Request(url, None, headers)
@@ -39,15 +46,25 @@ def extract_resultlines(urlFFA):
                     result_line_flat=[i[0] for i in result_line]
                     result_lines.append(result_line_flat)
 
-        return result_lines
+        return result_lines #list of flat lists of results
 
 def correct_resultlines(result_lines):
         # all corrections operations on lines are made here
         rls=[]
-        for result_line in result_lines:
-            if result_line[0] == '-':
+
+        for i,result_line in enumerate(result_lines):
+            error_code = 0 #default error code to 0
+            if result_line[0] == '-' or result_line[2].string == 'Participant Invalide':
+                error_code = 1
                 # replace some values with arbitrary ones
-                result_line = ['-'] * 9
+                _rank = str(i+1)
+                _time = result_lines[i-1][1].string
+                _name = 'unknown'
+                _club = ''
+                _cat = ''
+                result_line = [_rank,_time,_name,_club,'-','-',_cat,'-','-']
+
+                ID = '' #to share same operation as for else section
             else:
                 # extract runner ID before other filter operations
                 try:
@@ -55,11 +72,25 @@ def correct_resultlines(result_lines):
                 except IndexError:
                     ID=''
 
-                # exctraction of strings (bs4 method)
+                # a few more corrections
                 result_line = list(map(lambda x: x.string,result_line))
+                for i,rl in enumerate(result_line):
+                    if rl is None:
+                        result_line[i] = ''
+                result_line = list(map(lambda x: x.replace('\xa0',''),result_line))
 
-            result_line.insert(3,ID)
-            rls.append(result_line)
-            print(result_line)
+            result_line.insert(3,ID) # insert ID saved earlier
+            result_line.pop(5) # remove all the useless informations
+            result_line.pop(5)
+            result_line.pop(6)
+            result_line.pop(6)
+            result_line.insert(6,result_line[5][2:])
+            result_line[5]=result_line[5][:2]
+            result_line[1]=design.Time(result_line[1]) # transform string
+            #into Time object
+            rls.append({'rstl':result_line,'errcode':error_code})
         return rls
 
+
+def prepare_resultslines(result_lines):
+        pass
