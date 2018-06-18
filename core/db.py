@@ -1,4 +1,5 @@
 import psycopg2
+from psycopg2.extensions import AsIs
 import design
 import datetime
 
@@ -16,19 +17,17 @@ def db_finish(cursor,connexion):
 def create_columns_record():
         cursor,connexion=db_initiate()
         yearnow= datetime.datetime.now().year
-        yearlist = [yearnow - i for i in range(4)]*3
-        racetypes=['10k','21k','42k']
+        yearlist = [yearnow - i for i in range(4)]
+        racetypes=['10k','15k','21k','42k']
 
-        test_record= 'record_10k'+str(yearnow)
-        cursor.execute("SELECT * FROM runners LIMIT 0")
-        #cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='runners' and column_name=%s;",(test_record,))
-        column_names = [row[0] for row in cursor]
-        print(column_names)
-        # pass
-        #else:
         column_list=['record_' + y + '_' + str(x) for x in yearlist for y in racetypes]
-        for y in column_list:
-            cursor.execute('ALTER TABLE runners ADD COLUMN "%s" interval',(y,))
+        for rc in column_list:
+            cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='runners' and column_name=%s;",(rc,))
+            clmn = cursor.fetchone()
+            if clmn:
+                pass
+            else:
+                cursor.execute('ALTER TABLE runners ADD COLUMN %s interval',(AsIs(rc),))
         db_finish(cursor,connexion)
 
 def check_race_exists(race):

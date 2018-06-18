@@ -8,9 +8,17 @@ import sys
 import design
 
 def cleanup(str_time):
-        str_time = str_time.split("''")[0].strip()+"''"
+       #use regex! 
+        str_time = str_time.split(' ')[0].strip()
+        #str_time = str_time.split("''")[0].strip()+"''"
         return str_time
 
+def strtohex(js_ID): # to retrieve runner_ID from javascript input
+    hexreturn = ""
+    for i in range(1,len(str(js_ID))+1):
+        hexreturn += str(99 - ord(str(js_ID)[i - 1]))
+        hexreturn += str(ord(str(js_ID)[i - 1]))
+    return hexreturn
 
 def extract_soup(url):
         headers = { 'User-Agent' : 'Mozilla/5.0' }
@@ -91,6 +99,29 @@ def correct_resultlines(result_lines):
             rls.append({'rstl':result_line,'errcode':error_code})
         return rls
 
+def extract_records(runner):
+        urlrunner="http://bases.athle.com/asp.net/athletes.aspx?base=bilans&seq="+ str(strtohex(runner.ID))
+        soup = extract_soup(urlrunner)
 
-def prepare_resultslines(result_lines):
-        pass
+        race_type_dict = {'10':"10 Km Route",'15':"15 Km Route",'21':"1/2 Marathon",'42':"Marathon"}
+        for u,v in race_type_dict.items():
+            print(u,v)
+            for a in soup.find_all('tr'):
+                if a.td.get_attribute_list('class')[0] == 'innerDatas':
+                    if a.td.next_sibling.next_sibling.string == v:
+                        record = {}
+                        for sib in a.previous_siblings:
+                            try:
+                               if sib.td.get_attribute_list('class')[0] == 'innersubLabels':
+                                    record['annee']=sib.td.string
+                                    break
+                            except:
+                                pass
+                        record['temps']=design.Time(a.td.next_sibling.next_sibling.next_sibling.next_sibling.string)
+                        record['racetype']=a
+                        runner.records.append(record)
+
+if __name__ == "__main__":
+        runner=design.Runner('528136','unknown','XX','X','DDDD')
+        extract_records(runner)
+        print(runner.records)

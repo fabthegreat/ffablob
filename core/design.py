@@ -13,7 +13,11 @@ class Time:
             try:
                 dt = datetime.strptime('00h' + str_time,"%Hh%M'%S''")
             except ValueError:
-                dt = datetime.strptime('00h' + str_time,"%Hh%M:%S''")
+                try:
+                    dt = datetime.strptime('00h' + str_time,"%Hh%M:%S''")
+                except ValueError:
+                    dt = datetime.strptime(str_time,"%H:%M:%S")
+
         self.time = timedelta(hours=dt.hour,minutes=dt.minute,seconds=dt.second)
 
     def __str__(self):
@@ -30,6 +34,7 @@ class Runner:
         self.category = category
         self.gender = gender
         self.club = club
+        self.records=[]
         # Name => string
         # ID (not mandatory) => string
         # Birth date => date
@@ -57,7 +62,6 @@ class Runner:
 
     def populate_attrs(self,result_line):
         pass
-
 
 class Race:
     def __init__(self, ID, racetype):
@@ -106,4 +110,4 @@ if __name__ == '__main__':
     race_1 = Race('184050','30+Km')
     race_2 = Race('205515','10+Km+Route')
 #    race_2.write_to_csv('/home/ftg/python/ffablob/core/','race_'+race_2.ID+'_rt_'+race_2.racetype)
-    
+
