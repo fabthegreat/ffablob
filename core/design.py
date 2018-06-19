@@ -2,23 +2,18 @@ from datetime import datetime,timedelta
 
 import utils
 import db
+import re
 
 class Time:
      # verifier tous les formats...
     def __init__(self,str_time):
         str_time = utils.cleanup(str_time)
-        try:
-            dt = datetime.strptime(str_time,"%Hh%M'%S''")
-        except ValueError:
-            try:
-                dt = datetime.strptime('00h' + str_time,"%Hh%M'%S''")
-            except ValueError:
-                try:
-                    dt = datetime.strptime('00h' + str_time,"%Hh%M:%S''")
-                except ValueError:
-                    dt = datetime.strptime(str_time,"%H:%M:%S")
+        hms=re.findall('\d+',str_time)
+        while len(hms)<3:
+            hms.insert(0,'0')
+        hms=list(map(lambda x: int(x),hms))
 
-        self.time = timedelta(hours=dt.hour,minutes=dt.minute,seconds=dt.second)
+        self.time = timedelta(hours=hms[0],minutes=hms[1],seconds=hms[2])
 
     def __str__(self):
             s=self.time.total_seconds()
@@ -35,6 +30,7 @@ class Runner:
         self.gender = gender
         self.club = club
         self.records=[]
+        self.pullDB() #pull results either from FFA DB or internal
         # Name => string
         # ID (not mandatory) => string
         # Birth date => date
@@ -47,18 +43,19 @@ class Runner:
         return 'ID: ' + self.ID + ' ' + ' Name: ' + self.name + ' Cat: '+ self.category + ' Gender: ' + self.gender + ' Club: ' + self.club
 
     def pullDB(self):
-        if self.ID in RunnerDB:
-        # gives values to attributes
-            pass
-        else:
+#        if self.ID in RunnerDB: #db.check_runner_exists(self)
             self.pullFFA()
-        return _records
+            db.runner_to_runnerDB(self)
+#        # gives values to attributes
+#            pass
+#        else:
+#            self.pullFFA()
 
     def pushDB(self):
-        pass
+        db.runner_to_runnerDB(self)
 
     def pullFFA(self):
-        pass
+        utils.extract_records(self)
 
     def populate_attrs(self,result_line):
         pass
@@ -80,7 +77,8 @@ class Race:
             # assign values to attributes
         else:
             print('This race is being processed from FFA database...')
-            self.results=self.pullFFA()
+            self.results=self.pullFFA()#a homogeneiser avec runner.pullFFA 
+                    # ne pas affecter de variable
             self.pushDB()
 
     def pullFFA(self):
@@ -107,7 +105,10 @@ class Race:
 
 
 if __name__ == '__main__':
-    race_1 = Race('184050','30+Km')
-    race_2 = Race('205515','10+Km+Route')
+#    race_1 = Race('184050','30+Km')
+#    race_2 = Race('205515','10+Km+Route')
 #    race_2.write_to_csv('/home/ftg/python/ffablob/core/','race_'+race_2.ID+'_rt_'+race_2.racetype)
-
+    runner=Runner('528136','unknown','XX','X','DDDD')
+#    utils.extract_records(runner)
+#    for i in runner.records:
+#        print(i['racetype']+'kms en '+i['annee']+': '+str(i['temps']))

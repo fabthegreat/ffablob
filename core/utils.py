@@ -105,7 +105,6 @@ def extract_records(runner):
 
         race_type_dict = {'10':"10 Km Route",'15':"15 Km Route",'21':"1/2 Marathon",'42':"Marathon"}
         for u,v in race_type_dict.items():
-            print(u,v)
             for a in soup.find_all('tr'):
                 if a.td.get_attribute_list('class')[0] == 'innerDatas':
                     if a.td.next_sibling.next_sibling.string == v:
@@ -113,15 +112,16 @@ def extract_records(runner):
                         for sib in a.previous_siblings:
                             try:
                                if sib.td.get_attribute_list('class')[0] == 'innersubLabels':
-                                    record['annee']=sib.td.string
+                                    record['year']=sib.td.string
                                     break
                             except:
                                 pass
-                        record['temps']=design.Time(a.td.next_sibling.next_sibling.next_sibling.next_sibling.string)
-                        record['racetype']=a
+                        record['time']=design.Time(a.td.next_sibling.next_sibling.next_sibling.next_sibling.string)
+                        record['racetype']=u
                         runner.records.append(record)
 
 if __name__ == "__main__":
         runner=design.Runner('528136','unknown','XX','X','DDDD')
         extract_records(runner)
-        print(runner.records)
+        for i in runner.records:
+            print(i['racetype']+'kms en '+i['year']+': '+str(i['time']))
