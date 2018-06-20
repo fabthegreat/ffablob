@@ -58,19 +58,11 @@ def race_to_raceDB(race):
         db_finish(cursor,connexion)
 
 def runner_to_runnerDB(runner):
-#        cursor,connexion=db_initiate()
-        yearnow= datetime.datetime.now().year
-        yearlist = [yearnow - i for i in range(4)]
-        racetypes=['10','15','21','42']
-        for y in yearlist:
-            for rt in racetypes:
-                print(y,rt)
-                for r in runner.records:
-                    if y == int(r['year']) and rt == r['racetype']:
-                        print(r)
+        cursor,connexion=db_initiate()
+
 #        for r in race.results:
 #            cursor.execute('INSERT INTO runners (id,racetype,rank,time,name,runner_id,club,category,gender,errorcode) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(race.ID,race.racetype,r['rstl'][0],r['rstl'][1].time,r['rstl'][2],r['rstl'][3],r['rstl'][4],r['rstl'][5],r['rstl'][6],r['errcode']))
-#        db_finish(cursor,connexion)
+        db_finish(cursor,connexion)
 
 
 if __name__ == '__main__':

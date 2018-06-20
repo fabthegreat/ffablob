@@ -44,8 +44,8 @@ class Runner:
 
     def pullDB(self):
 #        if self.ID in RunnerDB: #db.check_runner_exists(self)
-            self.pullFFA()
-            db.runner_to_runnerDB(self)
+            self.records=self.pullFFA()
+#            db.runner_to_runnerDB(self)
 #        # gives values to attributes
 #            pass
 #        else:
@@ -55,7 +55,7 @@ class Runner:
         db.runner_to_runnerDB(self)
 
     def pullFFA(self):
-        utils.extract_records(self)
+        return utils.correct_records(utils.extract_records(self))
 
     def populate_attrs(self,result_line):
         pass
@@ -109,6 +109,7 @@ if __name__ == '__main__':
 #    race_2 = Race('205515','10+Km+Route')
 #    race_2.write_to_csv('/home/ftg/python/ffablob/core/','race_'+race_2.ID+'_rt_'+race_2.racetype)
     runner=Runner('528136','unknown','XX','X','DDDD')
+    print(runner.records)
 #    utils.extract_records(runner)
 #    for i in runner.records:
 #        print(i['racetype']+'kms en '+i['annee']+': '+str(i['temps']))

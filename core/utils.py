@@ -102,6 +102,7 @@ def correct_resultlines(result_lines):
 def extract_records(runner):
         urlrunner="http://bases.athle.com/asp.net/athletes.aspx?base=bilans&seq="+ str(strtohex(runner.ID))
         soup = extract_soup(urlrunner)
+        records = []
 
         race_type_dict = {'10':"10 Km Route",'15':"15 Km Route",'21':"1/2 Marathon",'42':"Marathon"}
         for u,v in race_type_dict.items():
@@ -118,10 +119,27 @@ def extract_records(runner):
                                 pass
                         record['time']=design.Time(a.td.next_sibling.next_sibling.next_sibling.next_sibling.string)
                         record['racetype']=u
-                        runner.records.append(record)
+                        records.append(record)
+        return records
+#        print(records)
+
+def correct_records(records):
+        print('entered')
+        yearnow= datetime.now().year
+        yearlist = [yearnow - i for i in range(4)]
+        racetypes=['10','15','21','42']
+        columnlist = {'record_'+rt+'k_'+str(y):None for rt in racetypes for y in
+                      yearlist}
+
+        for r in records:
+            if r['year'] in str(yearlist) and r['racetype'] in racetypes:
+#                print(r)
+                rcolumn='record_' + r['racetype'] + 'k' + '_' + r['year']
+                columnlist[rcolumn]=r['time']
+
+        return columnlist
 
 if __name__ == "__main__":
         runner=design.Runner('528136','unknown','XX','X','DDDD')
-        extract_records(runner)
-        for i in runner.records:
-            print(i['racetype']+'kms en '+i['year']+': '+str(i['time']))
+        correct_records(extract_records(runner))
+
