@@ -121,7 +121,6 @@ def extract_records(runner):
                         record['racetype']=u
                         records.append(record)
         return records
-#        print(records)
 
 def correct_records(records):
         print('entered')
@@ -133,9 +132,8 @@ def correct_records(records):
 
         for r in records:
             if r['year'] in str(yearlist) and r['racetype'] in racetypes:
-#                print(r)
                 rcolumn='record_' + r['racetype'] + 'k' + '_' + r['year']
-                columnlist[rcolumn]=r['time']
+                columnlist[rcolumn]=r['time'].time
 
         return columnlist
 

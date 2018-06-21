@@ -43,12 +43,14 @@ class Runner:
         return 'ID: ' + self.ID + ' ' + ' Name: ' + self.name + ' Cat: '+ self.category + ' Gender: ' + self.gender + ' Club: ' + self.club
 
     def pullDB(self):
-#        if self.ID in RunnerDB: #db.check_runner_exists(self)
+        if db.check_runner_exists(self):
+            print('This runner is being processed from internal database...')
+            #update records in DB
+#            db.runnerDB_to_runner(self)
+        else:
+            print('This runner is being processed from FFA database...')
             self.records=self.pullFFA()
-#            db.runner_to_runnerDB(self)
-#        # gives values to attributes
-#            pass
-#        else:
+            self.pushDB()
 #            self.pullFFA()
 
     def pushDB(self):

@@ -40,6 +40,16 @@ def check_race_exists(race):
         else:
             return False #race does not exists
 
+def check_runner_exists(runner):
+        cursor,connexion=db_initiate()
+        cursor.execute('SELECT * from runners WHERE runner_id=%s;',(runner.ID,))
+        test = cursor.fetchone()
+        db_finish(cursor,connexion)
+        if test:
+            return True #race exists
+        else:
+            return False #race does not exists
+
 def raceDB_to_race(race):
         cursor,connexion=db_initiate()
         cursor.execute("SELECT * from races WHERE id=%s AND racetype=%s ORDER BY rank;",(race.ID,race.racetype))
@@ -60,8 +70,14 @@ def race_to_raceDB(race):
 def runner_to_runnerDB(runner):
         cursor,connexion=db_initiate()
 
-#        for r in race.results:
-#            cursor.execute('INSERT INTO runners (id,racetype,rank,time,name,runner_id,club,category,gender,errorcode) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(race.ID,race.racetype,r['rstl'][0],r['rstl'][1].time,r['rstl'][2],r['rstl'][3],r['rstl'][4],r['rstl'][5],r['rstl'][6],r['errcode']))
+        cursor.execute('INSERT INTO runners \
+                       (runner_id,name,club,category,gender) VALUES \
+                       (%s,%s,%s,%s,%s)',(runner.ID,runner.name,runner.club, \
+                       runner.category,runner.gender))
+
+        for label,rst in runner.records.items():
+            cursor.execute('UPDATE runners SET %s = %s WHERE runner_id = \
+                       %s;',(AsIs(label),rst,runner.ID))
         db_finish(cursor,connexion)
 
 
