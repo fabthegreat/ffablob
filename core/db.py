@@ -1,7 +1,7 @@
 import psycopg2
 from psycopg2.extensions import AsIs
 import design
-import datetime
+from datetime import datetime,timedelta
 
 def db_initiate(host="localhost",dbname="ffablob",user="ffablob",password="ffablob"):
     conn=psycopg2.connect(host="localhost",dbname="ffablob", user="ffablob",
@@ -76,9 +76,31 @@ def runner_to_runnerDB(runner):
                        runner.category,runner.gender))
 
         for label,rst in runner.records.items():
-            cursor.execute('UPDATE runners SET %s = %s WHERE runner_id = \
-                       %s;',(AsIs(label),rst,runner.ID))
+            if rst:
+                cursor.execute('UPDATE runners SET %s = %s WHERE runner_id = \
+                               %s;',(AsIs(label),rst.time,runner.ID))
         db_finish(cursor,connexion)
+
+def runnerDB_to_runner(runner):
+        cursor,connexion=db_initiate()
+        cursor.execute("SELECT * from runners WHERE runner_id=%s;",(runner.ID,))
+        rls = cursor.fetchall()
+        rls = [i for i in rls[0]]
+        runner.name = rls[1]
+        runner.club = rls[2]
+        runner.category = rls[3]
+        runner.gender = rls[-1]
+
+        yearnow= datetime.now().year
+        yearlist = [yearnow - i for i in range(4)]
+        racetypes=['10','15','21','42']
+        columnlist = ['record_'+rt+'k_'+str(y) for rt in racetypes for y in
+                      yearlist]
+
+        runner.records = dict(zip(columnlist,rls[4:-2]))
+
+        db_finish(cursor,connexion)
+
 
 
 if __name__ == '__main__':

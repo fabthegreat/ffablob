@@ -1,0 +1,39 @@
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>Convert a FFA race page</title>
+</head>
+<body>
+	<h1 align="center" style="padding-top:20px">Convertisseur de résultats FFA en fichier csv (pour Kikourou.net)</h1>
+
+	<div class="container" align="center" style="padding-top:50px;width:70%">
+
+    <form action="/convert/" method="get">
+    <div class="form-row align-items-center">
+        <div class="col">
+		<label class="sr-only" for="inlineFormInput">Lien page de résultats</label>
+		<input type="text" class="form-control mb-2" id="inlineFormInput" name="urlFFA" placeholder="http://...">			        
+	</div>
+	<div class="col-auto">
+		<button type="submit" class="btn btn-primary mb-2">Submit</button>
+	</div>
+    </div>
+	
+    </form>
+
+
+    <div class="alert alert-primary" role="alert">
+    {{message}}
+    {% if file_available %}
+    <a href="/static/{{file_available}}">(lien de telechargement)</a>
+    {% endif %}
+    </div>
+	</div>
+    <script src="/static/jquery/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</body>
+</html>

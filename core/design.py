@@ -31,13 +31,6 @@ class Runner:
         self.club = club
         self.records=[]
         self.pullDB() #pull results either from FFA DB or internal
-        # Name => string
-        # ID (not mandatory) => string
-        # Birth date => date
-        # Category => string
-        # Gender => string
-        # Club => string
-        # Records => [{'year':,'time':}]
 
     def __str__(self):
         return 'ID: ' + self.ID + ' ' + ' Name: ' + self.name + ' Cat: '+ self.category + ' Gender: ' + self.gender + ' Club: ' + self.club
@@ -46,21 +39,17 @@ class Runner:
         if db.check_runner_exists(self):
             print('This runner is being processed from internal database...')
             #update records in DB
-#            db.runnerDB_to_runner(self)
+            db.runnerDB_to_runner(self)
         else:
             print('This runner is being processed from FFA database...')
             self.records=self.pullFFA()
             self.pushDB()
-#            self.pullFFA()
 
     def pushDB(self):
         db.runner_to_runnerDB(self)
 
     def pullFFA(self):
         return utils.correct_records(utils.extract_records(self))
-
-    def populate_attrs(self,result_line):
-        pass
 
 class Race:
     def __init__(self, ID, racetype):
@@ -84,12 +73,19 @@ class Race:
             self.pushDB()
 
     def pullFFA(self):
+        # put urlFFA inside extract_resultlines
         urlFFA ='http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition='+self.ID+'&frmepreuve='+self.racetype
         results=utils.correct_resultlines(utils.extract_resultlines(urlFFA))
         return results
 
     def pushDB(self):
         db.race_to_raceDB(self)
+
+    def extract_runners_from_race(self):
+        for rl in self.results:
+            if rl['rstl'][3] != '':
+                _runner = Runner(rl['rstl'][3],rl['rstl'][2],rl['rstl'][5],rl['rstl'][6],rl['rstl'][4])
+                print(_runner)
 
     def show(self):
         print('Race ID: {} Race type: {}\n'.format(self.ID,self.racetype))
@@ -104,14 +100,19 @@ class Race:
                 rw=r['rstl'][:].pop(3) #shallow copy to preserve results
                 f.write(';'.join(map(lambda x: str(x),rw))+'\n')
         f.close()
-
+        def flatten_results(self):
+            result_lines = [r['rstl'] for r in self.results]
+            errcodes = [r['errcode'] for r in self.results]
+            return result_lines,errcode
 
 if __name__ == '__main__':
-#    race_1 = Race('184050','30+Km')
+    race_1 = Race('184050','30+Km')
+#    race_1.show()
+    race_1.extract_runners_from_race()
 #    race_2 = Race('205515','10+Km+Route')
 #    race_2.write_to_csv('/home/ftg/python/ffablob/core/','race_'+race_2.ID+'_rt_'+race_2.racetype)
-    runner=Runner('528136','unknown','XX','X','DDDD')
-    print(runner.records)
+#    runner=Runner('528136','unknown','XX','X','DDDD')
+#    print(runner.records)
 #    utils.extract_records(runner)
 #    for i in runner.records:
 #        print(i['racetype']+'kms en '+i['annee']+': '+str(i['temps']))

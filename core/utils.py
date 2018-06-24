@@ -8,9 +8,7 @@ import sys
 import design
 
 def cleanup(str_time):
-       #use regex! 
         str_time = str_time.split(' ')[0].strip()
-        #str_time = str_time.split("''")[0].strip()+"''"
         return str_time
 
 def strtohex(js_ID): # to retrieve runner_ID from javascript input
@@ -19,6 +17,15 @@ def strtohex(js_ID): # to retrieve runner_ID from javascript input
         hexreturn += str(99 - ord(str(js_ID)[i - 1]))
         hexreturn += str(ord(str(js_ID)[i - 1]))
     return hexreturn
+
+def DBcolumn_to_dateracetype(column_name):
+    race_type=column_name.split('record_')[1].split('k')[0]
+    date=column_name.split('record_')[1].split('k_')[1]
+    return race_type,date
+
+def dateracetype_to_DBcolumn(date,race_type):
+    column_name='record_'+race_type+'k'+'_'+str(date)
+    return column_name
 
 def extract_soup(url):
         headers = { 'User-Agent' : 'Mozilla/5.0' }
@@ -123,7 +130,6 @@ def extract_records(runner):
         return records
 
 def correct_records(records):
-        print('entered')
         yearnow= datetime.now().year
         yearlist = [yearnow - i for i in range(4)]
         racetypes=['10','15','21','42']
@@ -132,8 +138,8 @@ def correct_records(records):
 
         for r in records:
             if r['year'] in str(yearlist) and r['racetype'] in racetypes:
-                rcolumn='record_' + r['racetype'] + 'k' + '_' + r['year']
-                columnlist[rcolumn]=r['time'].time
+                rcolumn=dateracetype_to_DBcolumn(r['year'],r['racetype'])
+                columnlist[rcolumn]=r['time']
 
         return columnlist
 
@@ -141,3 +147,5 @@ if __name__ == "__main__":
         runner=design.Runner('528136','unknown','XX','X','DDDD')
         correct_records(extract_records(runner))
 
+        print(DBcolumn_to_dateracetype('record_10k_2015'))
+        print(dateracetype_to_DBcolumn('2015','2015'))
