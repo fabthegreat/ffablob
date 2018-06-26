@@ -3,17 +3,23 @@
 {% block titre %}Statistiques{% endblock %}
 
 {% block form %}
-<form action="/race" method="get"><!-- Formulaire -->
-    <div class="form-row">
-        <div class="col-12 col-md-9 mb-2 mb-md-0">
-            <input type="text" class="form-control form-control-lg" placeholder="Lien de la page de résultat FFA (http://...)" name="urlFFA">
-        </div>
-        <div class="col-12 col-md-3">
-            <button type="submit" class="btn btn-block btn-lg
-                btn-primary">Charger</button>
-        </div>
-    </div> <!--disposition -->
-</form><!-- Formulaire -->
+	<form action="/" method="get"><!-- Formulaire -->
+	    <div class="form-row">
+		<div class="col-12 col-md-9 mb-2 mb-md-0">
+		    <input type="text" class="form-control form-control-lg" placeholder="Lien de la page de résultat FFA (http://...)" name="urlFFA">
+		</div>
+		<div class="col-12 col-md-3">
+		    <button type="submit" class="btn btn-block btn-lg
+			btn-primary">Charger</button>
+		</div>
+	    </div> <!--disposition -->
+	</form><!-- Formulaire -->
+
+	{% if error_msg_url %}
+		<div class="alert alert-warning" role="alert" style="margin-top:5px;margin-bottom:5px">
+			{{ error_msg_url }}
+		</div>
+	{% endif %}
 {% endblock %}
 
 

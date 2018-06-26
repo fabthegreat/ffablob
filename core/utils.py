@@ -7,6 +7,17 @@ import sys
 
 import design
 
+def check_urlFFA(url):
+    valid=re.compile(r"^(http://bases.athle.com/asp.net/liste.aspx\?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=[0-9]*&frmepreuve=)")
+    return bool(valid.match(url))
+
+
+
+def extract_race_from_url(url):
+        race_ID=url.split("frmcompetition=")[1].split("&")[0]
+        racetype=url.split("frmepreuve=")[1]
+        return (race_ID,racetype)
+
 def cleanup(str_time):
         str_time = str_time.split(' ')[0].strip()
         return str_time
