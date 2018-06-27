@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from ffablob_web.views import main
+from ffablob_web.views import main,flush_cart
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 #    url(r'convert/', conversion),
 #    url(r'analyze/', analyze),
-#    url(r'database/', database),
+    url(r'flush_cart/', flush_cart),
     url(r'^$', main),
 ]

@@ -1,0 +1,8 @@
+{% block racecart %}
+	{% if racelist %}
+		{% for race in racelist %}
+		ID course: {{ race.0 }} Type de course: {{ race.1 }} <br>
+		{% endfor %}
+	{% endif %}
+
+{% endblock %}
