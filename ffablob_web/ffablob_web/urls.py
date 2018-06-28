@@ -14,14 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.urls import path,re_path
 from django.contrib import admin
 
-from ffablob_web.views import main,flush_cart
+from ffablob_web.views import main,flush_cart,load_race,remove_race
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-#    url(r'convert/', conversion),
-#    url(r'analyze/', analyze),
-    url(r'flush_cart/', flush_cart),
-    url(r'^$', main),
+    re_path(r'^admin/', admin.site.urls),
+    path('flushcart/', flush_cart),
+    path('removerace/<race_ID>/<race_type>', remove_race),
+    path('loadrace/', load_race),
+    re_path(r'^$', main),
 ]

@@ -15,8 +15,9 @@ import design
 import utils
 
 def main(request, results = None):
-    # check GET datas
-    # retrieve URL
+    return render(request,'index.html',{'racelist':request.session.get('races')})
+
+def load_race(request):
     if request.method == 'GET' and 'urlFFA' in request.GET and \
     request.GET['urlFFA']:
         # check URL
@@ -24,12 +25,7 @@ def main(request, results = None):
         if utils.check_urlFFA(urlFFA):
             race_ID,racetype = utils.extract_race_from_url(urlFFA)
             race = design.Race(race_ID,racetype)
-            if request.session.get('races'):
-                request.session['races'].append([race.ID,race.racetype])
-                request.session.modified = True
-            else:
-                request.session['races']=[[race.ID,race.racetype]]
-            error_msg_url = 'Course chargée dans votre liste!'
+            error_msg_url=append_race_to_list(request,race)
 
             #error_msg_url = ';'.join([race_id[0] for race_id in request.session['races']])
             #race.extract_runners_from_race()
@@ -37,15 +33,39 @@ def main(request, results = None):
             # process race
             # store race ID/racetype in a session
             # print race information with toggle (+remove button)
-            return render(request,'statistics.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results})
+            return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results})
         else:
             error_msg_url = 'Veuillez renseigner une URL valide'
-            return render(request,'statistics.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
+            return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
 
     error_msg_url = 'Veuillez renseigner une URL dans la boîte de dialogue'
-    return render(request,'statistics.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
+
 
 def flush_cart(request):
     request.session.clear()
     request.session.modified = True
     return redirect('/')
+
+def remove_race(request,race_ID,race_type):
+    if request.session.get('races') and [race_ID,race_type] in request.session['races']:
+        request.session['races'].remove([race_ID,race_type])
+        request.session.modified = True
+        error_msg_url = 'Course supprimée avec succès!'
+    else:
+        error_msg_url = "La course n'appartient pas à votre liste!"
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
+
+
+def append_race_to_list(request,race):
+    if request.session.get('races'):
+        if [race.ID,race.racetype] not in request.session['races']:
+            request.session['races'].append([race.ID,race.racetype])
+            request.session.modified = True
+            error_msg_url = 'Course chargée dans votre liste!'
+        else:
+            error_msg_url = 'Course déjà dans votre liste!'
+    else:
+        request.session['races']=[[race.ID,race.racetype]]
+        error_msg_url = 'Course chargée dans votre liste!'
+    return error_msg_url
