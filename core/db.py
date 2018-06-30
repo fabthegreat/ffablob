@@ -54,8 +54,10 @@ def raceDB_to_race(race):
         cursor,connexion=db_initiate()
         cursor.execute("SELECT * from races WHERE id=%s AND racetype=%s ORDER BY rank;",(race.ID,race.racetype))
         rls = cursor.fetchall()
+        #fetch race_name based on the first result line
+        race.name = rls[0][10]
         for rl in rls:
-            race.results.append({'errcode':rl[9],'rstl':list(rl[2:-1])})
+            race.results.append({'errcode':rl[9],'rstl':list(rl[2:-2])})
 
         # convert timedelat to custom Time class object...
 
@@ -64,7 +66,10 @@ def raceDB_to_race(race):
 def race_to_raceDB(race):
         cursor,connexion=db_initiate()
         for r in race.results:
-            cursor.execute('INSERT INTO races (id,racetype,rank,time,name,runner_id,club,category,gender,errorcode) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(race.ID,race.racetype,r['rstl'][0],r['rstl'][1].time,r['rstl'][2],r['rstl'][3],r['rstl'][4],r['rstl'][5],r['rstl'][6],r['errcode']))
+            cursor.execute('INSERT INTO races \
+                           (id,racetype,race_name,rank,time,name,runner_id,club,category,gender,errorcode) \
+                           VALUES \
+                           (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(race.ID,race.racetype,race.name,r['rstl'][0],r['rstl'][1].time,r['rstl'][2],r['rstl'][3],r['rstl'][4],r['rstl'][5],r['rstl'][6],r['errcode']))
         db_finish(cursor,connexion)
 
 def runner_to_runnerDB(runner):

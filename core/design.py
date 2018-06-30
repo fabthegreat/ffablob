@@ -55,6 +55,7 @@ class Race:
     def __init__(self, ID, racetype):
         self.ID = ID
         self.racetype = racetype
+        self.name =''
         self.results = []
         self.pullDB() #pull results either from FFA DB or internal
         # ID => string
@@ -68,15 +69,15 @@ class Race:
             # assign values to attributes
         else:
             print('This race is being processed from FFA database...')
-            self.results=self.pullFFA()#a homogeneiser avec runner.pullFFA 
+            self.name, self.results=self.pullFFA()#a homogeneiser avec runner.pullFFA 
                     # ne pas affecter de variable
             self.pushDB()
 
     def pullFFA(self):
         # put urlFFA inside extract_resultlines
         urlFFA ='http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition='+self.ID+'&frmepreuve='+self.racetype
-        results=utils.correct_resultlines(utils.extract_resultlines(urlFFA))
-        return results
+        race_name,results = utils.extract_race(urlFFA)
+        return race_name,results
 
     def pushDB(self):
         db.race_to_raceDB(self)
@@ -107,8 +108,9 @@ class Race:
 
 if __name__ == '__main__':
     race_1 = Race('184050','30+Km')
+    print(race_1.name)
 #    race_1.show()
-    race_1.extract_runners_from_race()
+#    race_1.extract_runners_from_race()
 #    race_2 = Race('205515','10+Km+Route')
 #    race_2.write_to_csv('/home/ftg/python/ffablob/core/','race_'+race_2.ID+'_rt_'+race_2.racetype)
 #    runner=Runner('528136','unknown','XX','X','DDDD')

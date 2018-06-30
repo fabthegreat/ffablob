@@ -17,12 +17,13 @@ from django.conf.urls import url
 from django.urls import path,re_path
 from django.contrib import admin
 
-from ffablob_web.views import main,flush_cart,load_race,remove_race
+from ffablob_web.views import main,flush_cart,load_race,remove_race,show_race
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     path('flushcart/', flush_cart),
     path('removerace/<race_ID>/<race_type>', remove_race),
     path('loadrace/', load_race),
+    path('showrace/<race_ID>/<race_type>', show_race),
     re_path(r'^$', main),
 ]

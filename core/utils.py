@@ -7,11 +7,14 @@ import sys
 
 import design
 
+def index_shortlist_in_list(slist,llist):
+    if slist in list(map(lambda x:x[:len(slist)],llist)):
+        return list(map(lambda x:x[:len(slist)],llist)).index(slist)
+
+
 def check_urlFFA(url):
     valid=re.compile(r"^(http://bases.athle.com/asp.net/liste.aspx\?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=[0-9]*&frmepreuve=)")
     return bool(valid.match(url))
-
-
 
 def extract_race_from_url(url):
         race_ID=url.split("frmcompetition=")[1].split("&")[0]
@@ -45,8 +48,16 @@ def extract_soup(url):
         soup = BeautifulSoup(html,"lxml") # parse html page with lxml and bs
         return soup
 
-def extract_resultlines(urlFFA):
-        soup = extract_soup(urlFFA)
+def extract_race(urlFFA):
+    soup = extract_soup(urlFFA)
+    race_name = extract_racename(soup)
+    results = correct_resultlines(extract_resultlines(soup,urlFFA))
+    return race_name,results
+
+def extract_racename(soup):
+    return soup.find(attrs={"class": "mainheaders"}).contents[0]
+
+def extract_resultlines(soup,urlFFA):
         total_page_number = soup.find_all('select')[0].contents[0].string.split('/')[1].split('<')[0].strip()
 
         try:

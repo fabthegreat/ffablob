@@ -32,7 +32,8 @@
 							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
 								ID course: {{ race.0 }} Type de course: {{ race.1 }} 
 							</button>
-							<a href='/removerace/{{ race.0 }}/{{ race.1 }}'><span class="badge badge-pill badge-danger">Supprimer</span></a>
+							<a href='/showrace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-danger">Aperçu</span></a>
+							<a href='/removerace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-danger">Supprimer</span></a>
 						</h5>
 					</div>
 
