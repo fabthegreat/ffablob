@@ -29,8 +29,9 @@ class Runner:
         self.category = category
         self.gender = gender
         self.club = club
-        self.records=[]
-        self.pullDB() #pull results either from FFA DB or internal
+        self.records= {}
+        if ID:
+            self.pullDB() #pull results either from FFA DB or internal
 
     def __str__(self):
         return 'ID: ' + self.ID + ' ' + ' Name: ' + self.name + ' Cat: '+ self.category + ' Gender: ' + self.gender + ' Club: ' + self.club
@@ -50,6 +51,22 @@ class Runner:
 
     def pullFFA(self):
         return utils.correct_records(utils.extract_records(self))
+
+    def list_records(self,race_type,year=0):
+        yearnow= datetime.now().year
+        yearlist = [yearnow - i for i in range(4)]
+        if not year:
+            for y in yearlist:
+                if self.records:
+                    yield self.records[utils.dateracetype_to_DBcolumn(y,str(race_type))]
+                else:
+                    yield None
+        else:
+            if self.records:
+                yield self.records[utils.dateracetype_to_DBcolumn(year,str(race_type))]
+            else:
+                yield None
+
 
 class Race:
     def __init__(self, ID, racetype):
@@ -84,9 +101,9 @@ class Race:
 
     def extract_runners_from_race(self):
         for rl in self.results:
-            if rl['rstl'][3] != '':
+            #if rl['rstl'][3] != '':
                 _runner = Runner(rl['rstl'][3],rl['rstl'][2],rl['rstl'][5],rl['rstl'][6],rl['rstl'][4])
-                print(_runner)
+                yield _runner
 
     def show(self):
         print('Race ID: {} Race type: {}\n'.format(self.ID,self.racetype))
@@ -95,22 +112,27 @@ class Race:
             print('#{} Time:{} Name:{} Runner ID:{} Club:{} Category:{} Gender:{} ErrorCode:{}'.format(*_t))
 
     def write_to_csv(self,path,filename):
-        with open(path + filename + '.csv', 'w',encoding='utf8') as f:
+        with open(path + '/' + filename + '.csv', 'w',encoding='utf8') as f:
             f.write("class;temps;nom;cat;sexe;club\n")
-            for r in race_2.results:
-                rw=r['rstl'][:].pop(3) #shallow copy to preserve results
+            for r in self.results:
+                rw=r['rstl'][:] #shallow copy to preserve results
+                rw.pop(3)
                 f.write(';'.join(map(lambda x: str(x),rw))+'\n')
         f.close()
-        def flatten_results(self):
-            result_lines = [r['rstl'] for r in self.results]
-            errcodes = [r['errcode'] for r in self.results]
-            return result_lines,errcode
+        return 'race_files/' + filename + '.csv'
+
+    def flatten_results(self):
+        result_lines = [r['rstl'] for r in self.results]
+        errcodes = [r['errcode'] for r in self.results]
+        return result_lines,errcode
 
 if __name__ == '__main__':
     race_1 = Race('184050','30+Km')
-    print(race_1.name)
+#    race_1.write_to_csv(root_path + project_path + static_path + '/race_files',race_1.ID + '_' + race_1.racetype)
+#    print(race_1.name)
 #    race_1.show()
-#    race_1.extract_runners_from_race()
+    for i in race_1.extract_runners_from_race():
+        print([j for j in i.list_records(15)])
 #    race_2 = Race('205515','10+Km+Route')
 #    race_2.write_to_csv('/home/ftg/python/ffablob/core/','race_'+race_2.ID+'_rt_'+race_2.racetype)
 #    runner=Runner('528136','unknown','XX','X','DDDD')

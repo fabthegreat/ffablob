@@ -3,14 +3,14 @@
 {% block titre %}Statistiques{% endblock %}
 
 {% block form %}
+<div style="margin-bottom:5px">
 	<form action="/loadrace" method="get"><!-- Formulaire -->
 	    <div class="form-row">
 		<div class="col-12 col-md-9 mb-2 mb-md-0">
 		    <input type="text" class="form-control form-control-lg" placeholder="Lien de la page de résultat FFA (http://...)" name="urlFFA">
 		</div>
 		<div class="col-12 col-md-3">
-		    <button type="submit" class="btn btn-block btn-lg
-			btn-primary">Chargez la course!</button>
+		    <button type="submit" class="btn btn-block btn-lg btn-primary">Chargez la course!</button>
 		</div>
 	    </div> <!--disposition -->
 	</form><!-- Formulaire -->
@@ -20,6 +20,7 @@
 			{{ error_msg_url }}
 		</div>
 	{% endif %}
+</div>
 {% endblock %}
 
 {% block racecart %}
@@ -27,21 +28,9 @@
 		<div class="accordion" id="accordionExample">
 		{% for race in racelist %}
 				<div class="card">
-					<div class="card-header" id="heading{{ forloop.counter }}">
-						<h5 class="mb-0">
-							<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
-								ID course: {{ race.0 }} Type de course: {{ race.1 }} 
-							</button>
-							<a href='/showrace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-danger">Aperçu</span></a>
-							<a href='/removerace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-danger">Supprimer</span></a>
-						</h5>
-					</div>
 
-					<div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionExample">
-						<div class="card-body">
-							Formulaire de course
-						</div>
-					</div>
+                        {% include "raceform.html" %}
+
 				</div> 
 		{% endfor %}
 		</div> 

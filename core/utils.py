@@ -11,7 +11,6 @@ def index_shortlist_in_list(slist,llist):
     if slist in list(map(lambda x:x[:len(slist)],llist)):
         return list(map(lambda x:x[:len(slist)],llist)).index(slist)
 
-
 def check_urlFFA(url):
     valid=re.compile(r"^(http://bases.athle.com/asp.net/liste.aspx\?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=[0-9]*&frmepreuve=)")
     return bool(valid.match(url))

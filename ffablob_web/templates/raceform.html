@@ -1,0 +1,54 @@
+<div class="card-header" id="heading{{ forloop.counter }}">
+    <h5 class="mb-0">
+        <div class="form-check">
+
+            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option{{ forloop.counter }}" aria-label="...">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+            {{ race.2 }} (ID course: {{ race.0 }}) 
+            </button>
+
+            <a href='/showrace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-success">Aperçu</span></a>
+            {% include "csvmodal.html" %}
+            <a href='/removerace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-danger">Supprimer</span></a>
+
+        </div>
+    </h5>
+</div>
+
+<div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.first %}<!--show-->{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionExample">
+    <div class="card-body">
+        <b>Performance des partipants</b><br>
+        <form action="/loadanalysis/{{ race.0 }}/{{ race.1 | urlencode }}" method="get"><!-- Formulaire -->
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="RaceType" id="inlineRadio10_{{ forloop.counter }}" value="10" checked="checked">
+                <label class="form-check-label" for="inlineRadio10_{{ forloop.counter }}">10kms</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="RaceType" id="inlineRadio21_{{ forloop.counter }}" value="21">
+                <label class="form-check-label" for="inlineRadio21_{{ forloop.counter }}">Semi</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="RaceType" id="inlineRadio42_{{ forloop.counter }}" value="42">
+                <label class="form-check-label" for="inlineRadio42_{{ forloop.counter }}">Marathon</label>
+            </div>
+            <br>
+            <label for="fader">Classement min</label>
+            <input id="slider_minrank{{ forloop.counter }}" name="MinRank" type="range" min="100" max="500" step="10" oninput="outputUpdatemin{{ forloop.counter }}(value)"/> <output for="fader" id="rankmin{{ forloop.counter }}">50</output><br>
+                <script>
+                function outputUpdatemin{{ forloop.counter }}(vol) {
+                document.querySelector('#rankmin{{ forloop.counter }}').value = vol;
+                }
+                </script>
+
+            <label for="fader">Classement max</label>
+                <input id="slider_maxrank{{ forloop.counter }}" name="MaxRank" type="range" min="100" max="500" step="10" oninput="outputUpdatemax{{ forloop.counter }}(value)"/> <output for="fader" id="rankmax{{ forloop.counter }}">50</output><br>
+                <script>
+                function outputUpdatemax{{ forloop.counter }}(vol) {
+                document.querySelector('#rankmax{{ forloop.counter }}').value = vol;
+                }
+                </script>
+            <button type="submit" class="btn btn-block btn-lg btn-primary">Analysez la course!</button>
+        </form>
+    </div>
+
+</div>

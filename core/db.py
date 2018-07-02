@@ -101,8 +101,7 @@ def runnerDB_to_runner(runner):
         racetypes=['10','15','21','42']
         columnlist = ['record_'+rt+'k_'+str(y) for rt in racetypes for y in
                       yearlist]
-
-        runner.records = dict(zip(columnlist,rls[4:-2]))
+        runner.records = dict(zip(columnlist,rls[4:-1]))
 
         db_finish(cursor,connexion)
 
