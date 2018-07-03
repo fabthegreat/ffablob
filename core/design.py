@@ -131,9 +131,9 @@ if __name__ == '__main__':
     race_1 = Race('184050','30+Km')
     tab_records = []
     for i,r_ in enumerate(race_1.extract_runners_from_race()):
-        tab_records.append((r_.name,list(r_.list_records(10))))
+        print(r_.name,list(r_.list_records(10)))
 
-    print(tab_records[1][1])
+#    print(tab_records)
 
 
 #    race_1.write_to_csv(root_path + project_path + static_path + '/race_files',race_1.ID + '_' + race_1.racetype)

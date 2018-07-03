@@ -16,7 +16,7 @@ def db_finish(cursor,connexion):
 
 def create_columns_record():
         cursor,connexion=db_initiate()
-        yearnow= datetime.datetime.now().year
+        yearnow= datetime.now().year
         yearlist = [yearnow - i for i in range(4)]
         racetypes=['10k','15k','21k','42k']
 
@@ -94,14 +94,14 @@ def runnerDB_to_runner(runner):
         runner.name = rls[1]
         runner.club = rls[2]
         runner.category = rls[3]
-        runner.gender = rls[-1]
+        runner.gender = rls[4]
 
+        #TODO: try to fetch according to keys and not indexes
         yearnow= datetime.now().year
-        yearlist = [yearnow - i for i in range(4)]
+        yearlist = range(yearnow,yearnow-4,-1)
         racetypes=['10','15','21','42']
-        columnlist = ['record_'+rt+'k_'+str(y) for rt in racetypes for y in
-                      yearlist]
-        runner.records = dict(zip(columnlist,rls[4:-1]))
+        columnlist = ['record_'+rt+'k_'+str(y) for y in yearlist for rt in racetypes]
+        runner.records = dict(zip(columnlist,rls[5:]))
 
         db_finish(cursor,connexion)
 
