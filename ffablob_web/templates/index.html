@@ -67,5 +67,32 @@
                         {% endfor %}
 		</table>
 		{% endif %}
+
+		{% if tab_records %}
+		Aperçu de la performance des participants
+		<table class="table" style="margin-top:20px">
+			<thead class="thead-dark">
+				<tr>
+			      		<th scope="col">Classement</th>
+                        <th scope="col">Chrono</th>
+                        <th scope="col">2018</th>
+                        <th scope="col">2017</th>
+				        <th scope="col">2016</th>
+				        <th scope="col">2015</th>
+				</tr>
+			</thead>
+                    <tbody>
+                        {% for record in tab_records %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }} </th>
+                            <td>{{ record.0 }} </td>
+                            <td>{{ record.1.0 }} </td>
+                            <td>{{ record.1.1 }} </td>
+                            <td>{{ record.1.2 }} </td>
+                            <td>{{ record.1.3 }} </td>
+                         </tr>
+                        {% endfor %}
+		</table>
+		{% endif %}
 {% endblock %}
 

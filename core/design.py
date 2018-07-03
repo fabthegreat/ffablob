@@ -52,19 +52,20 @@ class Runner:
     def pullFFA(self):
         return utils.correct_records(utils.extract_records(self))
 
-    def list_records(self,race_type,year=0):
-        yearnow= datetime.now().year
-        yearlist = [yearnow - i for i in range(4)]
-        if not year:
-            for y in yearlist:
-                if self.records:
-                    yield self.records[utils.dateracetype_to_DBcolumn(y,str(race_type))]
-                else:
-                    yield None
-        else:
-            if self.records:
-                yield self.records[utils.dateracetype_to_DBcolumn(year,str(race_type))]
-            else:
+    def year_record(self,race_type,year):
+        """returns record of year for racetype, if record does not exists raise an
+        error
+        """
+        return self.records[utils.dateracetype_to_DBcolumn(year,str(race_type))]
+
+
+    def list_records(self,race_type):
+        yearnow = datetime.now().year
+        yearlist = range(yearnow,yearnow-4,-1)
+        for y in yearlist:
+            try:
+                yield self.year_record(race_type,y)
+            except KeyError:
                 yield None
 
 
@@ -128,11 +129,16 @@ class Race:
 
 if __name__ == '__main__':
     race_1 = Race('184050','30+Km')
+    tab_records = []
+    for i,r_ in enumerate(race_1.extract_runners_from_race()):
+        tab_records.append((r_.name,list(r_.list_records(10))))
+
+    print(tab_records[1][1])
+
+
 #    race_1.write_to_csv(root_path + project_path + static_path + '/race_files',race_1.ID + '_' + race_1.racetype)
 #    print(race_1.name)
 #    race_1.show()
-    for i in race_1.extract_runners_from_race():
-        print([j for j in i.list_records(15)])
 #    race_2 = Race('205515','10+Km+Route')
 #    race_2.write_to_csv('/home/ftg/python/ffablob/core/','race_'+race_2.ID+'_rt_'+race_2.racetype)
 #    runner=Runner('528136','unknown','XX','X','DDDD')
