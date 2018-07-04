@@ -75,8 +75,8 @@ def load_analysis(request,race_ID,race_type):
         racetype_record = request.GET['RaceType']
         race = design.Race(race_ID,race_type)
         tab_records = []
-        for r_ in race.extract_runners_from_race():
-            tab_records.append((r_.name,list(r_.list_records(racetype_record))))
+        for i,r_ in enumerate(race.extract_runners_from_race()):
+            tab_records.append((race.results[i]['rstl'][1],r_.name,list(r_.list_records(racetype_record))))
         error_msg_url = 'Chargement de l\'analyse effectuée'
     else:
         error_msg_url = 'Il manque des informations de formulaire importantes!'

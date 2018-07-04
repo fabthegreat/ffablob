@@ -60,6 +60,8 @@ class Runner:
 
 
     def list_records(self,race_type):
+        """yield records value (if it exists) for a race_type (10,15,21 or 42)k
+        """
         yearnow = datetime.now().year
         yearlist = range(yearnow,yearnow-4,-1)
         for y in yearlist:
