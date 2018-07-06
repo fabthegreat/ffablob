@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block titre %}Statistiques{% endblock %}
+{% block titre %}FFABlob<br>#blobez les resultats de vos courses!{% endblock %}
 
 {% block form %}
 <div style="margin-bottom:5px">
@@ -14,6 +14,35 @@
 		</div>
 	    </div> <!--disposition -->
 	</form><!-- Formulaire -->
+    Pour rechercher une course, utilisez <a href='http://bases.athle.com/asp.net/accueil.aspx?frmbase=resultats'>le moteur de base athlé FFA.</a>
+    <br>
+    Le lien doit ressembler au suivant:<br>
+    <a href='http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=207883&frmepreuve=10+km+TC'>http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=207883&frmepreuve=10+km+TC</a>
+
+	<!-- <form action="/search" method="get">
+        <div class="form-row">
+		<div class="col-12 col-md-9 mb-2 mb-md-0">
+		    <input type="text" class="form-control form-control-lg"
+            placeholder="Lancez une recherche de courses par mots clef" name="keywords">
+		</div>
+		<div class="col-12 col-md-3">
+		    <button type="submit" class="btn btn-block btn-lg
+                btn-primary">Recherchez!</button>
+		</div>
+	    </div> 
+	</form>
+
+    -->
+
+
+
+
+
+
+
+
+
+
 
 	{% if error_msg_url %}
 		<div class="alert alert-warning" role="alert" style="margin-top:5px;margin-bottom:5px">
@@ -69,7 +98,9 @@
 		{% endif %}
 
 		{% if tab_records %}
-		Aperçu de la performance des participants
+        Aperçu de la performance des participants:<br>
+        <b>Course</b>: {{ race_recap.name }} (race ID: {{ race_recap.id }})<br>
+        <b>Nombre de participants</b>: {{ race_recap.runner_nb }}<br>
 		<table class="table" style="margin-top:20px">
 			<thead class="thead-dark">
 				<tr>

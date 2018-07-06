@@ -69,18 +69,18 @@ def show_race(request,race_ID,race_type):
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results})
 
 def load_analysis(request,race_ID,race_type):
-    # TODO: all
     if request.method == 'GET' and 'RaceType' in request.GET and \
     request.GET['RaceType']:
         racetype_record = request.GET['RaceType']
         race = design.Race(race_ID,race_type)
+        race_recap={'name':race.name,'id':race.ID,'runner_nb':len(race.results)}
         tab_records = []
         for i,r_ in enumerate(race.extract_runners_from_race()):
             tab_records.append((race.results[i]['rstl'][1],r_.name,list(r_.list_records(racetype_record))))
         error_msg_url = 'Chargement de l\'analyse effectuée'
     else:
         error_msg_url = 'Il manque des informations de formulaire importantes!'
-    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'tab_records':tab_records})
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'race_recap':race_recap,'tab_records':tab_records})
 
 def csv_export(request,race_ID,race_type):
     race = design.Race(race_ID,race_type)
