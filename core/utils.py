@@ -7,6 +7,15 @@ import sys
 
 import design
 
+def str_to_hms(str_time):
+    str_time = cleanup(str_time)
+    hms=re.findall('\d+',str_time)
+    while len(hms)<3:
+        hms.insert(0,'0')
+    hms=list(map(lambda x: int(x),hms))
+    return hms
+
+
 def index_shortlist_in_list(slist,llist):
     if slist in list(map(lambda x:x[:len(slist)],llist)):
         return list(map(lambda x:x[:len(slist)],llist)).index(slist)
@@ -122,7 +131,7 @@ def correct_resultlines(result_lines):
             result_line.pop(6)
             result_line.insert(6,result_line[5][2:])
             result_line[5]=result_line[5][:2]
-            result_line[1]=design.Time(result_line[1]) # transform string
+            result_line[1]=design.TimeNew.time_from_string(result_line[1]) # transform string
             #into Time object
             rls.append({'rstl':result_line,'errcode':error_code})
         return rls
@@ -145,7 +154,7 @@ def extract_records(runner):
                                     break
                             except:
                                 pass
-                        record['time']=design.Time(a.td.next_sibling.next_sibling.next_sibling.next_sibling.string)
+                        record['time']=design.TimeNew.time_from_string(a.td.next_sibling.next_sibling.next_sibling.next_sibling.string)
                         record['racetype']=u
                         records.append(record)
         return records

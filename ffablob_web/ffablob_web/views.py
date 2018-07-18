@@ -1,5 +1,6 @@
 import sys
 import os
+import copy
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 
@@ -13,15 +14,65 @@ sys.path.insert(0,root_path + project_path + core_module_path)
 
 import design
 import utils
+import orgapdf
+import statraces
 
-def main(request, results = None):
+def main(request):
     return render(request,'index.html',{'racelist':request.session.get('races')})
 
+def compare(request):
+    tab_comparison = []
+    races = []
+    error_msg_url=''
+    if request.method == 'POST':
+        for i,v in request.POST.items():
+            if 'option_' in i:
+                races.append(design.Race(v.split('/')[0],v.split('/')[1]))
+                error_msg_url += races[-1].ID + ' ' + races[-1].racetype
+
+
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'selected_races':races})
+
+
+def convert(request):
+    file_link = ''
+    file_name = ''
+    error_log = []
+    tabfl = []
+
+    if request.method == 'POST' and 'file' in request.FILES:
+            file = request.FILES['file']
+            orga = request.POST['timecompany']
+            error_log = ['Le fichier de {} a été correctement converti.'.format(orga)]
+            file_fullpath = root_path + project_path + static_path + '/pdf_files'
+            #TODO: handle files that are not pdf: remove them from harddisk
+            if orgapdf.handle_uploaded_file(file_fullpath,file):
+                for l in orgapdf.lines_from_pdf(file_fullpath,file.name):
+                    fl = orgapdf.filter_line(l)
+                    if fl:
+                        #TODO: add protiming orga with dict
+                        try:
+                            fl,errors = orgapdf.organize_columns(fl,orga.lower())
+                        except:
+                            error_log = ['Les colonnes du fichiers ne correspondent pas à l\'organisation spécifiée']
+                            return render(request,'convert.html',{'convert':True,'error_log':error_log,'file':file_link,'test_chunks':file_name})
+
+                        if [key for key in errors[1].keys() if errors[1][key]]:
+                            error_log.append('ATTENTION: vérifiez la ligne {} du fichier.'.format(errors[0]))
+
+                        tabfl.append(fl)
+                        file_name = file.name[:-4]
+                        file_link = orgapdf.write_to_csv(tabfl,file_fullpath,file.name[:-4])
+            else:
+                error_log = ['Le fichier envoyé n\'est pas un pdf valide.']
+
+    return render(request,'convert.html',{'convert':True,'error_log':error_log,'file':file_link,'test_chunks':file_name})
+
 def load_race(request):
-    if request.method == 'GET' and 'urlFFA' in request.GET and \
-    request.GET['urlFFA']:
+    if request.method == 'POST' and 'urlFFA' in request.POST and \
+    request.POST['urlFFA']:
         # check URL
-        urlFFA = request.GET['urlFFA']
+        urlFFA = request.POST['urlFFA']
         if utils.check_urlFFA(urlFFA):
             race_ID,racetype = utils.extract_race_from_url(urlFFA)
             race = design.Race(race_ID,racetype)
@@ -69,18 +120,21 @@ def show_race(request,race_ID,race_type):
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results})
 
 def load_analysis(request,race_ID,race_type):
-    if request.method == 'GET' and 'RaceType' in request.GET and \
-    request.GET['RaceType']:
-        racetype_record = request.GET['RaceType']
+    if request.method == 'POST' and 'RaceType' in request.POST and \
+    request.POST['RaceType']:
+        racetype_record = request.POST['RaceType']
         race = design.Race(race_ID,race_type)
-        race_recap={'name':race.name,'id':race.ID,'runner_nb':len(race.results)}
+        race.create_race_stats('meantime')
+        race.create_race_stats('mediantime')
+        race_recap={'name':race.name,'race_type':race.racetype,'id':race.ID,'runner_nb':len(race.results)}
         tab_records = []
         for i,r_ in enumerate(race.extract_runners_from_race()):
-            tab_records.append((race.results[i]['rstl'][1],r_.name,list(r_.list_records(racetype_record))))
+            timetabr = list(r_.list_records(racetype_record))
+            tab_records.append((race.results[i]['rstl'][1],r_.name,timetabr))
         error_msg_url = 'Chargement de l\'analyse effectuée'
     else:
         error_msg_url = 'Il manque des informations de formulaire importantes!'
-    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'race_recap':race_recap,'tab_records':tab_records})
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'race_recap':race_recap,'tab_records':tab_records,'race_stats':[race.race_stats['meantime'],race.race_stats['mediantime']]})
 
 def csv_export(request,race_ID,race_type):
     race = design.Race(race_ID,race_type)

@@ -8,6 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
     <title>FFABlob</title>
 
     <!-- Bootstrap core CSS -->
@@ -31,12 +34,12 @@
           <div class="container">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Analyser<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/convert">Convertir</a>
                     </li>
                     <!--
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Convertir</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Analyser</a>
                     </li>
@@ -56,20 +59,26 @@
 
     <!-- Masthead -->
        <div class="row"><!-- Titre principal -->
-          <div class="mx-auto" style="margin-top:30px">
-		  <h1 class="mb-5">{% block titre %}Titre rubrique{% endblock %}</h1>
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto"> <!-- Contenu principal -->
+                <!--<div class="mx-auto" style="margin-top:30px">-->
+              <h2 class="mb-5"><img src="/static/ffablob.png">{% block titre %}Titre rubrique{% endblock %}</h2>
           </div> <!-- Titre principal -->
         </div>
 	
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto"> <!-- Contenu principal -->
-		{% block form %}
-		{% endblock %}
+        {% if convert %}
+            {% block browsefile %}
+            {% endblock %}
+        {% else %}
+            {% block form %}
+            {% endblock %}
 
-		{% block racecart %}
-		{% endblock %}
+            {% block racecart %}
+            {% endblock %}
 
-		{% block content %} 
-		{% endblock %}
+            {% block content %}
+            {% endblock %}
+        {% endif %}
             </div>
 
 

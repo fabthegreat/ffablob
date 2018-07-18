@@ -2,7 +2,7 @@
     <h5 class="mb-0">
         <div class="form-check">
 
-            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option{{ forloop.counter }}" aria-label="...">
+            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" name="option_{{ forloop.counter }}" value='{{race.0}}/{{race.1}}' aria-label="..." form="form_compare">
             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
             {{ race.2 }} (ID course: {{ race.0 }}) 
             </button>
@@ -18,7 +18,8 @@
 <div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.first %}<!--show-->{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionExample">
     <div class="card-body">
         <b>Performance des partipants</b><br>
-        <form action="/loadanalysis/{{ race.0 }}/{{ race.1 | urlencode }}" method="get"><!-- Formulaire -->
+        <form action="/loadanalysis/{{ race.0 }}/{{ race.1 | urlencode }}/" method="post"><!-- Formulaire -->
+        {% csrf_token %}
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="RaceType" id="inlineRadio10_{{ forloop.counter }}" value="10" checked="checked">
                 <label class="form-check-label" for="inlineRadio10_{{ forloop.counter }}">10kms</label>

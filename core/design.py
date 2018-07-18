@@ -3,17 +3,11 @@ from datetime import datetime,timedelta
 import utils
 import db
 import re
+import statistics as stat
 
-class Time:
-     # verifier tous les formats...
-    def __init__(self,str_time):
-        str_time = utils.cleanup(str_time)
-        hms=re.findall('\d+',str_time)
-        while len(hms)<3:
-            hms.insert(0,'0')
-        hms=list(map(lambda x: int(x),hms))
-
-        self.time = timedelta(hours=hms[0],minutes=hms[1],seconds=hms[2])
+class TimeNew:
+    def __init__(self,tmdelta):
+        self.time = tmdelta
 
     def __str__(self):
             s=self.time.total_seconds()
@@ -21,6 +15,28 @@ class Time:
                 return "{}'{}''".format(int(s % 3600 // 60),int(s % 60))
             else:
                 return "{:02}h{}'{}''".format(int(s//3600),int(s % 3600 //60),int(s % 60))
+
+    @classmethod
+    def time_from_string(cls,str_time):
+        hms = utils.str_to_hms(str_time)
+        tmdelta = timedelta(hours=hms[0],minutes=hms[1],seconds=hms[2])
+        return cls(tmdelta)
+
+    @classmethod
+    def time_from_timedelta(cls,tmdelta):
+        return cls(tmdelta)
+
+    @classmethod
+    def time_from_hms(cls,hms):
+        tmdelta = timedelta(hours=hms[0],minutes=hms[1],seconds=hms[2])
+        return cls(tmdelta)
+
+    @classmethod
+    def time_from_seconds(cls,total_seconds):
+        tmdelta = timedelta(hours=int(total_seconds//3600),minutes=int(total_seconds % 3600 // 60), seconds = int(total_seconds % 60))
+        return cls(tmdelta)
+
+
 
 class Runner:
     def __init__(self,ID,name,category,gender,club):
@@ -45,6 +61,7 @@ class Runner:
             print('This runner is being processed from FFA database...')
             self.records=self.pullFFA()
             self.pushDB()
+            #self.pullDB()#to retrieve correct timedelta...TODO: convert timedelta into time object
 
     def pushDB(self):
         db.runner_to_runnerDB(self)
@@ -70,17 +87,21 @@ class Runner:
             except KeyError:
                 yield None
 
-
 class Race:
+    """ Class Race
+    Results are extracted either from FFA site or from internal database
+    race.results=[{'errcode':,'rstl':[rank,time(TimeNew Object),name,ID,club,cat,gender]},...]
+    """
     def __init__(self, ID, racetype):
         self.ID = ID
         self.racetype = racetype
         self.name =''
         self.results = []
+        self.race_stats = {}
         self.pullDB() #pull results either from FFA DB or internal
         # ID => string
         # racetype => string
-        # results => [{'errcode':,'rstl':rank,time,name,ID,club,cat,gender}]
+        # results => [{'errcode':,'rstl':rank,time(TimeNew object),name,ID,club,cat,gender}]
 
     def pullDB(self):
         if db.check_race_exists(self): #RaceDB:
@@ -92,6 +113,7 @@ class Race:
             self.name, self.results=self.pullFFA()#a homogeneiser avec runner.pullFFA 
                     # ne pas affecter de variable
             self.pushDB()
+            #self.pullDB() #to retrieve correct timedelta...TODO: convert timedelta into time object
 
     def pullFFA(self):
         # put urlFFA inside extract_resultlines
@@ -104,7 +126,6 @@ class Race:
 
     def extract_runners_from_race(self):
         for rl in self.results:
-            #if rl['rstl'][3] != '':
                 _runner = Runner(rl['rstl'][3],rl['rstl'][2],rl['rstl'][5],rl['rstl'][6],rl['rstl'][4])
                 yield _runner
 
@@ -129,11 +150,39 @@ class Race:
         errcodes = [r['errcode'] for r in self.results]
         return result_lines,errcode
 
+    def create_race_stats(self,stat_value='meantime',sample_size=None):
+        if sample_size is None:
+            sample_size = len(self.results)
+            postfix = ''
+        else:
+            postfix = '_' + str(sample_size)
+
+        timelist = [t['rstl'][1].time.total_seconds() for t in self.results[:sample_size]]
+
+        if stat_value == 'meantime':
+            meantime = TimeNew.time_from_seconds(stat.mean(timelist))
+            self.race_stats['meantime' + postfix] = meantime
+        elif stat_value == 'mediantime':
+            mediantime = TimeNew.time_from_seconds(stat.median(timelist))
+            self.race_stats['mediantime' + postfix] = mediantime
+
+        print(self.race_stats)
+
+
 if __name__ == '__main__':
-    race_1 = Race('184050','30+Km')
-    tab_records = []
-    for i,r_ in enumerate(race_1.extract_runners_from_race()):
-        print(r_.name,list(r_.list_records(10)))
+    race_1 = Race('207883','10+km+TC')
+#    for i in race_1.results:
+#        print(i['rstl'][1])
+#    print(race_1.results)
+    race_1.create_race_stats(10)
+#    time_2 = TimeNew.time_from_string("30'45\"")
+#    print(time_2)
+#    tab_records = []
+#    for i,r_ in enumerate(race_1.extract_runners_from_race()):
+#        print(r_.name+':')
+#        print(r_.list_records(10))
+#        for t in r_.list_records(10):
+#            print(t)
 
 #    print(tab_records)
 

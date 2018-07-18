@@ -57,9 +57,9 @@ def raceDB_to_race(race):
         #fetch race_name based on the first result line
         race.name = rls[0][10]
         for rl in rls:
-            race.results.append({'errcode':rl[9],'rstl':list(rl[2:-2])})
-
-        # convert timedelat to custom Time class object...
+            time = design.TimeNew.time_from_timedelta(rl[3])
+            race.results.append({'errcode':rl[9],'rstl':[rl[2],time] + list(rl[4:-2])})
+        #TODO: convert timedelat to custom Time class object...
 
         db_finish(cursor,connexion)
 
@@ -101,7 +101,7 @@ def runnerDB_to_runner(runner):
         yearlist = range(yearnow,yearnow-4,-1)
         racetypes=['10','15','21','42']
         columnlist = ['record_'+rt+'k_'+str(y) for y in yearlist for rt in racetypes]
-        runner.records = dict(zip(columnlist,rls[5:]))
+        runner.records = dict(zip(columnlist,[design.TimeNew.time_from_timedelta(tm) if tm is not None else None for tm in rls[5:]]))
 
         db_finish(cursor,connexion)
 
