@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block titre %}Convertissez les resultats de vos courses!{% endblock %}
+
+{% block browsefile %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+          <label for="exampleFormControlFile1">Selectionner un fichier (format pdf)</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file'>
+    </div>
+    <label for="SelectControl">Société de chronométrage:</label>
+    <select class="form-control" id="SelectControl" name="timecompany">
+              <option>L-Chrono</option>
+              <option>Protiming</option>
+              <option>Sportips</option>
+              <option>Yaka-Events</option>
+              <option>Fichier générique</option>
+          <!--<option>Autre</option>-->
+    </select>
+    <br>
+    <button type="submit" class="btn btn-block btn-lg btn-primary">Convertir en CSV</button>
+</form>
+
+{%if error_log %}
+		<div class="alert alert-warning" role="alert" style="margin-top:5px">
+            {% for msg in error_log %}
+            {{ msg }}<br>
+            {% endfor %}
+		</div>
+{% endif %}
+
+{% if file %}
+    <script>
+        function trigger(){
+        $('#exampleModalCenter').modal('show');
+        }
+        window.onload = trigger;
+    </script>
+{% else %}
+            <div class="alert alert-success" role="alert" style="margin-top:5px">
+                  <h4 class="alert-heading">Comment utiliser cette rubrique:</h4>
+                      <p> Selectionnez un fichier de résultat de course sous
+                      format pdf sur votre disque dur.
+                        <br>
+                        Choisissez un organisateur de course puis lancer la
+                        conversion.
+                      <hr>
+                        <p class="mb-0">Un sujet sur le forum de Kikourou.net a été ouvert à ce sujet: <a href="http://www.kikourou.net/forum/viewtopic.php?f=1&t=41186">lien</a></p>
+            </div>
+{% endif %}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Fichier à télécharger</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            {% load static %}
+            <div class="modal-body"> <a href='{% static file %}'>Lien du fichier csv</a>
+                    {%if error_log %}
+                            <div class="alert alert-warning" role="alert" style="margin-top:5px">
+                                {% for msg in error_log %}
+                                {{ msg }}<br>
+                                {% endfor %}
+                            </div>
+                    {% endif %}
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

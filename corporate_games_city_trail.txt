@@ -1,0 +1,596 @@
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                Page 1/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                              12:02
+
+ Clt Nom - Prénom                 Doss.   Clt Sx   Temps      Moy.     Ecart    Entreprise       www.L-Chrono.com
+ 1    BALLARD Gaëtan              N°538     1M     00:37:52   17.04             WORLDLINE
+ 2    BLANCHARD Pascal            N°332     2M     00:38:14   16.88    + 22s    NTN - SNR
+ 3    METRAL Nicolas              N°317     3M     00:38:34   16.73    + 42s    MINERG-APPELSA
+ 4    DESAINT JEAN Florian        N°610     4M     00:38:39   16.69    + 48s    HOPITAUX UNIVERSITAIRE DE GENEVE
+ 5    DECURNINGE Xavier           N°251     5M     00:39:07   16.49   + 1m15s   INSEEC
+ 6    GIANI Sébastien             N°374     6M     00:39:36   16.29   + 1m45s   PATEK PHILIPPE SA
+ 7    EQUEY Pierre                N°547     7M     00:39:42   16.25   + 1m51s   NTN - SNR
+ 8    JOURDEN Stephane            N°316     8M     00:40:35   15.90   + 2m43s   MINERG-APPELSA
+ 9    LUCE Fabien                 N°531     9M     00:41:04   15.71   + 3m13s   VALEO
+ 10   AZÉMA Philippe              N°60     10 M    00:41:19   15.62   + 3m27s   BANQUE DE FRANCE
+ 11   LE COGUIC Thibaud           N°448    11 M    00:41:28   15.56   + 3m36s   SARL ALTUS
+ 12   JUBLOT Emmanuel             N°566    12 M    00:41:28   15.56   + 3m36s   PSB INDUSTRIES
+ 13   BARRALON Eloi               N°88     13 M    00:41:41   15.48   + 3m49s   CAISSE D'EPARGNE RHÔNE-ALPES
+ 14   MERMILLOD BLONDIN Charlie   N°549    14 M    00:41:45   15.45   + 3m53s   SCOTT SPORTS SA
+ 15   LEIX Fabrice                N°647    15 M    00:41:52   15.41   + 4m01s   27ÈME BCA
+ 16   DE ROSSI Alexandre          N°649    16 M    00:41:52   15.41   + 4m01s   27ÈME BCA
+ 17   DUGAS-VIALLIS Tom           N°650    17 M    00:42:25   15.21   + 4m33s   27ÈME BCA
+ 18   CUSIN François              N°116    18 M    00:42:30   15.18   + 4m38s   CONDUCTIX-WAMPFLER
+ 19   VALFORT Vincent             N°553    19 M    00:42:58   15.01   + 5m06s   PSB INDUSTRIES
+ 20   SEFSOUF Mohamed             N°365    20 M    00:43:02   14.99   + 5m10s   NTN - SNR
+ 21   BAILLY Nicolas              N°167    21 M    00:43:15   14.91   + 5m24s   CRÉDIT AGRICOLE TITRES
+ 22   FRATTALI Bruno              N°344    22 M    00:43:21   14.88   + 5m29s   NTN - SNR
+ 23   IDZIM Jamal                 N°541    23 M    00:43:37   14.79   + 5m46s   WORLDLINE
+ 24   JOUBERT Alexandre           N°530    24 M    00:43:38   14.79   + 5m46s   VALEO
+ 25   LACROIX Jean-Baptiste       N°594    25 M    00:43:38   14.79   + 5m46s   MINERG-APPELSA
+ 26   WIT Frédéric                N°525    26 M    00:43:50   14.72   + 5m58s   UGITECH
+ 27   DIEDRICH Christophe         N°554    27 M    00:43:55   14.69   + 6m04s   SCAIME
+ 28   GICQUEL Jerome              N°61     28 M    00:44:00   14.66   + 6m08s   BANQUE DE FRANCE
+ 29   BARRAUD Xavier              N°272    29 M    00:44:03   14.64   + 6m12s   MAIRIE D'ANNECY LE GROUPEMENT
+ 30   MELCHIOR Thibault           N°384    30 M    00:44:17   14.57   + 6m26s   PERRIN ELECTRIC
+ 31   FOESSER Thomas              N°178    31 M    00:44:36   14.46   + 6m44s   ESS
+ 32   VERNIN Aurelien             N°463    32 M    00:44:36   14.46   + 6m45s   SCHNEIDER ELECTRIC ALPES
+ 33   ROUX Camille                N°524    33 M    00:44:38   14.46   + 6m46s   UGITECH
+ 34   BALET Alexis                N°300    34 M    00:44:43   14.43   + 6m51s   MARS
+ 35   GIRERD Yannael              N°572    35 M    00:44:45   14.41   + 6m54s   SOPRA STERIA
+ 36   RUIZ Jaime                  N°57     36 M    00:44:49   14.40   + 6m57s   AVENTICS HOLDING SAS
+ 37   ANTOINAT David              N°87     37 M    00:44:55   14.36   + 7m03s   CAISSE D'EPARGNE RHÔNE-ALPES
+ 38   DUBUS Louis                 N°275    38 M    00:44:59   14.34   + 7m07s   MAIRIE D'ANNECY LE GROUPEMENT
+ 39   BRIDONNEAU Thomas           N°333    39 M    00:45:02   14.32   + 7m11s   NTN - SNR
+ 40   DEVIS Vincent               N°599    40 M    00:45:08   14.29   + 7m16s   TEFAL
+ 41   BARAGGIA Guillaume          N°163    41 M    00:45:11   14.28   + 7m20s   CREDIT AGRICOLE DES SAVOIE
+ 42   DUC Stéphanie               N°234     1F     00:45:15   14.26   + 7m23s   HARMONIE MUTUELLE
+ 43   MERMIER-BILLET Mickaël      N°377    42 M    00:45:37   14.14   + 7m46s   PATEK PHILIPPE SA
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                            GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                  Page 2/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                                12:02
+
+ Clt Nom - Prénom                Doss.    Clt Sx   Temps      Moy.     Ecart     Entreprise      www.L-Chrono.com
+ 44   BEQUILLEUX Franck           N°400    43 M    00:45:50   14.08   + 7m58s    PHARMACIE PRINCIPALE CHAMOT/POPELKA/CLERC
+ 45   NEVEU Richard               N°595    44 M    00:45:52   14.06   + 8m01s    MINERG-APPELSA
+ 46   MULLER Charlely             N°318    45 M    00:46:10   13.97   + 8m19s    MOBILIS DEVELOPMENT
+ 47   SABATIER David              N°250    46 M    00:46:25   13.90   + 8m33s    HOPITAUX UNIVERSITAIRE DE GENEVE
+ 48   AMPRIMO Nicolas             N°200    47 M    00:46:32   13.86   + 8m41s    GERARD PERRIER INDUSTRIE
+ 49   VOLATIER Sylvain            N°427    48 M    00:46:33   13.86   + 8m41s    PSB INDUSTRIES
+ 50   FOURNIER François           N°607    49 M    00:46:38   13.83   + 8m47s    FOURNIER HABITAT
+ 51   MORITA Shunsuke             N°356    50 M    00:46:40   13.83   + 8m48s    NTN - SNR
+ 52   VALÈRE Bourdeaux            N°69     51 M    00:46:40   13.82   + 8m49s    BANQUE POPULAIRE
+ 53   BURNET-MERLIN Olivier       N°513    52 M    00:46:47   13.79   + 8m55s    UGITECH
+ 54   VARET Johnny                N°565    53 M    00:46:54   13.76   + 9m02s    NTN - SNR
+ 55   JARNIAT Mathieu             N°306    54 M    00:46:54   13.75   + 9m03s    MECALAC
+ 56   PINO Florian                N°189    55 M    00:46:59   13.73   + 9m07s    FOURNIER HABITAT
+ 57   GENTINA Cedric              N°490    56 M    00:47:00   13.72   + 9m09s    TECHNICS D AGENCEMENT
+ 58   MOTTO-ROS Sandrine          N°285     2F     00:47:11   13.67   + 9m19s    MAIRIE D'ANNECY LE GROUPEMENT
+ 59   MAUDUIT Cédric              N°520    57 M    00:47:18   13.64   + 9m27s    UGITECH
+ 60   NICOLAUX Sébastien          N°614    58 M    00:47:26   13.60   + 9m34s    NTN - SNR
+ 61   CORRADO Fabrice             N°9      59 M    00:47:41   13.53   + 9m50s    AGI INGENIERIE
+ 62   RÉZENDE Stéphane            N°543    60 M    00:47:48   13.49   + 9m57s    WORLDLINE
+ 63   TRUSSARDI Baptiste          N°397    61 M    00:47:55   13.46   + 10m03s   PFEIFFER VACUUM
+ 64   CHEVALIER Arnaud            N°94     62 M    00:47:57   13.45   + 10m06s   CERFRANCE HAUTE-SAVOIE
+ 65   LOPEZ-GATELL FERNANDEZ Gabriela
+                                  N°283     3F     00:48:16   13.37   + 10m24s   MAIRIE D'ANNECY LE GROUPEMENT
+ 66   JOSSERAND Jean-Yves         N°447    63 M    00:48:19   13.35   + 10m27s   SARL ALTUS
+ 67   BOUCHER Raphael             N°103    64 M    00:48:27   13.31   + 10m36s   CLYDE UNION SAS
+ 68   CHEVALLIER David            N°486    65 M    00:48:31   13.30   + 10m39s   TECHNICS D AGENCEMENT
+ 69   BELFIELD Craig              N°108    66 M    00:48:33   13.29   + 10m41s   CONDUCTIX-WAMPFLER
+ 70   BIANCHIN Fabrice            N°484    67 M    00:48:35   13.28   + 10m44s   TECHNICS D AGENCEMENT
+ 71   BOAGLIO Philippe            N°288    68 M    00:48:41   13.25   + 10m49s   MAPED
+ 72   DUMONT Nicolas              N°194    69 M    00:48:50   13.21   + 10m59s   GALDERMA
+ 73   GONIN Lionel                N°548    70 M    00:48:56   13.18   + 11m05s   PSB INDUSTRIES
+ 74   PIROT Sébastien             N°619    71 M    00:48:59   13.17   + 11m07s   ALPES CONTROLES
+ 75   DELVECCHIO Jerome           N°265    72 M    00:49:01   13.16   + 11m10s   LANSARD ENERGIE
+ 76   NOUNI Jaouad                N°424    73 M    00:49:05   13.15   + 11m13s   PSB INDUSTRIES
+ 77   DAUMAS Mathieu              N°623    74 M    00:49:06   13.14   + 11m15s   INSEEC
+ 78   PERARDEL Nicolas            N°613    75 M    00:49:07   13.14   + 11m15s   NICOMATIC SA
+ 79   ZAK Manuel                  N°586    76 M    00:49:09   13.13   + 11m17s   CONDUCTIX-WAMPFLER
+ 80   CHEVRIER Jean-Noël          N°180    77 M    00:49:14   13.10   + 11m22s   FOURNIER HABITAT
+ 81   CHÂTEL Pierre               N°373    78 M    00:49:16   13.10   + 11m24s   PATEK PHILIPPE SA
+ 82   GESLIN Coralise             N°648     4F     00:49:21   13.07   + 11m29s   27ÈME BCA
+ 83   DELETRAZ Pierre             N°100    79 M    00:49:23   13.06   + 11m32s   CH ANNECY GENEVOIS
+ 84   FROST Alain                 N°345    80 M    00:49:23   13.06   + 11m32s   NTN - SNR
+ 85   LAFFIN Christian            N°292    81 M    00:49:23   13.06   + 11m32s   MAPED
+ 86   JACOB Aurélien              N°3      82 M    00:49:24   13.06   + 11m32s   ACCESS GROUP
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                             GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                  Page 3/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                                12:02
+
+ Clt Nom - Prénom               Doss.     Clt Sx   Temps      Moy.     Ecart     Entreprise      www.L-Chrono.com
+  87   BANDIERA Matteo          N°511      83 M    00:49:32   13.02   + 11m41s   UGITECH
+  88   FORTIN Jordan            N°571      84 M    00:49:33   13.02   + 11m42s   SOPRA STERIA
+  89   MELONI Gautier           N°39       85 M    00:49:39   12.99   + 11m47s   ARAYMOND
+  90   DEIDDA Fabio             N°52       86 M    00:49:46   12.96   + 11m54s   AVENTICS HOLDING SAS
+  91   MAXIT Jérémie            N°284      87 M    00:49:46   12.96   + 11m54s   MAIRIE D'ANNECY LE GROUPEMENT
+  92   GUILLERMET David         N°185      88 M    00:49:49   12.95   + 11m58s   FOURNIER HABITAT
+  93   BARET Gilles             N°386      89 M    00:49:52   12.94   + 12m00s   PFEIFFER VACUUM
+  94   MABBOUX Jerome           N°498      90 M    00:49:55   12.92   + 12m04s   TEFAL
+  95   GUEYDAN Sophie           N°184       5F     00:49:58   12.91   + 12m07s   FOURNIER HABITAT
+  96   RICHIERO Fabrice         N°106      91 M    00:50:02   12.89   + 12m10s   CLYDE UNION SAS
+  97   LONG Jean Marc           N°207      92 M    00:50:07   12.87   + 12m15s   GERARD PERRIER INDUSTRIE
+  98   TRINKLEIN Markus         N°396      93 M    00:50:08   12.87   + 12m17s   PFEIFFER VACUUM
+  99   GIROD Emmeline           N°225       6F     00:50:10   12.86   + 12m19s   GROUPE MG
+ 100   CRESSENS Romain          N°515      94 M    00:50:12   12.85   + 12m20s   UGITECH
+ 101   OLIVE Eric               N°271      95 M    00:50:15   12.84   + 12m23s   MAIRIE CARPENTRAS
+ 102   CHARPENTIER Mathieu      N°35       96 M    00:50:15   12.84   + 12m23s   ARAYMOND
+ 103   BRIOT Sebastien          N°598      97 M    00:50:17   12.83   + 12m25s   PSB INDUSTRIES
+ 104   COLLOVATTI Laurent       N°36       98 M    00:50:19   12.82   + 12m27s   ARAYMOND
+ 105   BERTAGNOLIO Léandre      N°214      99 M    00:50:21   12.81   + 12m29s   GGB FRANCE
+ 106   ANTHONY Dilosquet        N°162     100 M    00:50:25   12.79   + 12m34s   CREDIT AGRICOLE DES SAVOIE
+ 107   TREBOSC Aurélie          N°415       7F     00:50:33   12.76   + 12m41s   PILOT CORPORATION OF EUROPE - CE
+ 108   HOAREAU Jean Daniel      N°267     101 M    00:50:36   12.75   + 12m44s   LANSARD ENERGIE
+ 109   CARRET-OLIVIER David     N°202     102 M    00:50:44   12.72   + 12m52s   GERARD PERRIER INDUSTRIE
+ 110   MATHERET Julien          N°293     103 M    00:50:49   12.70   + 12m57s   MAPED
+ 111   DROMEL Thomas            N°205     104 M    00:50:50   12.69   + 12m58s   GERARD PERRIER INDUSTRIE
+ 112   PRIETO Alain             N°395     105 M    00:50:51   12.69   + 13m00s   PFEIFFER VACUUM
+ 113   LESAULNIER David         N°497     106 M    00:50:53   12.68   + 13m02s   TEFAL
+ 114   DUGAT Guillaume          N°419     107 M    00:51:07   12.62   + 13m15s   PSB INDUSTRIES
+ 115   MONNET-BESSON Damien     N°423     108 M    00:51:07   12.62   + 13m15s   PSB INDUSTRIES
+ 116   CHEVALLAY David          N°502     109 M    00:51:11   12.61   + 13m19s   TRANSDEV
+ 117   PASQUIER Jeremy          N°573     110 M    00:51:23   12.56   + 13m31s   SOPRA STERIA
+ 118   MORIEULT Emmanuel        N°616     111 M    00:51:23   12.55   + 13m32s   RÉSIDENCE PAUL IDIER
+ 119   POZZOBON Mikaël          N°211     112 M    00:51:24   12.55   + 13m33s   GERARD PERRIER INDUSTRIE
+ 120   JOVARD Guillaume         N°347     113 M    00:51:54   12.43   + 14m02s   NTN - SNR
+ 121   BLOT Olivier             N°617     114 M    00:51:59   12.41   + 14m08s   SOPRA STERIA
+ 122   MINNE Jean-Philippe      653       115 M    00:52:00   12.40   + 14m09s   PARKER
+ 123   LOMBARDI Claire          N°412       8F     00:52:02   12.40   + 14m10s   PILOT CORPORATION OF EUROPE - CE
+ 124   DELVOIX Samuel           N°341     116 M    00:52:12   12.36   + 14m21s   NTN - SNR
+ 125   DAPSENCE Loïc            N°601     117 M    00:52:26   12.30   + 14m34s   AVENTICS HOLDING SAS
+ 126   BOUET Gérald             N°450     118 M    00:52:37   12.26   + 14m45s   SCAIME
+ 127   MANTOUX Marie-Line       N°519       9F     00:52:50   12.21   + 14m59s   UGITECH
+ 128   BOULANGEAT Claire        N°584      10 F    00:52:53   12.20   + 15m01s   CANAL IMMOBILIER
+ 129   MERAZGA Fouaz            N°404     119 M    00:53:13   12.12   + 15m21s   PHARMACIE PRINCIPALE CHAMOT/POPELKA/CLERC
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                             GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                 Page 4/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                               12:02
+
+ Clt Nom - Prénom                Doss.    Clt Sx   Temps      Moy.     Ecart     Entreprise       www.L-Chrono.com
+ 130   DAUSSY Aurélien           N°540    120 M    00:53:18   12.10   + 15m26s   WORLDLINE
+ 131   TORRES François           N°311    121 M    00:53:31   12.05   + 15m39s   MECALAC
+ 132   AUVERT Nicolas            N°551    122 M    00:53:32   12.05   + 15m40s   NTN - SNR
+ 133   MORAND Olivier            N°125    123 M    00:53:38   12.03   + 15m46s   CONDUCTIX-WAMPFLER
+ 134   PIERREMONT Geoffrey       N°407    124 M    00:53:49   11.99   + 15m58s   PIERREMONT
+ 135   LERTOLA Anne              N°608     11 F    00:53:52   11.98   + 16m00s   GGB FRANCE
+ 136   VÉRISSEL Sylvie           N°161     12 F    00:53:58   11.95   + 16m07s   CPAM DE HAUTE-SAVOIE
+ 137   EISSEVA Baptiste          N°305    125 M    00:53:59   11.95   + 16m07s   MECALAC
+ 138   RICHEZ Steve              N°640    126 M    00:54:00   11.95   + 16m09s   NTN - SNR
+ 139   ROUX Thomas               N°10     127 M    00:54:07   11.92   + 16m15s   AGI INGENIERIE
+ 140   LANTZ Eric                N°393    128 M    00:54:12   11.90   + 16m20s   PFEIFFER VACUUM
+ 141   BISCH Simon               N°168    129 M    00:54:14   11.89   + 16m22s   CRÉDIT AGRICOLE TITRES
+ 142   LEFORT Guillaume          N°351    130 M    00:54:20   11.87   + 16m29s   NTN - SNR
+ 143   SOCIRAT Victor            N°190    131 M    00:54:28   11.84   + 16m36s   FOURNIER HABITAT
+ 144   LEFEBVRE Baptiste         N°644    132 M    00:54:31   11.83   + 16m39s   GGB
+ 145   CLERC Daniel              N°606    133 M    00:54:31   11.83   + 16m40s   CREDIT AGRICOLE DES SAVOIE
+ 146   LE DU Laurent             N°542    134 M    00:54:40   11.80   + 16m48s   WORLDLINE
+ 147   HERB Alexander            N°391    135 M    00:54:42   11.79   + 16m51s   PFEIFFER VACUUM
+ 148   SCHLEGEL Céline           N°438     13 F    00:54:44   11.79   + 16m52s   REVLON-ELIZABETH ARDEN
+ 149   ARCHIMBAULT Christophe    N°470    136 M    00:54:44   11.79   + 16m52s   SOM INDUSTRIE
+ 150   LATARTE Romain            N°19     137 M    00:54:59   11.73   + 17m07s   AMPHENOL SOCAPEX
+ 151   GRENOT Benoit             N°421    138 M    00:55:07   11.71   + 17m15s   PSB INDUSTRIES
+ 152   PERROLAZ Arnaud           N°75     139 M    00:55:12   11.69   + 17m20s   BONTAZ-CENTRE
+ 153   DOWEVI Audrey             N°270     14 F    00:55:28   11.63   + 17m36s   MAIRIE CARPENTRAS
+ 154   MANDRA Remi               N°308    140 M    00:55:36   11.60   + 17m44s   MECALAC
+ 155   VIALLET Jean-Christophe   N°482    141 M    00:55:41   11.58   + 17m50s   STAUBLI
+ 156   LOISEL Kévin              N°434    142 M    00:55:50   11.55   + 17m58s   REVLON-ELIZABETH ARDEN
+ 157   MARGUERETTAZ Laurent      N°563    143 M    00:55:54   11.54   + 18m02s   FOURNIER HABITAT
+ 158   MENANTEAU Romain          N°466    144 M    00:55:56   11.53   + 18m04s   SCHNEIDER ST GEOIRS
+ 159   KOCH Tobias               N°392    145 M    00:56:09   11.49   + 18m17s   PFEIFFER VACUUM
+ 160   BRON Mickaël              N°558    146 M    00:56:10   11.48   + 18m19s   ALPES CONTROLES
+ 161   VITU Romain               N°534    147 M    00:56:12   11.48   + 18m20s   VALEO
+ 162   SAR Jean-Paul             N°76     148 M    00:56:12   11.48   + 18m20s   BONTAZ-CENTRE
+ 163   GAUME Pascal              N°452    149 M    00:56:12   11.48   + 18m21s   SCAIME
+ 164   KÜBLER Dominik            N°123    150 M    00:56:12   11.48   + 18m21s   CONDUCTIX-WAMPFLER
+ 165   BERTEAU Yannick           N°92     151 M    00:56:15   11.47   + 18m24s   CERFRANCE HAUTE-SAVOIE
+ 166   BONVALOT Laetitia         N°441     15 F    00:56:16   11.47   + 18m24s   SALOMON
+ 167   TOURNAIRE Patrice         N°367    152 M    00:56:22   11.44   + 18m30s   NTN - SNR
+ 168   BUSHBY Sara               N°16      16 F    00:56:27   11.43   + 18m36s   AMPHENOL SOCAPEX
+ 169   BRONNEC Jean-François     N°334    153 M    00:56:29   11.42   + 18m37s   NTN - SNR
+ 170   VIAL Patrice              N°42     154 M    00:56:35   11.40   + 18m43s   ARAYMOND
+ 171   REDIEN Mathilde           N°426     17 F    00:56:35   11.40   + 18m44s   PSB INDUSTRIES
+ 172   MICHARD Alban             N°413    155 M    00:56:42   11.38   + 18m51s   PILOT CORPORATION OF EUROPE - CE
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                             GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                  Page 5/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                                12:02
+
+ Clt Nom - Prénom               Doss.     Clt Sx   Temps      Moy.     Ecart     Entreprise      www.L-Chrono.com
+ 173   MOSKOVSKIY Boris         N°126     156 M    00:56:43   11.37   + 18m51s   CONDUCTIX-WAMPFLER
+ 174   RODRIGUES Albert         N°453     157 M    00:56:46   11.37   + 18m54s   SCAIME
+ 175   LANFROY Nicolas          N°91      158 M    00:56:46   11.36   + 18m55s   CCFG/ COMMUNE DE BONNEVILLE
+ 176   DARTOIS Fabrice          N°192     159 M    00:56:48   11.36   + 18m57s   GALDERMA
+ 177   HAY Jennifer             N°564      18 F    00:57:02   11.31   + 19m10s   HARMONIE MUTUELLE
+ 178   GROLA Laurent            N°597     160 M    00:57:11   11.28   + 19m19s   PFEIFFER VACUUM
+ 179   GROLA Florian            N°390     161 M    00:57:11   11.28   + 19m20s   PFEIFFER VACUUM
+ 180   PIERREMONT Jacques       N°408     162 M    00:57:13   11.28   + 19m21s   PIERREMONT
+ 181   COSTE Emmanuel           N°25      163 M    00:57:13   11.27   + 19m21s   ANTHOGYR
+ 182   GAY Christine            N°388      19 F    00:57:15   11.27   + 19m23s   PFEIFFER VACUUM
+ 183   GAY Christian            N°389     164 M    00:57:15   11.27   + 19m23s   PFEIFFER VACUUM
+ 184   SOUJOL Cyril             N°310     165 M    00:57:31   11.22   + 19m40s   MECALAC
+ 185   BARTHELEMY Sandrine      N°399      20 F    00:57:32   11.21   + 19m40s   PHARMACIE PRINCIPALE CHAMOT/POPELKA/CLERC
+ 186   SAMBOURG Didier          N°299     166 M    00:57:36   11.20   + 19m44s   MAPED
+ 187   PIGNY Olivier            N°30      167 M    00:57:39   11.19   + 19m47s   ANTHOGYR
+ 188   LAROCHE Eric             N°496     168 M    00:57:39   11.19   + 19m48s   TEFAL
+ 189   GRUFFAT Jean-Marc        N°54      169 M    00:57:50   11.15   + 19m58s   AVENTICS HOLDING SAS
+ 190   REPPELLIN Jean-Marc      N°461     170 M    00:57:56   11.13   + 20m04s   SCHNEIDER ELECTRIC ALPES
+ 191   CHAUVEL Philippe         N°17      171 M    00:57:57   11.13   + 20m05s   AMPHENOL SOCAPEX
+ 192   ALLIX Guillaume          N°303     172 M    00:57:57   11.13   + 20m05s   MECALAC
+ 193   MANVILLE Christophe      N°151     173 M    00:58:07   11.10   + 20m16s   CPAM DE HAUTE-SAVOIE
+ 194   BICH Nicolas             N°331     174 M    00:58:14   11.08   + 20m22s   NTN - SNR
+ 195   PICHARD Max              N°358     175 M    00:58:15   11.07   + 20m24s   NTN - SNR
+ 196   HUMBERT Virginie         N°403      21 F    00:58:15   11.07   + 20m24s   PHARMACIE PRINCIPALE CHAMOT/POPELKA/CLERC
+ 197   ZITO Raffaella           N°139      22 F    00:58:17   11.07   + 20m25s   CONDUCTIX-WAMPFLER
+ 198   BERTRAND Jonathan        N°109     176 M    00:58:17   11.07   + 20m26s   CONDUCTIX-WAMPFLER
+ 199   BAGNE Bruno              N°483     177 M    00:58:18   11.06   + 20m27s   TECHNICS D AGENCEMENT
+ 200   HEBRAS Florian           N°593     178 M    00:58:18   11.06   + 20m27s   FOURNIER HABITAT
+ 201   COISSER Geneviève        N°528      23 F    00:58:24   11.05   + 20m32s   VALEO
+ 202   DENARIE David            N°570     179 M    00:58:25   11.04   + 20m33s   SOPRA STERIA
+ 203   SCHOLES Crawford         N°132     180 M    00:58:27   11.04   + 20m35s   CONDUCTIX-WAMPFLER
+ 204   PINEL Mathieu            N°596     181 M    00:58:32   11.02   + 20m40s   NTN - SNR
+ 205   ROTARU Robert            N°631     182 M    00:58:33   11.02   + 20m41s   NTN - SNR
+ 206   METRAL Didier            N°394     183 M    00:58:37   11.01   + 20m45s   PFEIFFER VACUUM
+ 207   MUDRY Aurélie            N°295      24 F    00:58:40   11.00   + 20m49s   MAPED
+ 208   AMANN Nina               N°585      25 F    00:58:46   10.98   + 20m54s   CONDUCTIX-WAMPFLER
+ 209   LUISET Cédric            N°354     184 M    00:58:47   10.98   + 20m55s   NTN - SNR
+ 210   HUARD Henri              N°618     185 M    00:58:56   10.95   + 21m05s   PSB INDUSTRIES
+ 211   CAVRET Houria            N°431      26 F    00:59:03   10.92   + 21m12s   RÉSIDENCE PAUL IDIER
+ 212   FABRICE Santamaria       N°266     186 M    00:59:07   10.91   + 21m15s   LANSARD ENERGIE
+ 213   GODET Guillaume          N°625     187 M    00:59:12   10.90   + 21m21s   INSEEC
+ 214   GROSJEAN Luc             N°621     188 M    00:59:13   10.89   + 21m21s   INSEEC
+ 215   ROSELLI Eric             N°309     189 M    00:59:15   10.89   + 21m24s   MECALAC
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                             GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                 Page 6/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                               12:02
+
+ Clt Nom - Prénom               Doss.     Clt Sx   Temps      Moy.     Ecart     Entreprise       www.L-Chrono.com
+ 216   PALACIN Fredéric         N°85      190 M    00:59:19   10.87   + 21m28s   BOUVERAT-PERNAT
+ 217   HENRIET Bruno            N°518     191 M    00:59:20   10.87   + 21m28s   UGITECH
+ 218   CARRON-CABARET Alain     N°246     192 M    00:59:24   10.86   + 21m32s   HEXACT
+ 219   MAGNIENT Franck          N°47      193 M    00:59:24   10.86   + 21m33s   AUDICE ALPES
+ 220   SAVIGNAT Kevin           N°364     194 M    00:59:25   10.86   + 21m33s   NTN - SNR
+ 221   BRUSLE Julie             N°336      27 F    00:59:25   10.86   + 21m33s   NTN - SNR
+ 222   TRAISSARD Coraline       N°230      28 F    00:59:25   10.86   + 21m33s   GROUPE MG
+ 223   WIKSTRÖM Anders          N°138     195 M    00:59:26   10.85   + 21m34s   CONDUCTIX-WAMPFLER
+ 224   LAUWERS Didier           N°465     196 M    00:59:34   10.83   + 21m43s   SCHNEIDER ST GEOIRS
+ 225   CLERC-DUBOIS Arnaud      N°340     197 M    00:59:35   10.83   + 21m43s   NTN - SNR
+ 226   DAUDIN Catherine         N°274      29 F    00:59:35   10.83   + 21m43s   MAIRIE D'ANNECY LE GROUPEMENT
+ 227   DEPAEPE Céline           N°146      30 F    00:59:36   10.83   + 21m44s   CPAM DE HAUTE-SAVOIE
+ 228   CHAUVIN Alain            N°339     198 M    00:59:45   10.80   + 21m53s   NTN - SNR
+ 229   DE FREITAS Karine        N°26       31 F    00:59:55   10.77   + 22m04s   ANTHOGYR
+ 230   LAVABRE Frédéric         N°348     199 M    00:59:59   10.76   + 22m07s   NTN - SNR
+ 231   PROVOST-CRÉPEL Nadège    N°523      32 F    01:00:01   10.75   + 22m10s   UGITECH
+ 232   COMBET Stéphane          N°600     200 M    01:00:03   10.74   + 22m11s   UGITECH
+ 233   USSLER Falk              N°302     201 M    01:00:04   10.74   + 22m13s   MARS
+ 234   DUPENLOUP Ludovic        N°581     202 M    01:00:08   10.73   + 22m16s   BOUVERAT-PERNAT
+ 235   FERLIN Christophe        N°277     203 M    01:00:08   10.73   + 22m17s   MAIRIE D'ANNECY LE GROUPEMENT
+ 236   GRANDCOING Christophe    N°328     204 M    01:00:12   10.72   + 22m20s   NICOMATIC SA
+ 237   GALTIER Nathalie         N°301      33 F    01:00:12   10.72   + 22m21s   MARS
+ 238   MONET Thibault           N°329     205 M    01:00:21   10.69   + 22m29s   NICOMATIC SA
+ 239   DUBANCHET Aurélien       N°493     206 M    01:00:30   10.66   + 22m38s   TEFAL
+ 240   LECYGNE Correze          N°249      34 F    01:00:31   10.66   + 22m39s   HOPITAUX UNIVERSITAIRE DE GENEVE
+ 241   ALLAMA Jérôme            N°592     207 M    01:00:32   10.66   + 22m40s   FOURNIER HABITAT
+ 242   FRANKE Rüdiger           N°119     208 M    01:00:32   10.66   + 22m41s   CONDUCTIX-WAMPFLER
+ 243   EPAKA Franklin           N°169     209 M    01:00:32   10.66   + 22m41s   CTC
+ 244   FAVROT Laetitia          N°182      35 F    01:00:34   10.65   + 22m42s   FOURNIER HABITAT
+ 245   GRANDVOINNET Charlène    N°13       36 F    01:00:36   10.65   + 22m44s   ALLERGAN
+ 246   CAGNON Virginie          N°12       37 F    01:00:37   10.64   + 22m45s   ALLERGAN
+ 247   TAYAC Vincent            N°468     210 M    01:00:41   10.63   + 22m49s   SCHNEIDER ST GEOIRS
+ 248   BESSIRON Marie-France    N°34       38 F    01:00:55   10.59   + 23m03s   ARAYMOND
+ 249   TICHADOU Stephane        N°256     211 M    01:00:55   10.59   + 23m04s   IUT ANNECY LE VIEUX
+ 250   BATICLE Cyrille          N°569     212 M    01:00:58   10.58   + 23m06s   SOPRA STERIA
+ 251   PETROCELLI Robert        N°449     213 M    01:00:59   10.58   + 23m07s   SARL ALTUS
+ 252   DULAC Jean-Luc           N°516     214 M    01:01:00   10.58   + 23m08s   UGITECH
+ 253   LAFFONT Pierre           N°568     215 M    01:01:00   10.57   + 23m09s   SOM INDUSTRIE
+ 254   OMS Franck               N°642     216 M    01:01:03   10.57   + 23m11s   MUTUELLE DE FRANCE UNIE
+ 255   HALIM Mohamed            N°495     217 M    01:01:07   10.56   + 23m15s   TEFAL
+ 256   VIROT Sylvain            N°368     218 M    01:01:11   10.54   + 23m19s   NTN - SNR
+ 257   BAYSSON Hélène           N°99       39 F    01:01:11   10.54   + 23m20s   CH ANNECY GENEVOIS
+ 258   PAYO LEWIS Alicia        N°245      40 F    01:01:13   10.54   + 23m21s   HASBRO
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                             GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                   Page 7/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                                 12:02
+
+ Clt Nom - Prénom                  Doss.   Clt Sx   Temps      Moy.     Ecart     Entreprise      www.L-Chrono.com
+ 259   FLIPAUX Jérémie             N°259   219 M    01:01:17   10.53   + 23m25s   IVOCLAR VIVADENT COMIT
+ 260   RICHARD MAGNIN Romy         N°469    41 F    01:01:18   10.52   + 23m27s   SCOTT SPORTS SA
+ 261   BUTIN David                 N°289   220 M    01:01:18   10.52   + 23m27s   MAPED
+ 262   GARDIZE Arnaud              N°120   221 M    01:01:20   10.52   + 23m29s   CONDUCTIX-WAMPFLER
+ 263   FOULEX Joan                 N°556   222 M    01:01:20   10.52   + 23m29s   SOPRA STERIA
+ 264   STEUER-BURON Bertille       N°439    42 F    01:01:23   10.51   + 23m32s   REVLON-ELIZABETH ARDEN
+ 265   DUMAZ Nathalie              N°27     43 F    01:01:24   10.51   + 23m32s   ANTHOGYR
+ 266   SANCHEZ Miguel              N°363   223 M    01:01:25   10.50   + 23m34s   NTN - SNR
+ 267   POTRICH David               N°156   224 M    01:01:26   10.50   + 23m34s   CPAM DE HAUTE-SAVOIE
+ 268   GRUFFAT Emilie              N°262    44 F    01:01:27   10.50   + 23m36s   LABORATOIRES PRODENE KLINT
+ 269   GARBI Pierre                N°235   225 M    01:01:30   10.49   + 23m39s   HARMONIE MUTUELLE
+ 270   FOUQUET Maggy               N°343    45 F    01:01:36   10.47   + 23m44s   NTN - SNR
+ 271   BRUNIAUX Jean-François      N°539   226 M    01:01:36   10.47   + 23m45s   WORLDLINE
+ 272   KAÏS Djellab                N°323   227 M    01:01:38   10.47   + 23m46s   MUTUELLE DE FRANCE UNIE
+ 273   BOCQUET Patrice             N°264   228 M    01:01:40   10.46   + 23m48s   LANSARD ENERGIE
+ 274   LYARD Lara                  N°268    46 F    01:01:40   10.46   + 23m48s   LANSARD ENERGIE
+ 275   OGER Jordan                 N°379   229 M    01:01:44   10.45   + 23m53s   PATEK PHILIPPE SA
+ 276   CASTANDET Olivier           N°104   230 M    01:01:49   10.43   + 23m58s   CLYDE UNION SAS
+ 277   CARNET Stephanie            N°44     47 F    01:01:53   10.42   + 24m02s   ASSOCIATION MDE
+ 278   PIFFAUT Robin               N°467   231 M    01:02:00   10.41   + 24m08s   SCHNEIDER ST GEOIRS
+ 279   TRÉHOREL Stéphane           N°381   232 M    01:02:03   10.40   + 24m11s   PATEK PHILIPPE SA
+ 280   BUZZI Patrice               N°576   233 M    01:02:11   10.38   + 24m19s   BOUVERAT-PERNAT
+ 281   CLERC Raphael               N°401   234 M    01:02:11   10.37   + 24m20s   PHARMACIE PRINCIPALE CHAMOT/POPELKA/CLERC
+ 282   DIARD Benoit                N°254   235 M    01:02:12   10.37   + 24m20s   IUT ANNECY LE VIEUX
+ 283   FRANCONY Damien             N°535   236 M    01:02:15   10.36   + 24m23s   WAT
+ 284   COUSIN Sylvain              N°273   237 M    01:02:18   10.35   + 24m26s   MAIRIE D'ANNECY LE GROUPEMENT
+ 285   PONTON Serge                N°359   238 M    01:02:26   10.33   + 24m34s   NTN - SNR
+ 286   VAUTROT Marine              N°198    48 F    01:02:28   10.33   + 24m36s   GALDERMA
+ 287   LEROY Alexia                N°66     49 F    01:02:28   10.33   + 24m37s   BANQUE POPULAIRE
+ 288   DEVILLE-CAVELLIN Stephane   N°487   239 M    01:02:29   10.32   + 24m37s   TECHNICS D AGENCEMENT
+ 289   BONNET Dominique            N°223   240 M    01:02:33   10.31   + 24m41s   GROUPE MG
+ 290   CORSO François              N°114   241 M    01:02:36   10.30   + 24m45s   CONDUCTIX-WAMPFLER
+ 291   GAUDIN Olivier              N°405   242 M    01:02:51   10.27   + 24m59s   PIERREMONT
+ 292   BURIN Philippe              N°578   243 M    01:02:55   10.25   + 25m03s   BOUVERAT-PERNAT
+ 293   MARIAS Patrick              N°422   244 M    01:02:56   10.25   + 25m04s   PSB INDUSTRIES
+ 294   COUSIN Christophe           N°115   245 M    01:02:56   10.25   + 25m05s   CONDUCTIX-WAMPFLER
+ 295   KERN Gilles                 N°199   246 M    01:03:03   10.23   + 25m12s   GENERAL ELECTRIC
+ 296   GUSMEROLI Amandine          N°71     50 F    01:03:05   10.23   + 25m13s   BANQUE-LAYDERNIER
+ 297   BARFUß Heinz                N°387   247 M    01:03:06   10.22   + 25m14s   PFEIFFER VACUUM
+ 298   ROGNON David                N°414   248 M    01:03:07   10.22   + 25m15s   PILOT CORPORATION OF EUROPE - CE
+ 299   CHAPEL Claude               N°546   249 M    01:03:14   10.20   + 25m22s   NTN - SNR
+ 300   SCHLEIFER Magaly            N°63     51 F    01:03:14   10.20   + 25m22s   BANQUE DE FRANCE
+ 301   PONS RAMELLS Christelle     N°62     52 F    01:03:15   10.20   + 25m23s   BANQUE DE FRANCE
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                              GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                 Page 8/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                               12:02
+
+ Clt Nom - Prénom               Doss.     Clt Sx   Temps      Moy.     Ecart     Entreprise       www.L-Chrono.com
+ 302   LETT Aurélie             N°353      53 F    01:03:15   10.20   + 25m24s   NTN - SNR
+ 303   FRANKE Audrey            N°70       54 F    01:03:16   10.20   + 25m25s   BANQUE-LAYDERNIER
+ 304   CACCIAPUOTI Gregoire     N°201     250 M    01:03:29   10.16   + 25m37s   GERARD PERRIER INDUSTRIE
+ 305   MIAGAT Audrey            N°634      55 F    01:03:31   10.16   + 25m39s   HARMONIE MUTUELLE
+ 306   LECHINE Héloïse          N°186      56 F    01:03:33   10.15   + 25m42s   FOURNIER HABITAT
+ 307   LETELLIER Valerie        N°72       57 F    01:03:33   10.15   + 25m42s   BANQUE-LAYDERNIER
+ 308   SILVESTRI Carole         N°366      58 F    01:03:38   10.14   + 25m46s   NTN - SNR
+ 309   DAVOINE Jennifer         N°145      59 F    01:03:39   10.13   + 25m47s   CPAM DE HAUTE-SAVOIE
+ 310   REVERDY Philippe         N°129     251 M    01:03:40   10.13   + 25m48s   CONDUCTIX-WAMPFLER
+ 311   BERNARD Thomas           N°326     252 M    01:03:42   10.13   + 25m51s   NICOMATIC SA
+ 312   MEYLAN Eric              N°459     253 M    01:03:47   10.11   + 25m55s   SCHNEIDER ELECTRIC ALPES
+ 313   LAGET Ollivier           N°456     254 M    01:03:57   10.09   + 26m05s   SCHNEIDER ELECTRIC ALPES
+ 314   GOLDMANN Christoph       N°121     255 M    01:03:57   10.09   + 26m05s   CONDUCTIX-WAMPFLER
+ 315   PIZZERA Fabienne         N°478      60 F    01:03:58   10.08   + 26m06s   STARLING GENEVA HOTEL
+ 316   CURT Isabelle            N°181      61 F    01:03:59   10.08   + 26m07s   FOURNIER HABITAT
+ 317   BARTHELEMY Olivier       N°555     256 M    01:04:05   10.07   + 26m14s   SOPRA STERIA
+ 318   ZIVANIC Aleksandar       N°21      257 M    01:04:05   10.07   + 26m14s   AMPHENOL SOCAPEX
+ 319   CAMBOULIVES Carole       N°372      62 F    01:04:11   10.05   + 26m19s   PATEK PHILIPPE SA
+ 320   VON HUELSEN Ulrich       N°398     258 M    01:04:26   10.01   + 26m35s   PFEIFFER VACUUM
+ 321   ESCOFFIER Stephanie      N°117      63 F    01:04:28   10.01   + 26m36s   CONDUCTIX-WAMPFLER
+ 322   MAUVAIS Francis          N°521     259 M    01:04:32   10.00   + 26m40s   UGITECH
+ 323   BALMENS Sandrine         N°510      64 F    01:04:32   10.00   + 26m40s   UGITECH
+ 324   GUELLERIN Julie          N°101      65 F    01:04:32   10.00   + 26m40s   CH ANNECY GENEVOIS
+ 325   MILANI Myriam            N°522      66 F    01:04:32    9.99   + 26m41s   UGITECH
+ 326   TERRASSE Emilie          N°491      67 F    01:04:37    9.98   + 26m45s   TECHNICS D AGENCEMENT
+ 327   ESCHBACH Guillaume       N°74      260 M    01:04:38    9.98   + 26m47s   BODYCOTE
+ 328   DELANNOY Peggy           N°260      68 F    01:04:39    9.98   + 26m47s   LABORATOIRES PRODENE KLINT
+ 329   PERRIN Virginie          N°188      69 F    01:04:39    9.98   + 26m48s   FOURNIER HABITAT
+ 330   PELLET Alain             N°370     261 M    01:04:44    9.96   + 26m53s   PARKER
+ 331   ROUGE Nathalie           N°371      70 F    01:04:45    9.96   + 26m53s   PARKER
+ 332   LEON Pierre Jean         N°324     262 M    01:04:57    9.93   + 27m05s   MUTUELLE DE FRANCE UNIE
+ 333   GARCIA Gregory           N°507     263 M    01:05:12    9.89   + 27m20s   UBISOFT ANNECY
+ 334   JUST Sophie              N°411      71 F    01:05:14    9.89   + 27m22s   PILOT CORPORATION OF EUROPE - CE
+ 335   BRDAR Emilie             N°247      72 F    01:05:18    9.88   + 27m26s   HOPITAUX UNIVERSITAIRE DE GENEVE
+ 336   JEANDET Laetitia         N°263      73 F    01:05:18    9.88   + 27m27s   LABORATOIRES PRODENE KLINT
+ 337   SICAMOIS Anthony         N°159     264 M    01:05:20    9.87   + 27m29s   CPAM DE HAUTE-SAVOIE
+ 338   BROCVIELLE Louis         N°179     265 M    01:05:21    9.87   + 27m29s   FOURNIER HABITAT
+ 339   FORESTIER Alexandra      N°261      74 F    01:05:40    9.82   + 27m48s   LABORATOIRES PRODENE KLINT
+ 340   VIGOUROUX Florent        N°287     266 M    01:05:48    9.80   + 27m56s   MAIRIE D'ANNECY LE GROUPEMENT
+ 341   PIGA Marc                N°380     267 M    01:05:48    9.80   + 27m56s   PATEK PHILIPPE SA
+ 342   POULAIN Aurore           N°545      75 F    01:05:49    9.80   + 27m57s   GALDERMA
+ 343   QUAIRE Elodie            N°360      76 F    01:05:53    9.79   + 28m01s   NTN - SNR
+ 344   BOUCHON Stephanie        N°253      77 F    01:05:57    9.78   + 28m05s   IUT ANNECY LE VIEUX
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                             GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                Page 9/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                              12:02
+
+ Clt Nom - Prénom                Doss.    Clt Sx   Temps      Moy.    Ecart     Entreprise       www.L-Chrono.com
+ 345   FOURNIER Fabien           N°488    268 M    01:05:59   9.78   + 28m07s   TECHNICS D AGENCEMENT
+ 346   COUTAZ Auguste            N°479    269 M    01:06:07   9.76   + 28m15s   STAUBLI
+ 347   CAMUS Simon               N°579    270 M    01:06:08   9.75   + 28m16s   BOUVERAT-PERNAT
+ 348   SALVATORE Maurice         N°577    271 M    01:06:08   9.75   + 28m17s   BOUVERAT-PERNAT
+ 349   POVICI Paul Aledandru     N°632    272 M    01:06:10   9.75   + 28m18s   NTN - SNR
+ 350   CHEVALIER Sylvia          N°313     78 F    01:06:17   9.73   + 28m25s   MIGROS
+ 351   SUSLIN Sergey             N°135    273 M    01:06:17   9.73   + 28m26s   CONDUCTIX-WAMPFLER
+ 352   BAHLOUL Pauline           N°141     79 F    01:06:18   9.73   + 28m26s   CPAM DE HAUTE-SAVOIE
+ 353   TALLARON Clémence         N°509     80 F    01:06:18   9.73   + 28m26s   UBISOFT ANNECY
+ 354   GRAVIER Stephan           N°226    274 M    01:06:21   9.72   + 28m29s   GROUPE MG
+ 355   CAMPAGNE Hervé            N°112    275 M    01:06:25   9.71   + 28m34s   CONDUCTIX-WAMPFLER
+ 356   FOUASSIER Cecile          N°464     81 F    01:06:28   9.71   + 28m36s   SCHNEIDER ST GEOIRS
+ 357   METRAL Christine          N°294     82 F    01:06:31   9.70   + 28m40s   MAPED
+ 358   MAILLOTE Marine           N°14      83 F    01:06:38   9.68   + 28m46s   ALLERGAN
+ 359   BARTHES Corinne           N°639     84 F    01:06:43   9.67   + 28m52s   CPAM 74
+ 360   AMARAL Fernanda           N°385     85 F    01:06:53   9.64   + 29m02s   PFEIFFER VACUUM
+ 361   LANDECY Patrick           N°255    276 M    01:06:55   9.64   + 29m03s   IUT ANNECY LE VIEUX
+ 362   KILBURG Julien            N°307    277 M    01:07:00   9.63   + 29m09s   MECALAC
+ 363   JUBERT Frédéric           N°218    278 M    01:07:02   9.62   + 29m10s   GGB FRANCE
+ 364   ROCHE Fabienne            N°219     86 F    01:07:02   9.62   + 29m10s   GGB FRANCE
+ 365   ALICIA Jamais             N°64      87 F    01:07:07   9.61   + 29m15s   BANQUE POPULAIRE
+ 366   BELLEMIN Gwenael          N°222    279 M    01:07:09   9.61   + 29m17s   GROUPE MG
+ 367   NAZE Manon                N°357     88 F    01:07:15   9.59   + 29m23s   NTN - SNR
+ 368   CHOSSAT Julien            N°203    280 M    01:07:16   9.59   + 29m25s   GERARD PERRIER INDUSTRIE
+ 369   RENAUD-DEGUEROIS Maud     N°361     89 F    01:07:19   9.58   + 29m27s   NTN - SNR
+ 370   ANGELLOZ NICOUD Valérie   N°312     90 F    01:07:33   9.55   + 29m42s   MIGROS
+ 371   GRANDI Isabella           N°646     91 F    01:07:39   9.54   + 29m47s   AVENTICS HOLDING SAS
+ 372   EOZINOU Camille           N°494     92 F    01:07:41   9.53   + 29m49s   TEFAL
+ 373   PATRAS Remusat            N°500     93 F    01:07:41   9.53   + 29m50s   TEFAL
+ 374   DOMENGE Coralie           N°645     94 F    01:07:42   9.53   + 29m50s   BANQUE POPULAIRE
+ 375   DEMAISON Béatrice         N°492     95 F    01:07:42   9.53   + 29m51s   TEFAL
+ 376   CHALENDARD Christelle     N°224     96 F    01:07:43   9.53   + 29m52s   GROUPE MG
+ 377   MIZON Pauline             N°229     97 F    01:07:45   9.52   + 29m53s   GROUPE MG
+ 378   MOOSZ Andrei              N°633    281 M    01:08:12   9.46   + 30m20s   NTN - SNR
+ 379   CLICQ Elise               N°177     98 F    01:08:12   9.46   + 30m21s   ESS
+ 380   GUISLE Fredéric           N°77     282 M    01:08:17   9.45   + 30m25s   BOUVERAT-PERNAT
+ 381   MAGGIULLI Michaël         N°208    283 M    01:08:21   9.44   + 30m30s   GERARD PERRIER INDUSTRIE
+ 382   CLEMENT Marine            N°204     99 F    01:08:23   9.43   + 30m31s   GERARD PERRIER INDUSTRIE
+ 383   LAVIT Damien              N°98     284 M    01:08:28   9.42   + 30m36s   CERFRANCE HAUTE-SAVOIE
+ 384   ARNOLD Kelsey             N°429    100 F    01:08:31   9.41   + 30m40s   RALPH LAUREN EUROPE SARL
+ 385   LECLERC Anne              N°196    101 F    01:08:42   9.39   + 30m50s   GALDERMA
+ 386   HORVATHNE-UNGHI Barbara   N°455    102 F    01:08:45   9.38   + 30m53s   SCHNEIDER ELECTRIC ALPES
+ 387   LEBRUN Florentin          N°350    285 M    01:08:49   9.37   + 30m57s   NTN - SNR
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                            GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                                Page 10/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                               12:02
+
+ Clt Nom - Prénom                  Doss.   Clt Sx   Temps      Moy.    Ecart     Entreprise      www.L-Chrono.com
+ 388   BERTHET Jessica             N°215   103 F    01:09:07   9.33   + 31m15s   GGB FRANCE
+ 389   SAUVIAT Alizée              N°437   104 F    01:09:07   9.33   + 31m15s   REVLON-ELIZABETH ARDEN
+ 390   GARESIO Céline              N°2     105 F    01:09:07   9.33   + 31m16s   ACCESS GROUP
+ 391   CALONGE Sébastien           N°1     286 M    01:09:08   9.33   + 31m16s   ACCESS GROUP
+ 392   GERFAUD Marie-Noëlle        N°454   106 F    01:09:10   9.33   + 31m18s   SCHNEIDER ELECTRIC ALPES
+ 393   ATTIA Intissar              N°32    107 F    01:09:11   9.33   + 31m19s   ARAYMOND
+ 394   OTTOSSON Stefan             N°128   287 M    01:09:11   9.32   + 31m19s   CONDUCTIX-WAMPFLER
+ 395   PERNOUD Anne-Lise           N°605   108 F    01:09:24   9.30   + 31m32s   CREDIT AGRICOLE DES SAVOIE
+ 396   NORERO Nathalie             N°296   109 F    01:09:32   9.28   + 31m40s   MAPED
+ 397   DOLMAZON Clémentine         N°193   110 F    01:09:36   9.27   + 31m45s   GALDERMA
+ 398   CHAMARANDE Loic             N°24    288 M    01:09:39   9.26   + 31m48s   ANTHOGYR
+ 399   CARNEVALE Sylvie            N°471   111 F    01:09:40   9.26   + 31m49s   SOM INDUSTRIE
+ 400   GILLET Alexane              N°442   112 F    01:09:43   9.25   + 31m52s   SALOMON
+ 401   JEAN-BART Yves              N°28    289 M    01:09:49   9.24   + 31m58s   ANTHOGYR
+ 402   WENK Ulrike                 N°137   113 F    01:10:06   9.20   + 32m15s   CONDUCTIX-WAMPFLER
+ 403   NEUBERGER Ruth              N°127   114 F    01:10:07   9.20   + 32m15s   CONDUCTIX-WAMPFLER
+ 404   GASTALDIN Patrick           N°489   290 M    01:10:07   9.20   + 32m15s   TECHNICS D AGENCEMENT
+ 405   STOBBE Sabine               N°133   115 F    01:10:07   9.20   + 32m15s   CONDUCTIX-WAMPFLER
+ 406   BLANCHIN Claire             N°485   116 F    01:10:07   9.20   + 32m16s   TECHNICS D AGENCEMENT
+ 407   CHALVIN Sonia               N°432   117 F    01:10:10   9.19   + 32m18s   RÉSIDENCE PAUL IDIER
+ 408   ANDRE Noël                  N°622   291 M    01:10:13   9.19   + 32m21s   INSEEC
+ 409   TUNNO Maxime                N°231   292 M    01:10:16   9.18   + 32m25s   GROUPE MG
+ 410   CHARVET Corinne             N°8     118 F    01:10:17   9.18   + 32m26s   AGI INGENIERIE
+ 411   RAMCHETTY Nadège            N°550   119 F    01:10:20   9.17   + 32m28s   GUHRING
+ 412   ANDERSON Vincent            N°15    293 M    01:10:20   9.17   + 32m29s   AMPHENOL SOCAPEX
+ 413   BEGGIORA Marion             N°221   120 F    01:10:22   9.17   + 32m31s   GROUPE MG
+ 414   BENEDETTO Jérôme            N°512   294 M    01:10:33   9.14   + 32m41s   UGITECH
+ 415   NOITON Delphine             N°170   121 F    01:10:34   9.14   + 32m42s   CTC
+ 416   CROS MAYREVIEILLE Pauline   N°257   122 F    01:10:45   9.12   + 32m53s   IVOCLAR VIVADENT COMIT
+ 417   PESENTI Kevin               N°425   295 M    01:10:47   9.11   + 32m55s   PSB INDUSTRIES
+ 418   BERTIN Laetitia             N°216   123 F    01:10:47   9.11   + 32m56s   GGB FRANCE
+ 419   DUFFOUR Viviane             N°402   124 F    01:10:50   9.11   + 32m59s   PHARMACIE PRINCIPALE CHAMOT/POPELKA/CLERC
+ 420   AKEBBABORTEGA Marjorie      N°428   125 F    01:11:07   9.07   + 33m16s   RALPH LAUREN EUROPE SARL
+ 421   FIDIER Jacques              N°38    296 M    01:11:09   9.07   + 33m17s   ARAYMOND
+ 422   GUIGNARD Orlane             N°244   126 F    01:11:15   9.05   + 33m23s   HASBRO
+ 423   PITROIS Michel              N°197   297 M    01:11:19   9.05   + 33m27s   GALDERMA
+ 424   CHATELLARD Flora            N°46    127 F    01:11:24   9.04   + 33m32s   AUDICE ALPES
+ 425   BRAVO Angelo                N°417   298 M    01:11:37   9.01   + 33m45s   PSB INDUSTRIES
+ 426   TISCHMACHER Camille         N°626   128 F    01:11:39   9.00   + 33m47s   HASBRO
+ 427   BINIEK Catherine            N°93    129 F    01:11:40   9.00   + 33m49s   CERFRANCE HAUTE-SAVOIE
+ 428   BADIN Julie                 N°240   130 F    01:11:44   8.99   + 33m52s   HASBRO
+ 429   GROS Isabelle               N°446   131 F    01:11:45   8.99   + 33m54s   SARL ALTUS
+ 430   REVIL Annick                N°158   132 F    01:12:01   8.96   + 34m09s   CPAM DE HAUTE-SAVOIE
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                             GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                              Page 11/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                             12:02
+
+ Clt Nom - Prénom               Doss.     Clt Sx   Temps      Moy.    Ecart     Entreprise       www.L-Chrono.com
+ 431   BELTRAMI Marion          N°304     133 F    01:12:10   8.94   + 34m18s   MECALAC
+ 432   MIOLLANY Aurélie         N°382     134 F    01:12:10   8.94   + 34m18s   PERFORMANCE DIRECTE
+ 433   COMTE Laurent            N°445     299 M    01:12:12   8.94   + 34m20s   SARL ALTUS
+ 434   BROSSE Kevin             N°335     300 M    01:12:19   8.92   + 34m28s   NTN - SNR
+ 435   VERDIER Laetitia         N°462     135 F    01:12:25   8.91   + 34m33s   SCHNEIDER ELECTRIC ALPES
+ 436   MORAND Nadine            N°152     136 F    01:12:27   8.90   + 34m35s   CPAM DE HAUTE-SAVOIE
+ 437   BOTTOLLIER Laurent       N°580     301 M    01:12:48   8.86   + 34m56s   BOUVERAT-PERNAT
+ 438   LANTOINE Frédérique      N°195     137 F    01:13:03   8.83   + 35m11s   GALDERMA
+ 439   PIERREGROSSE Isabelle    N°210     138 F    01:13:13   8.81   + 35m21s   GERARD PERRIER INDUSTRIE
+ 440   GONZALEZ Jacqueline      N°281     139 F    01:13:19   8.80   + 35m27s   MAIRIE D'ANNECY LE GROUPEMENT
+ 441   VINDRET Jessica          N°45      140 F    01:13:21   8.79   + 35m29s   ASSOCIATION MDE
+ 442   CONTET Samuel            N°603     302 M    01:13:25   8.79   + 35m33s   CONDUCTIX-WAMPFLER
+ 443   DEPOLLIER Rachel         N°6       141 F    01:13:28   8.78   + 35m36s   AFCOM2I SAS - GROUPE SI2A
+ 444   ZUCCHETTO Johanna        N°7       142 F    01:13:28   8.78   + 35m36s   AFCOM2I SAS - GROUPE SI2A
+ 445   COLOGON Pascale          N°143     143 F    01:13:40   8.76   + 35m48s   CPAM DE HAUTE-SAVOIE
+ 446   GAILLARD Florence        N°609     144 F    01:13:57   8.72   + 36m06s   HASBRO
+ 447   CADET Jean-Michel        N°241     303 M    01:14:06   8.71   + 36m14s   HASBRO
+ 448   HÉRITIER Lucie           N°375     145 F    01:14:34   8.65   + 36m43s   PATEK PHILIPPE SA
+ 449   GRECO Ilaria             N°122     146 F    01:14:43   8.63   + 36m52s   CONDUCTIX-WAMPFLER
+ 450   MIRVEAUX Priscilla       N°378     147 F    01:14:44   8.63   + 36m52s   PATEK PHILIPPE SA
+ 451   LOISON Stéphanie         N°282     148 F    01:14:54   8.61   + 37m02s   MAIRIE D'ANNECY LE GROUPEMENT
+ 452   PACARD Amandine          N°435     149 F    01:15:10   8.58   + 37m18s   REVLON-ELIZABETH ARDEN
+ 453   GERACI Anaïs             N°279     150 F    01:15:15   8.57   + 37m24s   MAIRIE D'ANNECY LE GROUPEMENT
+ 454   GODRIE Jenny             N°280     151 F    01:15:17   8.57   + 37m25s   MAIRIE D'ANNECY LE GROUPEMENT
+ 455   BEAUFORT Fanny           N°220     152 F    01:15:30   8.54   + 37m39s   GROUPE MG
+ 456   GOUX Camille             N°65      153 F    01:15:52   8.50   + 38m00s   BANQUE POPULAIRE
+ 457   FERRIÈRE Dominique       N°517     304 M    01:15:53   8.50   + 38m01s   UGITECH
+ 458   GAVILA Margot            N°433     154 F    01:15:54   8.50   + 38m03s   RÉSIDENCE PAUL IDIER
+ 459   CARREL Martine           N°320     155 F    01:16:05   8.48   + 38m14s   MUTUELLE DE FRANCE UNIE
+ 460   VARESCON Elodie          N°59      156 F    01:17:42   8.30   + 39m51s   AVENTICS HOLDING SAS
+ 461   LOVERA Ugo               N°56      305 M    01:17:45   8.30   + 39m53s   AVENTICS HOLDING SAS
+ 462   CHEVILLON Stéphanie      N°504     157 F    01:17:46   8.30   + 39m54s   UBISOFT ANNECY
+ 463   DELHAYE Laurène          N°258     158 F    01:17:52   8.28   + 40m00s   IVOCLAR VIVADENT COMIT
+ 464   HENRY Fabienne           N°149     159 F    01:17:54   8.28   + 40m02s   CPAM DE HAUTE-SAVOIE
+ 465   PONCET Amandine          N°154     160 F    01:18:10   8.25   + 40m18s   CPAM DE HAUTE-SAVOIE
+ 466   BAHLOUL Seyf             N°140     306 M    01:18:11   8.25   + 40m20s   CPAM DE HAUTE-SAVOIE
+ 467   MICHELON Charlène        N°477     161 F    01:19:26   8.12   + 41m34s   STARLING GENEVA HOTEL
+ 468   PAQUET Nadège            N°209     162 F    01:19:43   8.09   + 41m51s   GERARD PERRIER INDUSTRIE
+ 469   POUSSONNEL Manon         N°73      163 F    01:19:44   8.09   + 41m53s   BANQUE-LAYDERNIER
+ 470   LANGLADE Sophie          N°481     164 F    01:20:04   8.06   + 42m13s   STAUBLI
+ 471   CAILLOT Alain            N°337     307 M    01:20:19   8.03   + 42m28s   NTN - SNR
+ 472   KERKHOVE Charlotte       N°228     165 F    01:20:40   8.00   + 42m48s   GROUPE MG
+ 473   BOUGEARD Gwenaelle       N°23      166 F    01:21:28   7.92   + 43m36s   ANTHOGYR
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                            GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+Corporate Games - City Trail (10.750 km) - 30 Juin 2018                                                              Page 12/12
+C L A S S E M E N T G E N E R A L - 10.750 mm                                                                             12:02
+
+ Clt Nom - Prénom               Doss.     Clt Sx   Temps      Moy.    Ecart     Entreprise       www.L-Chrono.com
+ 474   HAZERA Carole            N°97      167 F    01:21:50   7.88   + 43m58s   CERFRANCE HAUTE-SAVOIE
+ 475   JACQUET Delphine         N°376     168 F    01:22:09   7.85   + 44m17s   PATEK PHILIPPE SA
+ 476   FOUCHER Anne             N°242     169 F    01:23:36   7.72   + 45m44s   HASBRO
+ 477   CICCARELLO Jacqueline    N°142     170 F    01:24:38   7.62   + 46m46s   CPAM DE HAUTE-SAVOIE
+ 478   AMICO Caterina           N°43      171 F    01:25:28   7.55   + 47m37s   ASSOCIATION MDE
+ 479   GOMEZ Evelyne            N°148     172 F    01:29:04   7.24   + 51m13s   CPAM DE HAUTE-SAVOIE
+ 480   LAMBLIN Arièle           N°150     173 F    01:29:05   7.24   + 51m14s   CPAM DE HAUTE-SAVOIE
+ 481   CESANA Chiara            N°51      174 F    01:29:31   7.21   + 51m39s   AVENTICS HOLDING SAS
+ 482   SCOMPARIN Flavio         N°58      308 M    01:29:31   7.21   + 51m39s   AVENTICS HOLDING SAS
+ 483   DENIS Laura              N°526     175 F    01:30:02   7.16   + 52m11s   VACANCÉOLE HOLDING
+ 484   MICHAUD Angélique        N°527     176 F    01:30:10   7.15   + 52m19s   VACANCÉOLE HOLDING
+ 485   THERY Julie              N°238     177 F    01:33:26   6.90   + 55m34s   HARMONIE MUTUELLE
+ 486   CHABOT Beatrice          N°232     178 F    01:33:27   6.90   + 55m35s   HARMONIE MUTUELLE
+
+
+
+
+I:650 P:489 Ar:486 D:0 Ab:3                                            GmCAP Pro 4.40 - Licence d'utilisation accordée à L-CHRONO
+
