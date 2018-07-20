@@ -42,7 +42,7 @@
         <button type="submit" style="display: none;" id="submit_compare">Comparer</button>
         </form>
 
-        <label for="submit_compare"><span type="submit" class="badge badge-pill badge-success">Comparer</span></label>
+        <label for="submit_compare"><span type="submit" class="badge badge-pill badge-success" style="cursor: pointer;">Comparer</span></label>
 		<a href='/flushcart'><span class="badge badge-pill badge-danger">Effacer la liste</span></a>
 		</div>
     {% else %}
@@ -127,9 +127,30 @@
 
         {% if selected_races %}
         Statistiques de comparaison des courses:<br>
+            <table class="table" style="margin-top:20px">
+			<thead class="thead-dark">
+
+            <tr>
+                            <th scope="col"></th>
             {% for race in selected_races %}
-                <b>Course</b>: {{ race.name }} <b>Epreuve</b>: {{ race.racetype }} (<b>race ID</b>: {{ race.ID }})<br>
+                            <th scope="col" style="text-align:center">{{ race.name }} (ID: {{ race.ID }})</th>
             {% endfor %}
+            </tr>
+			</thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" style="text-align:center">Moyenne</th>
+                            {% for race in selected_races %}
+                            <td style="text-align:center">{{ race.race_stats.meantime }} </td>
+                            {% endfor %}
+                         <tr>
+                            <th scope="row" style="text-align:center">Mediane</th>
+                            {% for race in selected_races %}
+                            <td style="text-align:center">{{ race.race_stats.mediantime }} </td>
+                            {% endfor %}
+                         </tr>
+</tr>
+		</table>
 
         {% endif %}
 

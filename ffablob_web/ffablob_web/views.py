@@ -15,7 +15,7 @@ sys.path.insert(0,root_path + project_path + core_module_path)
 import design
 import utils
 import orgapdf
-import statraces
+import statraces as strc
 
 def main(request):
     return render(request,'index.html',{'racelist':request.session.get('races')})
@@ -28,11 +28,9 @@ def compare(request):
         for i,v in request.POST.items():
             if 'option_' in i:
                 races.append(design.Race(v.split('/')[0],v.split('/')[1]))
-                error_msg_url += races[-1].ID + ' ' + races[-1].racetype
-
+                strc.std_stat_table(races)
 
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'selected_races':races})
-
 
 def convert(request):
     file_link = ''
