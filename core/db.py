@@ -105,7 +105,27 @@ def runnerDB_to_runner(runner):
 
         db_finish(cursor,connexion)
 
+def search_DB(text):
+        cursor,connexion=db_initiate()
+        if text:
+            cursor.execute("SELECT * from races WHERE to_tsvector('french',race_name) @@ plainto_tsquery('french',%s);",(text,))
+        else:
+            cursor.execute("SELECT * from races")
+        search_rst = cursor.fetchall()
+#SELECT title FROM pgweb WHERE to_tsvector('english', body) @@ to_tsquery('english', 'friend');
+        db_finish(cursor,connexion)
+        return search_rst
 
+def sort_search(search_rst):
+    """ remove unnecessary elements in each tuple element and then create a set
+    of results
+    """
+    rstl = []
+    for srst in search_rst:
+        rstl.append([srst[0],srst[1],srst[-1]])
+
+    return set([tuple(i) for i in rstl])
 
 if __name__ == '__main__':
-    create_columns_record()
+        #create_columns_record()
+        print(sort_search(search_DB('Trail')))

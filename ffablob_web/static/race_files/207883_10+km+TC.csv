@@ -1,0 +1,199 @@
+class;temps;nom;cat;sexe;club
+1;34'14'';JOURDAIN Mickael;Athle Club Angerien;V1;M
+2;34'45'';BREUILH Philippe;Cognac Ac;SE;M
+3;36'0'';FILHON Mickael;Ersga;V1;M
+4;36'4'';VILLETTE Nicolas;Grand Angouleme Athle;SE;M
+5;37'4'';RIO Frederic;Us Saintes Athletisme;V1;M
+6;37'39'';PERRET Samuel;Gass;CA;M
+7;37'40'';NARDO Angel;;SE;M
+8;37'44'';DESFEUX Peter;Allure Libre Oleron;SE;M
+9;37'56'';MAINARD Sebastien;Aunis A. La Rochelle;SE;M
+10;38'15'';SENECHAU Marc;;V2;M
+11;38'20'';AREIAS Herve;Athle Oleronnais;V2;M
+12;38'49'';COUTURIER Christophe;Montceau Triathlon;V1;M
+13;38'57'';RINGARD Joel;Triathlon Club Saujon;V3;M
+14;39'7'';LYS Sylvain;Eca 17;V1;M
+15;39'22'';LAVIDALIE Christophe;Ussaintes Athletisme;V1;M
+16;39'24'';PLANCHENAULT Mathieu;;SE;M
+17;39'39'';GROLLEAU Stephane;Charente-maritime Ori;SE;M
+18;39'56'';ANGIBAUD Jerome;;SE;M
+19;39'58'';MORILLON Matthieu;Stelia Aerospace;SE;M
+20;40'32'';JOUIN David;Eca17;V1;M
+21;40'37'';CHARRIAU Kevin;Stelia;SE;M
+22;40'45'';BAZIN Philippe;;SE;M
+23;41'12'';DEZECOT Herve;;V1;M
+24;41'47'';CANTALEJO David;Ocr Run Or Die;SE;M
+25;41'55'';LAFON Patrice;;V3;M
+26;42'12'';GROS Amelie;Usaa;SE;F
+27;42'47'';MICHAUD Floren;;SE;M
+28;42'51'';LEGER Philippe;Team Estuaire;V2;M
+29;42'58'';BARBOTIN Florent;;V1;M
+30;43'2'';HERVE Jean marie;;V3;M
+31;43'23'';BETEAU Sebastien;;V1;M
+32;43'25'';EUZENAT Yannick;;V1;M
+33;43'32'';PETIT Clement;;SE;M
+34;43'36'';CHARPENTIER Franck;Stelia;SE;M
+35;43'45'';MOREL Allan;;SE;M
+36;43'50'';VOZEL Jeremy;;SE;M
+37;44'14'';DIOT Jean christophe;;V2;M
+38;44'28'';FRIOU Guylain;;SE;M
+39;44'38'';LOUBES Antonin;;JU;M
+40;44'41'';BETFORT Frederic;S/l Ampa;V1;M
+41;44'43'';LAFITE Jean-baptiste;;SE;M
+42;44'47'';PERRET Christophe;;V1;M
+43;45'1'';DANIEL Benoit;Gass;V1;M
+44;45'8'';MONELLIC Erwan;;V1;M
+45;45'15'';CLERTON Anthony;;ES;M
+46;45'25'';ZAMORA Cedric;Gass;SE;M
+47;45'27'';GRIGNON Delphine;Akro Bitume;SE;F
+48;45'35'';GRIVET Cyril;;V1;M
+49;45'37'';BOINARD Cyrill;17 Soupapes;V1;M
+50;45'40'';DAUBINIER David;;SE;M
+51;45'41'';BAROUSSE Alexis;Ultramical86;V1;M
+52;45'55'';LELEU Laurent;Ua Chauny;V1;M
+53;45'58'';DE JESUS Nicolas;;V1;M
+54;46'3'';CRON Jean-louis;;V3;M
+55;46'23'';HYAUMET Patrick;;V3;M
+56;46'39'';COMIN Christian;;SE;M
+57;46'45'';NOUGUES Damien;;SE;M
+58;46'47'';GAILLARD Christophe;Gass Saujon;V2;M
+59;46'53'';CREUNIER Alain;;V2;M
+60;46'53'';MARIUS Arnaud;;V1;M
+61;46'57'';LEDAIN Pascal;;V2;M
+62;46'59'';MUSE Mickael;;V1;M
+63;47'19'';DUBOIS Frederic;Saintes Triathlon;V1;M
+64;47'20'';BOIRON Sophie;;V2;F
+65;47'31'';MEZIANI Hassan;;V2;M
+66;47'40'';NEGRIER Claudine;;V2;F
+67;47'40'';ROY Aurelia;;SE;F
+68;47'41'';GOUET Yann;;V2;M
+69;48'6'';CAILLAUD Dominique;;V1;M
+70;48'11'';VOZEL Patrick;;V3;M
+71;48'15'';MARTINAUD Gaetan;;SE;M
+72;48'39'';DAVID Alain;;V2;M
+73;48'39'';BEAUSSANT Pascal;;V2;M
+74;48'47'';ROUX Nicolas;;SE;M
+75;48'51'';BONNEVIN Gaetan;;SE;M
+76;48'56'';GESLAND Stephane;Coop Atlantique;V1;M
+77;48'57'';TANCHAUD Bruno;;V1;M
+78;49'4'';BOURON Damien;;SE;M
+79;49'9'';PETROWISTE Andre;;V3;M
+80;49'11'';MALLET Daniel;;V3;M
+81;49'13'';ARLECCHINI Franck;;V2;M
+82;49'33'';TURBIAZ Michel;Us Aigrefeuille Athle;V3;M
+83;49'34'';AUTAN Isabelle;;V1;F
+84;49'39'';RUAUD Pierre;;SE;M
+85;49'39'';BOURON Nicolas;;SE;M
+86;49'41'';GRANDENER Anthony;Gass;SE;M
+87;49'42'';AUVERGNAT Benoit;;V2;M
+88;49'42'';MEMAIN Remi;Optic 2000;SE;M
+89;49'48'';CHARBEAU Patrice;Gass Saujon;V3;M
+90;49'53'';GUILET Philippe;;V4;M
+91;50'2'';LAPEYRE Cedric;;SE;M
+92;50'14'';PAPIN Laetitia;Team Trail 17;V1;F
+93;50'36'';CZERWINSKI Aline;Eca 17;V1;F
+94;50'53'';NAIS Stephane;;V1;M
+95;50'57'';BELLEDENT Stephane;GROUPEMENT ATHLETIQUE SAUJON S;V2;M
+96;51'17'';PAPOT Gerard;;V3;M
+97;51'22'';MORISSET Daniel;;V3;M
+98;51'30'';VOISIN Emmanuelle;Eca 17;V1;F
+99;51'34'';BREUIL Laurent;Optic 2000;SE;M
+100;51'39'';SALMON Pierre olivier;Optic 2000;V1;M
+101;51'41'';TOURNEUR Sebastien;;V1;M
+102;51'41'';LEFEVRE Pauline;;SE;F
+103;51'41'';DALMAS Patrick;;V4;M
+104;51'54'';MONTOUX Mathieu;;SE;M
+105;52'3'';BOYER Nadia;;V2;F
+106;52'7'';COCHON Michel;;V3;M
+107;52'10'';POUZEAUD Dimitri;;V1;M
+108;52'21'';RAMBAUD Adeline;;V1;F
+109;52'23'';GIRET Stephane;;V1;M
+110;52'28'';MOUHE Lydie;;SE;F
+111;53'5'';ROYER Jackie;;V3;M
+112;53'5'';SEGUIN Stephanie;;V1;F
+113;53'15'';DELAFOY Jean-jacques;;V2;M
+114;53'18'';RENAUD Philippe;;V2;M
+115;53'20'';PISONI Lionel;Gass;V2;M
+116;53'24'';SUIRE Karelle;;V1;F
+117;53'25'';AUDIN Thierry;;V3;M
+118;53'31'';MOREAU Stella;Gazelec;V1;F
+119;53'31'';BALAY Cedric;;V1;M
+120;54'9'';ETAVARD Nicolas;;V1;M
+121;54'9'';MASSONNEAU Nicolas;;V1;M
+122;54'9'';ROQUELAURE Alicia;Gass;SE;F
+123;54'19'';ROCHETEAU Regine;Athetic Club St Palai;V3;F
+124;54'20'';ROCHETEAU Claude;Athetic Club St Palai;V3;M
+125;54'24'';FOUCAUD Michel;Acf Alstom;V3;M
+126;54'30'';LUME Pierrick;;SE;M
+127;54'32'';VOZEL Philippe;;V2;M
+128;54'38'';BACHELIER-CANU Christine;Gass;V1;F
+129;54'42'';GABOREAU Aurore;Stelia;SE;F
+130;54'42'';DEVREESE Antoine;;SE;M
+131;54'54'';ROY Olivier;;V1;M
+132;55'16'';PLUSS Werner;Haute Saintonge Athle;V4;M
+133;55'24'';LE GARREC Fabrice;Us Saujon Football;V1;M
+134;55'25'';BAILLARD Karine;Us Saujon Football;V1;F
+135;55'25'';MAUREL Alexandre;;SE;M
+136;55'26'';DAUNAS Roger;;V3;M
+137;55'55'';GRONDIN Jimmy;;SE;M
+138;56'47'';FONTAINE Julien;;SE;M
+139;56'58'';BASQUIN Francis;Eca17;SE;M
+140;57'13'';TOUILLET Alex;;CA;M
+141;57'26'';CEGLAREK Marinette;;V3;F
+142;57'48'';ROLLAND Emilie;Gass;V1;F
+143;57'57'';PELLAT Julien;;SE;M
+144;57'57'';GOMES Chloe;;ES;F
+145;58'3'';DAVID Dominique;;V3;F
+146;58'6'';REMBERT Xavier;Gass Saujon;V1;M
+147;58'15'';LECONTE Severine;Estuaire Club Athletic 17;V1;F
+148;58'19'';VANBATTEN Jennifer;Us Saintes Athletisme;SE;F
+149;58'39'';BARON Laurence;;V2;F
+150;59'16'';CHAUVET Audrey;;SE;F
+151;01h0'2'';LOUBES Frederick;;V1;M
+152;01h0'7'';VERNOUX Veronique;Gass;V1;F
+153;01h0'15'';RIDOUARD Nathalie;;V2;F
+154;01h0'23'';RAMBAULT Jean-michel;;V3;M
+155;01h0'42'';REMO Marjory;;V1;F
+156;01h0'52'';DAVID Gerard;;V3;M
+157;01h1'16'';OCTEAU Lucette;;V3;F
+158;01h1'28'';PAPIN Gilles;;V3;M
+159;01h1'30'';BARNY Pierre;;SE;M
+160;01h1'32'';GAILLOT Severine;;SE;F
+161;01h2'11'';LOUBES Agnes;;V1;F
+162;01h2'47'';PETROWISTE Xavier;;V1;M
+163;01h2'51'';MICHAUD Diana;;SE;F
+164;01h3'15'';POZZOBON Alain;;SE;M
+165;01h3'22'';GRADAIVE Christelle;Gass Saujon;V1;F
+166;01h3'30'';ROUSSEAU Dominique;Gass;V3;M
+167;01h4'25'';RAYNAUD Eric;;V3;M
+168;01h4'31'';TESSIER Joelle;;V2;F
+169;01h4'31'';TESSIER Vincent;;V2;M
+170;01h4'35'';CAILLAUD Sylvie;;V1;F
+171;01h4'52'';MIGAUD Jean-pierre;Rochefort Athletisme;V4;M
+172;01h5'12'';CHOLLET Sebastien;;V1;M
+173;01h5'18'';LANCHON Vincent;Gass Saujon;V1;M
+174;01h5'29'';SOURMAY Jean-paul;Ac St Palais;V4;M
+175;01h6'19'';DENIS Thierry;;V1;M
+176;01h6'57'';BONHOMME Valerie;;V2;F
+177;01h6'57'';CHOLLET Odile;Ac St Palais;V2;F
+178;01h6'57'';WERY Lucile;;SE;F
+179;01h7'31'';SAUZEAU Didier;;V1;M
+180;01h7'38'';HERVEAU Muriel;Gass Saujon;V2;F
+181;01h7'39'';CHAUMONT Nelly;;SE;F
+182;01h8'5'';BAUMANOIR Angeline;;ES;F
+183;01h8'5'';BAUMANOIR Corentin;;JU;M
+184;01h8'33'';COUDIN Mickael;;SE;M
+185;01h8'34'';BOTTON Jeremy;Pompiers De Saujon;SE;M
+186;01h9'10'';VACHE Aurelie;;SE;F
+187;01h9'11'';LUMINEAU Charlotte;;SE;F
+188;01h9'43'';TOURNEUR Thibault;;SE;M
+189;01h9'43'';TOURNEUR Karine;;SE;F
+190;01h9'56'';CAILLAUD Sandra;;SE;F
+191;01h10'4'';GUILLOUT Christine;Gass Saujon;V2;F
+192;01h10'42'';BIESSE Marjorie;Gass;SE;F
+193;01h11'33'';RIBREAU Dorothee;;SE;F
+194;01h13'46'';PERROCHEAU Anne-sophie;;V1;F
+195;01h15'36'';ACHARD Vanessa;;V1;F
+196;01h18'23'';FRANCOISE Daniel;Ersga;V4;M
+197;01h18'44'';HOCHART Magali;;V1;F
+198;01h18'45'';ROUGEON Eric;;V1;M

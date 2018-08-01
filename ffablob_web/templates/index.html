@@ -2,50 +2,58 @@
 
 {% block titre %}Analysez les resultats de vos courses!{% endblock %}
 
-{% block form %}
-<div style="margin-bottom:5px">
-	<form action="/loadrace/" method="post"><!-- Formulaire -->
-        {% csrf_token %}
-	    <div class="form-row">
-		<div class="col-12 col-md-9 mb-2 mb-md-0">
-		    <input type="text" class="form-control form-control-lg" placeholder="Lien de la page de résultat FFA (http://...)" name="urlFFA">
-		</div>
-		<div class="col-12 col-md-3">
-		    <button type="submit" class="btn btn-block btn-lg btn-primary">Chargez la course!</button>
-		</div>
-	    </div> <!--disposition -->
-	</form><!-- Formulaire -->
+{% block raceload %}
+        {% include "raceload.html" %}
+{% endblock %}
 
-	{% if error_msg_url %}
-		<div class="alert alert-warning" role="alert" style="margin-top:5px;margin-bottom:5px">
-			{{ error_msg_url }}
-		</div>
-	{% endif %}
-</div>
+{% block search %}
+        {% include "search.html" %}
 {% endblock %}
 
 {% block racecart %}
 	{% if racelist %}
 		<div class="accordion" id="accordionExample">
-		{% for race in racelist %}
-				<div class="card">
-
-                        {% include "raceform.html" %}
-
-				</div> 
-		{% endfor %}
+            {% for race in racelist %}
+                    <div class="card">
+                            {% include "raceform.html" %}
+                    </div> 
+            {% endfor %}
 		</div> 
 		<div style='text-align:right;margin:5px'>
 
-        <form action="/compare/" method="post" id="form_compare">
-        {% csrf_token %}
-        <button type="submit" style="display: none;" id="submit_compare">Comparer</button>
-        </form>
+            <form action="/compare/" method="post" id="form_compare">
+            {% csrf_token %}
+            <button type="submit" style="display: none;" id="submit_compare">Comparer</button>
+            </form>
 
-        <label for="submit_compare"><span type="submit" class="badge badge-pill badge-success" style="cursor: pointer;">Comparer</span></label>
-		<a href='/flushcart'><span class="badge badge-pill badge-danger">Effacer la liste</span></a>
+            <label for="submit_compare"><span type="submit" class="badge badge-pill badge-success" style="cursor: pointer;">Comparer</span></label>
+            <a href='/flushcart'><span class="badge badge-pill badge-danger">Effacer la liste</span></a>
+        </div><!-- /.accordion -->
+    {% endif %}
+{% endblock %}
+
+{% block searchresults %}
+        {% if searchresults %}
+            <ul class="list-group list-group-flush">
+            {% for result in searchresults %}
+          <li class="list-group-item">
+            <b>{{ result.2 }}</b> (ID: {{result.0}}, format: {{result.1}})
+            <a href='/addrace/{{result.0}}/{{result.1 | urlencode}}'><span class="badge badge-pill badge-danger">Ajouter à la liste</span></a><br>
+          </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+{% endblock %}
+
+{% block message %}
+	{% if error_msg_url %}
+		<div class="alert alert-warning" role="alert" style="margin-top:5px;margin-bottom:5px">
+			{{ error_msg_url }}
 		</div>
-    {% else %}
+	{% endif %}
+{% endblock %}
+
+{% block help %}
             <div class="alert alert-success" role="alert" style="margin-top:5px">
                   <h4 class="alert-heading">Comment utiliser cette rubrique:</h4>
                       <p> 
@@ -54,13 +62,20 @@
                         Le lien à coller dans la boite de dialogue doit, dans sa forme et dans son contenu, ressembler au suivant:<br>
                         <a
                       href='http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=207883&frmepreuve=10+km+TC'>http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=207883&frmepreuve=10+km+TC</a><br>
-                        Certaines fonctionnalités ne sont pas encore actives,
-                        veuillez patienter un peu!
+                        Attention à bien sélectionner l'épreuve dans le menu
+                        déroulant de la course, sinon la page ne sera
+                        pas bien lue par FFABlob.
+                        <div style="text-align:center"><b><u>Ou bien</u></b></div><br>
+                        Utilisez la base de données FFABlob, qui est constitué
+                        des courses déjà recherchées par les utilisateurs, peu
+                        remplie au début elle le sera de plus en plus au fur
+                        et à mesure. Si rien n'est renseigné dans la boite,
+                        l'ensemble des courses de la base de données sera
+                        affichée.
                         <p>
                       <hr>
                         <p class="mb-0">Un sujet sur le forum de Kikourou.net a été ouvert à ce sujet: <a href="http://www.kikourou.net/forum/viewtopic.php?f=1&t=41186">lien</a></p>
             </div>
-	{% endif %}
 {% endblock %}
 
 {% block content %}

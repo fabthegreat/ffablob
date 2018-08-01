@@ -1,0 +1,190 @@
+class;temps;nom;cat;sexe;club
+1;01h56'30'';BOUSSAGUE Lhousseine (Mar);Ahsa;V1;M
+2;01h56'46'';SERVANT Julien;Avoc;SE;M
+3;01h58'52'';CICERO Christophe;Wgtn;V1;M
+4;02h0'41'';VEYRAT-DUREBEX Francois;;SE;M
+5;02h1'48'';PERRET Aubin;Asptt Annecy;ES;M
+6;02h5'2'';BECHET Clement;Aix Savoie Triathlon;ES;M
+7;02h5'21'';PELLICIER Joel;Terre De Running Albertville;V2;M
+8;02h6'36'';HERBIN Nicolas;Caf Faverges Competition;V1;M
+9;02h7'40'';JOURDEN Stephane;Entente Athletique De L'arve*;V1;M
+10;02h8'30'';LUCOTTE Quentin;;SE;M
+11;02h11'32'';CONDEMINE Joseph;Fc Bauges;ES;M
+12;02h11'57'';GEORGES Didier;;V2;M
+13;02h13'4'';CAPRON Wilfried;;SE;M
+14;02h13'46'';INDERCHIT Christian;St Benoit 01;V2;M
+15;02h14'17'';THIBOUD Alexandre;Crapast;V1;M
+16;02h16'6'';BOURY Jerome;Samphi;SE;M
+17;02h17'15'';ROUX Mathieu;Astl;SE;M
+18;02h17'18'';SOUBRIER Patrick;;V2;M
+19;02h19'39'';PLANTON Louis-marie;;JU;M
+20;02h22'46'';ODORICO Cedric;;SE;M
+21;02h23'18'';ESTRUCH Jonathan;;SE;M
+22;02h23'19'';BURDIN Mickael;;SE;M
+23;02h23'21'';DORSCHNER Manon;As Aix-les-bains;ES;F
+24;02h23'48'';MUNIER Alexandra;Gresicourant - Endurance Shop;V1;F
+25;02h23'49'';GUIDON Matthieu;;V1;M
+26;02h24'35'';PIN Jerome;;SE;M
+27;02h24'43'';GAUJON Karine;Trailers Du Mole;SE;F
+28;02h26'57'';LEFEBVRE Mathias;;V1;M
+29;02h27'34'';RABILLOUD Karl;Asvel;V1;M
+30;02h27'36'';RABILLOUD Arthur;Asvel;JU;M
+31;02h27'42'';SARTORI Remy;;SE;M
+32;02h27'47'';PETIT Paul;;JU;M
+33;02h29'4'';HERAUD Jean-philippe;Alsip Trail;SE;M
+34;02h29'22'';LEON Clement;;JU;M
+35;02h29'24'';JOGUET Jean-pierre;;V2;M
+36;02h29'42'';COCATRIX Guillaume;;SE;M
+37;02h30'36'';SERIEYS Bastien;Astl;SE;M
+38;02h31'9'';MILLERIOUX Martin;Martin;SE;M
+39;02h31'23'';CREVOT Antoine;;SE;M
+40;02h31'25'';TONNELLIER Thierry;Quintal;V2;M
+41;02h32'17'';PASCAL Jerome;;V1;M
+42;02h32'23'';CARRERE Mathieu;;SE;M
+43;02h33'4'';RIBAULT Pierre;;SE;M
+44;02h33'19'';JUAREZ Fabien;;V1;M
+45;02h33'34'';JACOB Gael;Sokola;SE;M
+46;02h33'46'';MONOD Frederic;Les Princes En Foulee;V2;M
+47;02h34'4'';LENOUVEL Jean;;V2;M
+48;02h34'24'';RIVIERE Jean francois;;V3;M
+49;02h35'25'';DHONNEUR Sylvain;Lescheraines Power;SE;M
+50;02h36'1'';MARCELLIN Romain;;SE;M
+51;02h37'8'';CONDEMINE Jules;;SE;M
+52;02h37'11'';ENJALBERT Nicolas;Wgtn The Crew;SE;M
+53;02h37'15'';PIVOT TAFFUT Jean-francois;;V2;M
+54;02h37'18'';BARET Gilles;Avoc;V3;M
+55;02h38'6'';GOURDIN Maxence;;SE;M
+56;02h38'36'';GOTZ Lou;;SE;F
+57;02h39'6'';CELLES Marielle;;SE;F
+58;02h39'37'';PROST Franck;;V2;M
+59;02h40'50'';FAVIER Anne;Trail Du Mont;V3;F
+60;02h41'32'';FLAMMIER Franck;Les Briseurs De Montagnes;V1;M
+61;02h41'33'';BROYART Joris;;SE;M
+62;02h42'13'';LEPORALE Florianne;Ua Maurienne (st-jean);SE;F
+63;02h43'18'';ALEXANDRE Xavier;;SE;M
+64;02h43'29'';CHIOLLAZ Anne-cecile;Avoc;SE;F
+65;02h43'57'';NIVET Florian;;SE;M
+66;02h44'17'';BADI Amelie;;SE;F
+67;02h45'5'';BARRIERE Francoise;Saint-christol Ac;V2;F
+68;02h45'31'';FUCHS Olivier;;SE;M
+69;02h46'26'';CHAPSAL Hugo;;SE;M
+70;02h46'42'';NOULETTE Joel;;SE;M
+71;02h47'13'';SIMON Laurent;;SE;M
+72;02h47'56'';BELLON Herve;;V1;M
+73;02h48'15'';BARRIERE Philippe;;V2;M
+74;02h48'26'';MAQUART Didier;;V2;M
+75;02h48'29'';VILLATTE Claude;Gresicourant Le Versoud;V4;M
+76;02h48'34'';WEXTEEN Thomas;;V1;M
+77;02h48'37'';HESLING Adrien;;SE;M
+78;02h49'17'';DUBOEUF Fanelie;Ea Chambery;V2;F
+79;02h50'28'';DAGAND Michel;;V3;M
+80;02h50'58'';ANSEL Vincent;;SE;M
+81;02h51'35'';FIRMIN Pierre-alexis;;SE;M
+82;02h51'36'';LE POCREAU Justine;;SE;F
+83;02h51'59'';SONDAZ Elodie;;V1;F
+84;02h52'30'';BONTOUX Philippe;;V2;M
+85;02h53'15'';FAVIER Marine;Astl;SE;F
+86;02h53'16'';BRUNEAUX Pascal;;V2;M
+87;02h53'18'';BELMONT Theo;Lyon Sport Metropole Jogging A;SE;M
+88;02h53'39'';CARRE Nicolas;;SE;M
+89;02h53'47'';PASSARDI Alessandro;Fantastic Four;V1;M
+90;02h53'51'';KABALIN Franck;;SE;M
+91;02h53'52'';SUSGIN Benjamin;;SE;M
+92;02h53'58'';LESOING Thomas;Veo 2000 La Plagne;JU;M
+93;02h53'59'';TRAVERS David;;SE;M
+94;02h54'11'';CHAMBOST Pierre;;SE;M
+95;02h54'12'';SCHNEIDER Claude;Veo 2000 La Plagne;V2;M
+96;02h54'46'';LAPERROUSAZ Anouk;;SE;F
+97;02h54'48'';NORMAND Louis;;SE;M
+98;02h55'47'';HENRARD Julie;;SE;F
+99;02h55'48'';MEKKI Souhail;;SE;M
+100;02h55'53'';PONTINI Vincent;;V1;M
+101;02h55'57'';RAFANOMEZANTSOA Samy;;V1;M
+102;02h56'45'';SARTORI Rudy;;SE;M
+103;02h57'12'';BRISA Jean luc;;V2;M
+104;02h57'46'';MONTANGOM Janine;Courirplaisir;V3;F
+105;02h58'1'';POULIN Valerie;;V2;F
+106;02h58'8'';BELLEMIN Gilles;;V1;M
+107;02h58'16'';EGMAN David;;SE;M
+108;02h59'35'';BORDET Timothee;;SE;M
+109;02h59'59'';GENDRON Antoine;Les Hydros Annecy Triathlon;V1;M
+110;03h0'5'';BOLON Martial;;V2;M
+111;03h0'19'';GALBAN Stephane;Les Trailers De La Chambotte;V1;M
+112;03h0'55'';LESOING Philippe;Veo 2000 La Plagne;V2;M
+113;03h1'20'';DUBOIS Guillaume;Courir A Poisy;V1;M
+114;03h2'11'';MARION Frederic;;SE;M
+115;03h2'28'';GENOULAZ Beatride;A.p.a;V2;F
+116;03h2'37'';CARRERAS Brigitte;Ea Chambery;V2;F
+117;03h2'53'';BABOLAT Mikael;Maelle;SE;M
+118;03h2'54'';VUILLEROD Maelle;;SE;F
+119;03h3'31'';WYSOCKA Jean-paul;;V2;M
+120;03h3'52'';GARNIER Lilian;;V2;M
+121;03h3'53'';VILLARD Yannick;;V1;M
+122;03h3'59'';MARINA Ksenia;;SE;F
+123;03h4'46'';BONNEFOY-CUDRAZ Marianne;;SE;F
+124;03h4'57'';OUDIN Alice;Fontanil Triathlon;SE;F
+125;03h4'58'';PRUVOST Anthony;;V1;M
+126;03h7'13'';MARIN - CUDRAZ Joel;;V2;F
+127;03h7'26'';RENOIR Marion;;SE;F
+128;03h8'21'';JOURNET Damien;;SE;M
+129;03h8'51'';VIGNERON Paul;;SE;M
+130;03h8'57'';GOTZ Natacha;;SE;F
+131;03h9'38'';DAUTEL Valentin;;SE;M
+132;03h10'31'';POLETTO Jeremy;;SE;M
+133;03h10'39'';VOLANT Etienne;;SE;M
+134;03h11'16'';GALANAKIS Eric;Aix Athle Provence;V2;M
+135;03h11'17'';GALANAKIS Agnes;Aix Athle Provence;V1;F
+136;03h12'27'';POCHON Cyril;;V1;M
+137;03h12'43'';SARTORI Sylvie;;V2;F
+138;03h14'4'';PETIT Jerome;;SE;M
+139;03h14'50'';BORDAT Jean-marc;;V1;M
+140;03h15'31'';DENLIKER Jean-pierre;Courir Plaisir;V2;M
+141;03h15'36'';KOUBBI Sophie;;SE;F
+142;03h16'7'';CHIARELLO Christelle;;SE;F
+143;03h16'12'';MERCHIER Valerie;La Fine Equipe Running;V1;F
+144;03h16'37'';LELIEVRE Loic;;SE;M
+145;03h18'43'';CALU Lucie;Beauce Power;SE;F
+146;03h18'44'';POLASZEK Christophe;Beauce Power;V1;M
+147;03h19'18'';SALOPELTO Aapo;;SE;M
+148;03h20'41'';RICHARD Clarisse;Sylvain;SE;F
+149;03h21'1'';HUCHIN Gael;;SE;M
+150;03h21'24'';RABILLOUD Chloe;;SE;F
+151;03h21'38'';BOZET Dominique;;V2;F
+152;03h21'47'';PETIT Laurent;;V1;M
+153;03h22'10'';RATEL Jean-francois;Les Coureurs Du Perron;V1;M
+154;03h22'35'';GUILLOTEAU Christelle;;SE;F
+155;03h23'15'';PARRET Marc;;V2;M
+156;03h23'35'';JUAREZ Christine;;V1;F
+157;03h24'24'';DELEU Angelique;Bel'donne Runnig;SE;F
+158;03h24'29'';FERRARI Philippe;Ea Chambery;V2;M
+159;03h26'16'';BERGOEND Jean;;V2;M
+160;03h27'6'';VIOLLET Maud;Gresicourant;V1;F
+161;03h28'4'';VIFFRAY Christian;Faucigny Athletic Club;V2;M
+162;03h29'33'';RONTEAU Jerome;;V1;M
+163;03h29'36'';LAMERAND Jacques;;V2;M
+164;03h37'33'';FAURE Gilles;;V3;M
+165;03h39'41'';VALETTE Bertrand;;V1;M
+166;03h39'42'';VALETTE Barthelemy;;V1;M
+167;03h40'59'';GAVET Aurore;;SE;F
+168;03h41'4'';RATEL Marie-pierre;;V2;F
+169;03h42'0'';BAILLY Romain;;SE;M
+170;03h44'41'';LESOING Murielle;Veo 2000 La Plagne;V2;F
+171;03h46'54'';LAMANDE Julie;;V1;F
+172;03h49'45'';MOUGNOZ David;;V1;M
+173;03h52'57'';GUIGUET Beatrice;Ibm Nice Sophia;V2;F
+174;04h0'4'';REMERAND Theo;;SE;M
+175;04h0'12'';REMERAND Regis;;V2;M
+176;04h0'29'';CORPORON Bernard;;V3;M
+177;04h1'45'';GUIET Cecile;Pace En Courant;V1;F
+178;04h6'50'';MUZY Aymeric;Association Cassandra;SE;M
+179;04h9'1'';DE WACHTER Julie;;V1;F
+180;04h9'46'';CONVERS Elodie;;SE;F
+181;04h12'57'';PLACE Rosana;;ES;F
+182;04h13'32'';PARRET Nathalie;;V1;F
+183;04h13'52'';MICHAUD Alexandra;;SE;F
+184;04h13'53'';CHARD Samantha;;SE;F
+185;04h14'30'';DUPONT Fabienne;;V2;F
+186;04h34'0'';COVAREL Julie;;ES;F
+187;04h34'2'';COVAREL Christophe;;V2;M
+188;04h39'32'';DHONNEUR Severine;;SE;F
+189;04h41'18'';VANUXEM Alain;;V3;M

@@ -14,18 +14,8 @@
     <title>FFABlob</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- Custom fonts for this template -->
-    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="/static/css/landing-page.min.css" rel="stylesheet">
-
-    <!-- Slider range section -->  
-    <link href="/static/css/bootstrap-slider.css" rel="stylesheet" type="text/css">
 </head>
   <body>
 
@@ -39,57 +29,71 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/convert">Convertir</a>
                     </li>
-                    <!--
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Analyser</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Base de données</a>
-                    </li>
-                    -->
                 </ul>
-<!--
-                <form class="form-inline my-2 my-lg-0">
-<input class="form-control mr-sm-2" type="search" name="keywords" placeholder="Chercher une course FFA" aria-label="Search">
-<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-                </form>
--->
         </div>
     </nav>
 
     <!-- Masthead -->
-       <div class="row"><!-- Titre principal -->
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto"> <!-- Contenu principal -->
-                <!--<div class="mx-auto" style="margin-top:30px">-->
-              <h2 class="mb-5"><img src="/static/ffablob.png">{% block titre %}Titre rubrique{% endblock %}</h2>
-          </div> <!-- Titre principal -->
-        </div>
-	
-            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto"> <!-- Contenu principal -->
         {% if convert %}
-            {% block browsefile %}
-            {% endblock %}
+        <div class="container">
         {% else %}
-            {% block form %}
-            {% endblock %}
-
-            {% block racecart %}
-            {% endblock %}
-
-            {% block content %}
-            {% endblock %}
+        <div class="container-fluid">
         {% endif %}
-            </div>
+
+            <h2 style="text-align:center" class="mb-5"><img src="/static/ffablob.png">{% block titre %}Titre rubrique{% endblock %}</h2>
+            <div class="row"><!-- Début section principale -->
+
+            {% if convert %}
+                <div class="col-xl"> <!-- Contenu principal -->
+                {% block browsefile %}
+                {% endblock %}
+                </div>
+            {% else %}
+
+                <!-- liste courses --> 
+                <div class="col-sm-4" >
+                    <h4>Courses</h4>
+                    <hr>
+
+
+                        {% block raceload %}
+                        {% endblock %}
+                        <div style="margin:5px;text-align:center"><b>ou</b></div>
+                        {% block search %}
+                        {% endblock %}
+                        <div style="margin:5px"></div>
+                        <hr>
+
+
+                        <div class="list-group">
+                            {% block racecart %}
+                            {% endblock %}
+                        </div>
+                </div>
+
+                <div class="col-sm-8"> <!-- Contenu principal -->
+                    {% block message %}
+                    {% endblock %}
+
+                    {% block searchresults %}
+                    {% endblock %}
+
+                    {% block content %}
+                    {% endblock %}
+
+                    {% block help %}
+                    {% endblock %}
+            {% endif %}
+                </div>
+
+            </div> <!-- /row -->
+       </div><!-- /container -->
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/static/query-ui-bootstrap/assets/js/demo.js></script>
-    <script src="/static/query-ui-bootstrap/assets/css/docs.css"></script>
-    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/static/bootstrap-slider.js"></script>
-    <script src="/static/modernizr.js"></script>
-    <script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
   </body>
 

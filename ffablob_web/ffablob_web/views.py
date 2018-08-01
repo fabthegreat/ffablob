@@ -16,9 +16,25 @@ import design
 import utils
 import orgapdf
 import statraces as strc
+import db
 
 def main(request):
     return render(request,'index.html',{'racelist':request.session.get('races')})
+
+def search(request):
+    searchresults=[]
+    if request.method == 'POST':
+        searchresults = db.sort_search(db.search_DB(request.POST['searchphrase']))
+        request.session['searchresults'] = [list(sr) for sr in searchresults]
+
+    return render(request,'index.html',{'racelist':request.session.get('races'),'searchresults':searchresults})
+
+def add_race(request,race_ID,race_type):
+    # check if race_ID, racetype exist indeed in DB
+    race = design.Race(race_ID,race_type)
+    error_msg_url=append_race_to_list(request,race)
+    searchresults = request.session['searchresults']
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
 
 def compare(request):
     tab_comparison = []

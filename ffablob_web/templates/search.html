@@ -1,0 +1,13 @@
+<form action="/search/" method="post"><!-- Formulaire -->
+            {% csrf_token %}
+            <div class="form-row">
+            <div class="col-12 col-md-8 mb-2 mb-md-0">
+                <input type="text" class="form-control form-control-sm"
+                placeholder="Recherche dans la base ffablob" name="searchphrase">
+            </div>
+            <div class="col-12 col-md-4">
+                <button type="submit" class="btn btn-block btn-sm btn-primary">Recherche</button>
+            </div>
+            </div> <!--disposition -->
+</form><!-- Formulaire -->
+
