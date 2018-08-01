@@ -1,6 +1,12 @@
 
 # Created by https://www.gitignore.io/api/linux,django,python
 
+### Misc ###
+nohup.out
+
+### Vim ###
+*.sw*
+
 ### Django ###
 *.log
 *.pot
