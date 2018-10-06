@@ -36,6 +36,16 @@ def add_race(request,race_ID,race_type):
     searchresults = request.session['searchresults']
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
 
+def reload_race(request,race_ID,race_type):
+    # check if race_ID, racetype exist indeed in DB
+    race = design.Race(race_ID,race_type)
+    race.resetDB()
+    #error_msg_url=append_race_to_list(request,race)
+    error_msg_url="Course mise à jour dans la base de données!"
+    searchresults = request.session['searchresults']
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
+
+
 def compare(request):
     tab_comparison = []
     races = []

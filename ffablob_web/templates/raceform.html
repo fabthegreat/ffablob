@@ -9,6 +9,7 @@
 
             <a href='/showrace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-success">Aperçu</span></a>
             {% include "csvmodal.html" %}
+            <a href='/reloadrace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-danger">Recharger</span></a>
             <a href='/removerace/{{ race.0 }}/{{ race.1|urlencode }}'><span class="badge badge-pill badge-danger">Supprimer</span></a>
 
 </div>

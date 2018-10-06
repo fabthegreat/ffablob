@@ -36,8 +36,6 @@ class TimeNew:
         tmdelta = timedelta(hours=int(total_seconds//3600),minutes=int(total_seconds % 3600 // 60), seconds = int(total_seconds % 60))
         return cls(tmdelta)
 
-
-
 class Runner:
     def __init__(self,ID,name,category,gender,club):
         self.ID = ID
@@ -124,6 +122,11 @@ class Race:
     def pushDB(self):
         db.race_to_raceDB(self)
 
+    def resetDB(self):
+        #TODO: allow user to reset all the race datas
+        db.delete_race(self)
+        self.pullDB()
+
     def extract_runners_from_race(self):
         for rl in self.results:
                 _runner = Runner(rl['rstl'][3],rl['rstl'][2],rl['rstl'][5],rl['rstl'][6],rl['rstl'][4])
@@ -168,13 +171,13 @@ class Race:
 
         print(self.race_stats)
 
-
 if __name__ == '__main__':
-    race_1 = Race('207883','10+km+TC')
+    race_1 = Race('205572','10+Km+Route+TC')
+    #db.delete_race(race_1)
 #    for i in race_1.results:
 #        print(i['rstl'][1])
 #    print(race_1.results)
-    race_1.create_race_stats(10)
+    #race_1.create_race_stats(10)
 #    time_2 = TimeNew.time_from_string("30'45\"")
 #    print(time_2)
 #    tab_records = []

@@ -40,6 +40,11 @@ def check_race_exists(race):
         else:
             return False #race does not exists
 
+def delete_race(race):
+        cursor,connexion=db_initiate()
+        cursor.execute("DELETE from races WHERE id=%s AND racetype=%s;",(race.ID,race.racetype))
+        db_finish(cursor,connexion)
+
 def check_runner_exists(runner):
         cursor,connexion=db_initiate()
         cursor.execute('SELECT * from runners WHERE runner_id=%s;',(runner.ID,))
