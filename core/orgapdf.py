@@ -1,4 +1,5 @@
 import re
+import os.path
 from subprocess import Popen, PIPE
 
 def check_file(path,file_name):
@@ -11,6 +12,9 @@ def check_file(path,file_name):
             return False
 
 def handle_uploaded_file(path,file):
+    #if os.path.isfile(path + '/' + file.name):
+    #    file.name = '_' + file.name
+
     destination = open(path + '/' + file.name, 'wb+')
     for chunk in file.chunks():
         destination.write(chunk)
@@ -25,6 +29,7 @@ def lines_from_pdf(path,file_name):
     with Popen(['pdftotext','-layout',path + '/' + file_name,'-'], stdout=PIPE, bufsize=1) as p:
             for line in p.stdout:
                 yield line.decode('utf-8')
+                #yield line.decode('ISO_8859-1')
 
 def filter_line(line):
     l=line[:]
@@ -61,8 +66,7 @@ def organize_columns(line,organization):
             print(line)
             time, time_error = fetch_catch_column_errors(r'\b\d{2}:\d{2}:\d{2}\b',line,0)
             rank, rank_error = fetch_catch_column_errors(r'\d+',line,0)
-            name, name_error = fetch_catch_column_errors(r'\b((?:[a-zA-ZÎÏÔÛÜÉÈéèîëï\']+\s?)+)\b',line,0)
-
+            name, name_error = fetch_catch_column_errors(r'\b((?:[a-zA-ZÎÏÔÛÜÉÊÈöôéèîëï\'\-]+\s?)+)\b',line,0)
             club, club_error = fetch_catch_column_errors(r'(\b(?:[a-zA-Zéè]+\s?)+\b|/)',line,-1)
             #TODO :check in a more elegant manner when only 1 long word sequence has been found (and then name == club)
             #TODO : check when digits are in the club name
@@ -83,7 +87,7 @@ def organize_columns(line,organization):
             print(line)
             time, time_error = fetch_catch_column_errors(r'\b\d{2}:\d{2}:\d{2}\b',line,0)
             rank, rank_error = fetch_catch_column_errors(r'\d+',line,0)
-            name, name_error = fetch_catch_column_errors(r'\b((?:[a-zA-Z\-ÎÏÔÛÜÉÈéèîëï\']+\s?)+)\b',line,0)
+            name, name_error = fetch_catch_column_errors(r'\b((?:[a-zA-Z\-ÎÏÔÛÜÉÊÈéèîëïôö\']+\s?)+)\b',line,0)
             club, club_error = fetch_catch_column_errors(r'(?:[a-zA-Zéè\-\']+\s?)+(?=\s+\d{2}:\d{2}:\d{2})\b',line,0)
             #TODO : check when digits are in the club name
             if club == name:
@@ -105,7 +109,7 @@ def organize_columns(line,organization):
     return line,errors
 
 def write_to_csv(result_tab,path,filename):
-    with open(path + '/' + filename + '.csv', 'w',encoding='utf8') as f:
+    with open(path + '/' + filename + '.csv', 'w',encoding='ISO_8859-1') as f:
         f.write("class;temps;nom;cat;sexe;club\n")
         for r in result_tab:
             rw=r[:] #shallow copy to preserve results
@@ -118,11 +122,12 @@ if __name__ == '__main__':
     tabfl = []
 #    print(check_file('/home/ftg/python/ffablob/tests','emt_run_5.pdf'))
 
-    for l in lines_from_pdf('/home/ftg/python/ffablob/tests','test_yaka.pdf'):
-#        print(l)
+    for l in lines_from_pdf('/home/ftg/python/ffablob/tests','emt_run_5.pdf'):
+    #    print(l)
         fl = filter_line(l)
+        print(fl)
         if fl:
-            fl = organize_columns(fl,'yaka-events')
+            fl = organize_columns(fl,'l-chrono')
             tabfl.append(fl)
 
-    #print(tabfl)
+    print(tabfl)

@@ -35,12 +35,12 @@
 {% block searchresults %}
         {% if searchresults %}
             <ul class="list-group list-group-flush">
-            {% for result in searchresults %}
-          <li class="list-group-item">
-            <b>{{ result.2 }}</b> (ID: {{result.0}}, format: {{result.1}})
-            <a href='/addrace/{{result.0}}/{{result.1 | urlencode}}'><span class="badge badge-pill badge-danger">Ajouter à la liste</span></a><br>
-          </li>
-            {% endfor %}
+                {% for result in searchresults %}
+                    <li class="list-group-item">
+                        <b>{{ result.3 }}</b>: {{ result.2 }} (ID: {{result.0}}, format: {{result.1}})
+                        <a href='/addrace/{{result.0}}/{{result.1 | urlencode}}'><span class="badge badge-pill badge-danger">Ajouter à la liste</span></a>
+                        <a href='http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition={{result.0}}&frmepreuve={{result.1}}'><span class="badge badge-pill badge-success">Lien FFA</span></a><br> </li>
+                {% endfor %}
             </ul>
         {% endif %}
 {% endblock %}

@@ -93,7 +93,8 @@ class Race:
     def __init__(self, ID, racetype):
         self.ID = ID
         self.racetype = racetype
-        self.name =''
+        self.name = ''
+        self.date = ''
         self.results = []
         self.race_stats = {}
         self.pullDB() #pull results either from FFA DB or internal
@@ -109,7 +110,9 @@ class Race:
         else:
             print('This race is being processed from FFA database...')
             self.name, self.results=self.pullFFA()#a homogeneiser avec runner.pullFFA 
-                    # ne pas affecter de variable
+            #TODO: extraire la date du nom
+            self.date = self.name.split(' - ')[0]
+            self.name = self.name.split(' - ')[1]
             self.pushDB()
             #self.pullDB() #to retrieve correct timedelta...TODO: convert timedelta into time object
 
@@ -133,13 +136,13 @@ class Race:
                 yield _runner
 
     def show(self):
-        print('Race ID: {} Race type: {}\n'.format(self.ID,self.racetype))
+        print('Race ID: {} Race type: {} Race date: {} Race name: {}\n'.format(self.ID,self.racetype,self.date,self.name))
         for rl in self.results:
             _t=tuple(rl['rstl'])+(rl['errcode'],)
             print('#{} Time:{} Name:{} Runner ID:{} Club:{} Category:{} Gender:{} ErrorCode:{}'.format(*_t))
 
     def write_to_csv(self,path,filename):
-        with open(path + '/' + filename + '.csv', 'w',encoding='utf8') as f:
+        with open(path + '/' + filename + '.csv', 'w',encoding='ISO_8859-1') as f:
             f.write("class;temps;nom;cat;sexe;club\n")
             for r in self.results:
                 rw=r['rstl'][:] #shallow copy to preserve results
@@ -171,8 +174,41 @@ class Race:
 
         print(self.race_stats)
 
+class RaceCollection:
+    def __init__(self):
+        self.race_list = []
+        self.collect_racesDB()
+
+    def collect_racesDB(self):
+        self.race_list = [ Race(race[0],race[1]) for race in db.collect_races()]
+
+    def show(self):
+        for race in self.race_list:
+            print('Race ID: {} Race type: {} Race date: {} Race name: {}\n'.format(race.ID,race.racetype,race.date,race.name))
+
+    def update_races(self):
+        """ if new column is created in the DB, all races can be updated thanks
+        to this function """
+        # update names and dates (to be commented)
+        for race in self.race_list:
+            if race.date == None:
+                print(race.date)
+                race.date = race.name.split(' - ')[0]
+                race.name = race.name.split(' - ')[1]
+            race.pushDB()
+        
+
+
+
 if __name__ == '__main__':
-    race_1 = Race('205572','10+Km+Route+TC')
+    race_collection = RaceCollection()
+    db.reset_races()
+    race_collection.update_races()
+    race_collection.collect_racesDB()
+    race_collection.show()
+#    race_1 = Race('209915','10+km')
+#    race_1.resetDB()
+#    race_1.show()
     #db.delete_race(race_1)
 #    for i in race_1.results:
 #        print(i['rstl'][1])

@@ -61,9 +61,19 @@ def raceDB_to_race(race):
         rls = cursor.fetchall()
         #fetch race_name based on the first result line
         race.name = rls[0][10]
+        race.date = rls[0][11]
         for rl in rls:
+            rank = rl[2]
             time = design.TimeNew.time_from_timedelta(rl[3])
-            race.results.append({'errcode':rl[9],'rstl':[rl[2],time] + list(rl[4:-2])})
+            name = rl[4]
+            runner_ID = rl[5]
+            club = rl[6]
+            cat = rl[7]
+            gender = rl[8]
+            errcode = rl[9]
+            #TODO: replace column number
+
+            race.results.append({'errcode':errcode,'rstl':[rank,time,name,runner_ID,club,cat,gender]})
         #TODO: convert timedelat to custom Time class object...
 
         db_finish(cursor,connexion)
@@ -72,9 +82,14 @@ def race_to_raceDB(race):
         cursor,connexion=db_initiate()
         for r in race.results:
             cursor.execute('INSERT INTO races \
-                           (id,racetype,race_name,rank,time,name,runner_id,club,category,gender,errorcode) \
+                           (id,racetype,race_name,rank,time,name,runner_id,club,category,gender,errorcode,race_date) \
                            VALUES \
-                           (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(race.ID,race.racetype,race.name,r['rstl'][0],r['rstl'][1].time,r['rstl'][2],r['rstl'][3],r['rstl'][4],r['rstl'][5],r['rstl'][6],r['errcode']))
+                           (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(race.ID,race.racetype,race.name,r['rstl'][0],r['rstl'][1].time,r['rstl'][2],r['rstl'][3],r['rstl'][4],r['rstl'][5],r['rstl'][6],r['errcode'],race.date))
+        db_finish(cursor,connexion)
+
+def reset_races():
+        cursor,connexion=db_initiate()
+        cursor.execute('TRUNCATE TABLE races;')
         db_finish(cursor,connexion)
 
 def runner_to_runnerDB(runner):
@@ -127,10 +142,20 @@ def sort_search(search_rst):
     """
     rstl = []
     for srst in search_rst:
-        rstl.append([srst[0],srst[1],srst[-1]])
+        rstl.append([srst[0],srst[1],srst[10],srst[11]])
 
     return set([tuple(i) for i in rstl])
 
+def collect_races():
+        cursor,connexion=db_initiate()
+        cursor.execute("SELECT * from races;")
+        races = set([(race[0],race[1]) for race in cursor.fetchall()])
+        db_finish(cursor,connexion)
+        return races
+
+
 if __name__ == '__main__':
         #create_columns_record()
-        print(sort_search(search_DB('Trail')))
+        #print(sort_search(search_DB('Trail')))
+
+        print(collect_races())
