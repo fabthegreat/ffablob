@@ -21,13 +21,16 @@ import db
 def main(request):
     return render(request,'index.html',{'racelist':request.session.get('races')})
 
-def search(request):
+def search(request,sort_key='race_name'):
     searchresults=[]
+    keys = {'date':3, 'ID':0, 'race_name':2, 'format': 1}
     if request.method == 'POST':
         searchresults = db.sort_search(db.search_DB(request.POST['searchphrase']))
-        request.session['searchresults'] = [list(sr) for sr in searchresults]
+        request.session['searchresults'] = sorted([list(sr) for sr in searchresults],key =lambda x:x[keys[sort_key]])
+    else:
+        request.session['searchresults'] = sorted(request.session['searchresults'],key =lambda x:x[keys[sort_key]])
 
-    return render(request,'index.html',{'racelist':request.session.get('races'),'searchresults':searchresults})
+    return render(request,'index.html',{'racelist':request.session.get('races'),'searchresults':request.session['searchresults']})
 
 def add_race(request,race_ID,race_type):
     # check if race_ID, racetype exist indeed in DB

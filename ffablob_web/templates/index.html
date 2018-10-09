@@ -35,12 +35,41 @@
 {% block searchresults %}
         {% if searchresults %}
             <ul class="list-group list-group-flush">
-                {% for result in searchresults %}
+               <!-- {% for result in searchresults %}
                     <li class="list-group-item">
                         <b>{{ result.3 }}</b>: {{ result.2 }} (ID: {{result.0}}, format: {{result.1}})
                         <a href='/addrace/{{result.0}}/{{result.1 | urlencode}}'><span class="badge badge-pill badge-danger">Ajouter à la liste</span></a>
                         <a href='http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition={{result.0}}&frmepreuve={{result.1}}'><span class="badge badge-pill badge-success">Lien FFA</span></a><br> </li>
                 {% endfor %}
+
+               -->
+
+
+
+		<table class="table" style="margin-top:20px">
+			<thead class="thead-dark">
+				<tr>
+                        <th scope="col"><a href='/search/date'>Date</a></th>
+                        <th scope="col"><a href='/search/ID'>ID FFA</a></th>
+                        <th scope="col"><a href='/search/race_name'>Course</a></th>
+                        <th scope="col"><a href='/search/format'>Format</a></th>
+                        <th scope="col">Actions</th>
+				</tr>
+			</thead>
+                    <tbody>
+                        {% for result in searchresults %}
+                        <tr>
+                            <th scope="row">{{ result.3 }} </th>
+                            <td>{{ result.0 }} </td>
+                            <td>{{ result.2 }} </td>
+                            <td>{{ result.1 }} </td>
+                            <td><a href='/addrace/{{result.0}}/{{result.1 | urlencode}}'><span class="badge badge-pill badge-danger">Ajouter à la liste</span></a>
+                            <a href='http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition={{result.0}}&frmepreuve={{result.1}}'><span class="badge badge-pill badge-success">Lien FFA</span></a><br> </li></td>
+
+                         </tr>
+                        {% endfor %}
+		</table>
+
             </ul>
         {% endif %}
 {% endblock %}

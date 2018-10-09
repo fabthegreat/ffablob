@@ -26,7 +26,7 @@ urlpatterns = [
     path('loadrace/', load_race),
     path('convert/', convert),
     path('compare/', compare),
-    path('search/', search),
+    path('search/<sort_key>', search),
     path('reloadrace/<race_ID>/<race_type>', reload_race),
     path('csvexport/<race_ID>/<race_type>', csv_export),
     path('showrace/<race_ID>/<race_type>', show_race),

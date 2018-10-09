@@ -196,7 +196,8 @@ class RaceCollection:
                 race.date = race.name.split(' - ')[0]
                 race.name = race.name.split(' - ')[1]
             race.pushDB()
-        
+   
+       
 
 
 
