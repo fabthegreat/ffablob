@@ -1,5 +1,5 @@
 from datetime import datetime,timedelta
-
+import urllib.parse
 import utils
 import db
 import re
@@ -88,19 +88,19 @@ class Runner:
 class Race:
     """ Class Race
     Results are extracted either from FFA site or from internal database
-    race.results=[{'errcode':,'rstl':[rank,time(TimeNew Object),name,ID,club,cat,gender]},...]
+    race.results=[{'errcode':,'rstl':[rank,time(TimeNew
+    Object),name,ID,club,cat,gender,racetype_human]},...]
     """
     def __init__(self, ID, racetype):
-        self.ID = ID
-        self.racetype = racetype
+        self.ID = ID #string
+        self.racetype = racetype #string
+        self.racetype_human = urllib.parse.unquote(self.racetype).replace('+',' ')
         self.name = ''
         self.date = ''
         self.results = []
         self.race_stats = {}
         self.pullDB() #pull results either from FFA DB or internal
-        # ID => string
-        # racetype => string
-        # results => [{'errcode':,'rstl':rank,time(TimeNew object),name,ID,club,cat,gender}]
+        # results => [{'errcode':,'rstl':rank,time(TimeNew # object),name,ID,club,cat,gender,racetype_human}]
 
     def pullDB(self):
         if db.check_race_exists(self): #RaceDB:
@@ -110,7 +110,7 @@ class Race:
         else:
             print('This race is being processed from FFA database...')
             self.name, self.results=self.pullFFA()#a homogeneiser avec runner.pullFFA 
-            #TODO: extraire la date du nom
+            #xtraire la date du nom
             self.date = self.name.split(' - ')[0]
             self.name = self.name.split(' - ')[1]
             self.pushDB()
@@ -196,10 +196,6 @@ class RaceCollection:
                 race.date = race.name.split(' - ')[0]
                 race.name = race.name.split(' - ')[1]
             race.pushDB()
-   
-       
-
-
 
 if __name__ == '__main__':
     race_collection = RaceCollection()

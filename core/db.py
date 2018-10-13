@@ -1,3 +1,4 @@
+import urllib.parse
 import psycopg2
 from psycopg2.extensions import AsIs
 import design
@@ -141,8 +142,12 @@ def sort_search(search_rst):
     of results
     """
     rstl = []
+    # add correct distance
     for srst in search_rst:
-        rstl.append([srst[0],srst[1],srst[10],srst[11]])
+        # add pretty print of race format
+        format_ted = urllib.parse.unquote(srst[1]).replace('+',' ')
+        format_ted = format_ted.replace('TC','')
+        rstl.append([srst[0],srst[1],srst[10],srst[11],format_ted])
 
     return set([tuple(i) for i in rstl])
 

@@ -23,7 +23,7 @@ def main(request):
 
 def search(request,sort_key='race_name'):
     searchresults=[]
-    keys = {'date':3, 'ID':0, 'race_name':2, 'format': 1}
+    keys = {'date':3, 'ID':0, 'race_name':2, 'format': 4}
     if request.method == 'POST':
         searchresults = db.sort_search(db.search_DB(request.POST['searchphrase']))
         request.session['searchresults'] = sorted([list(sr) for sr in searchresults],key =lambda x:x[keys[sort_key]])
@@ -129,14 +129,14 @@ def remove_race(request,race_ID,race_type):
 
 def append_race_to_list(request,race):
     if request.session.get('races'):
-        if [race.ID,race.racetype,race.name] not in request.session['races']:
-            request.session['races'].append([race.ID,race.racetype,race.name])
+        if [race.ID,race.racetype,race.name,race.racetype_human] not in request.session['races']:
+            request.session['races'].append([race.ID,race.racetype,race.name,race.racetype_human])
             request.session.modified = True
             error_msg_url = 'Course chargée dans votre liste!'
         else:
             error_msg_url = 'Course déjà dans votre liste!'
     else:
-        request.session['races']=[[race.ID,race.racetype,race.name]]
+        request.session['races']=[[race.ID,race.racetype,race.name,race.racetype_human]]
         error_msg_url = 'Course chargée dans votre liste!'
     return error_msg_url
 

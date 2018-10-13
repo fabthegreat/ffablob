@@ -2,7 +2,7 @@
         <div class="row">
             <input class="col-1" type="checkbox" id="blankCheckbox" name="option_{{ forloop.counter }}" value='{{race.0}}/{{race.1}}' aria-label="..." form="form_compare">
             <div class="col">
-            {{ race.2 }} (ID course: {{ race.0 }}) 
+            {{ race.2 }} (Format: {{ race.3 }}) 
             </div>
         </div>
                 <button class="btn btn-link" style="padding:0px" type="button" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}"><span class="badge badge-pill badge-success">Analyse</span> </button>
@@ -16,7 +16,7 @@
 
 <div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.first %}<!--show-->{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionExample">
     <div class="card-body">
-        <b>Performance des partipants</b><br>
+        <b>Performance des participants</b><br>
 
         <form action="/loadanalysis/{{ race.0 }}/{{ race.1 | urlencode }}/" method="post"><!-- Formulaire -->
         {% csrf_token %}
