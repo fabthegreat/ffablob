@@ -25,12 +25,14 @@ def search(request,sort_key='race_name'):
     searchresults=[]
     keys = {'date':3, 'ID':0, 'race_name':2, 'format': 4}
     if request.method == 'POST':
-        searchresults = db.sort_search(db.search_DB(request.POST['searchphrase']))
+        searchresults = utils.prettify_search(db.search_DB(request.POST['searchphrase']))
         request.session['searchresults'] = sorted([list(sr) for sr in searchresults],key =lambda x:x[keys[sort_key]])
     else:
         request.session['searchresults'] = sorted(request.session['searchresults'],key =lambda x:x[keys[sort_key]])
 
-    return render(request,'index.html',{'racelist':request.session.get('races'),'searchresults':request.session['searchresults']})
+    error_msg_url = 'Recherche affichée'
+
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'searchresults':request.session['searchresults']})
 
 def add_race(request,race_ID,race_type):
     # check if race_ID, racetype exist indeed in DB
@@ -168,3 +170,6 @@ def csv_export(request,race_ID,race_type):
     csvfile_link = race.write_to_csv(root_path + project_path + static_path + '/race_files',race_ID + '_' + race_type)
     error_msg_url = 'Fichier csv généré'
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'csvfile':csvfile_link})
+
+
+

@@ -109,7 +109,7 @@
 
 {% block content %}
 		{% if results %}
-		Aperçu de la course chargée
+        <!--Aperçu de la course chargée-->
 		<table class="table" style="margin-top:20px">
 			<thead class="thead-dark">
 				<tr>
@@ -136,7 +136,7 @@
 		{% endif %}
 
 		{% if tab_records %}
-        Aperçu de la performance des participants:<br>
+        <!--Aperçu de la performance des participants:<br>-->
         <b>Course</b>: {{ race_recap.name }} <b>Epreuve</b>: {{ race_recap.race_type }} (<b>race ID</b>: {{ race_recap.id }})<br>
         <b>Nombre de participants</b>: {{ race_recap.runner_nb }}<br>
         <b>Temps moyen</b>: {{ race_stats.0 }}<br>

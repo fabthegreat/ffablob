@@ -100,6 +100,7 @@ class Race:
         self.results = []
         self.race_stats = {}
         self.pullDB() #pull results either from FFA DB or internal
+        self.name = self.name.lower().title() # prettify the name once retrieved
         # results => [{'errcode':,'rstl':rank,time(TimeNew # object),name,ID,club,cat,gender,racetype_human}]
 
     def pullDB(self):

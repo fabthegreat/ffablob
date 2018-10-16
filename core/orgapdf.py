@@ -66,8 +66,8 @@ def organize_columns(line,organization):
             print(line)
             time, time_error = fetch_catch_column_errors(r'\b\d{2}:\d{2}:\d{2}\b',line,0)
             rank, rank_error = fetch_catch_column_errors(r'\d+',line,0)
-            name, name_error = fetch_catch_column_errors(r'\b((?:[a-zA-ZÎÏÔÛÜÉÊÈöôéèîëï\'\-]+\s?)+)\b',line,0)
-            club, club_error = fetch_catch_column_errors(r'(\b(?:[a-zA-Zéè]+\s?)+\b|/)',line,-1)
+            name, name_error = fetch_catch_column_errors(r'\b((?:[a-zA-ZÄÉÊÈËÎÏÔÖÛÜäéêèëîïôöûüç\'\-]+\s?)+)\b',line,0)
+            club, club_error = fetch_catch_column_errors(r'(\b(?:[a-zA-ZÄÉÊÈËÎÏÔÖÛÜäéêèëîïôöûüç\'\-]+\s?)+\b|/)',line,-1)
             #TODO :check in a more elegant manner when only 1 long word sequence has been found (and then name == club)
             #TODO : check when digits are in the club name
             if club == name:
@@ -87,8 +87,8 @@ def organize_columns(line,organization):
             print(line)
             time, time_error = fetch_catch_column_errors(r'\b\d{2}:\d{2}:\d{2}\b',line,0)
             rank, rank_error = fetch_catch_column_errors(r'\d+',line,0)
-            name, name_error = fetch_catch_column_errors(r'\b((?:[a-zA-Z\-ÎÏÔÛÜÉÊÈéèîëïôö\']+\s?)+)\b',line,0)
-            club, club_error = fetch_catch_column_errors(r'(?:[a-zA-Zéè\-\']+\s?)+(?=\s+\d{2}:\d{2}:\d{2})\b',line,0)
+            name, name_error = fetch_catch_column_errors(r'\b((?:[a-zA-ZÄÉÊÈËÎÏÔÖÛÜäéêèëîïôöûüç\'\-]+\s?)+)\b',line,0)
+            club, club_error = fetch_catch_column_errors(r'(?:[a-zA-ZÄÉÊÈËÎÏÔÖÛÜäéêèëîïôöûüç\'\-]+\s?)+(?=\s+\d{2}:\d{2}:\d{2})\b',line,0)
             #TODO : check when digits are in the club name
             if club == name:
                 club = ''

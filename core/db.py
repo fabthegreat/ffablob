@@ -137,20 +137,6 @@ def search_DB(text):
         db_finish(cursor,connexion)
         return search_rst
 
-def sort_search(search_rst):
-    """ remove unnecessary elements in each tuple element and then create a set
-    of results
-    """
-    rstl = []
-    # add correct distance
-    for srst in search_rst:
-        # add pretty print of race format
-        format_ted = urllib.parse.unquote(srst[1]).replace('+',' ')
-        format_ted = format_ted.replace('TC','')
-        rstl.append([srst[0],srst[1],srst[10],srst[11],format_ted])
-
-    return set([tuple(i) for i in rstl])
-
 def collect_races():
         cursor,connexion=db_initiate()
         cursor.execute("SELECT * from races;")

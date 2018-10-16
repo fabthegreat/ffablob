@@ -15,7 +15,6 @@ def str_to_hms(str_time):
     hms=list(map(lambda x: int(x),hms))
     return hms
 
-
 def index_shortlist_in_list(slist,llist):
     if slist in list(map(lambda x:x[:len(slist)],llist)):
         return list(map(lambda x:x[:len(slist)],llist)).index(slist)
@@ -173,9 +172,64 @@ def correct_records(records):
 
         return columnlist
 
-if __name__ == "__main__":
-        runner=design.Runner('528136','unknown','XX','X','DDDD')
-        correct_records(extract_records(runner))
+def extract_race_list(league,department,year,month):
+    #http://bases.athle.com/asp.net/liste.aspx?frmpostback=true&frmbase=calendrier&frmmode=1&frmespace=0&frmsaison=2018&frmtype1=Hors+Stade&frmtype2=&frmtype3=&frmtype4=&frmniveau=&frmniveaulab=&frmligue=ARA&frmdepartement=074&frmepreuve=&frmdate_j1=01&frmdate_m1=10&frmdate_a1=2018&frmdate_j2=01&frmdate_m2=11&frmdate_a2=2018
+    #http://bases.athle.com/asp.net/liste.aspx?frmpostback=true&frmbase=calendrier&frmmode=1&frmespace=0&frmsaison=2018&frmtype1=Hors+Stade&frmtype2=&frmtype3=&frmtype4=&frmniveau=&frmniveaulab=&frmligue=ARA&frmdepartement=074&frmepreuve=&frmdate_j1=01&frmdate_m1=10&frmdate_a1=2018&frmdate_j2=01&frmdate_m2=11&frmdate_a2=2018
 
-        print(DBcolumn_to_dateracetype('record_10k_2015'))
-        print(dateracetype_to_DBcolumn('2015','2015'))
+        url_core = 'http://bases.athle.com/asp.net/liste.aspx?frmpostback=true&frmbase=calendrier&frmmode=1&frmespace=0&frmsaison=' + year + '&frmtype1=Hors+Stade&frmtype2=&frmtype3=&frmtype4=&frmniveau=&frmniveaulab='
+        url_main_param = '&frmligue=' + league + '&frmdepartement=' + department + '&frmepreuve='
+        url_dates_param = '&frmdate_j1=01&frmdate_m1=' + month + '&frmdate_a1=' + year + '&frmdate_j2=01&frmdate_m2=' + str(int(month)+1) +'&frmdate_a2=' + year
+        url = url_core + url_main_param + url_dates_param
+        print(url)
+
+        soup = extract_soup(url)
+        list_ID = []
+        for a in soup.find_all('td'):
+            for b in a.get_attribute_list('class'):
+                if b == 'listResCom':
+                    list_ID.append(a.a['href'].split('frmcompetition=')[1])
+        return list_ID
+
+def extract_race_type(race_ID):
+        soup = extract_soup('http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=' + race_ID)
+        list_race_type = []
+        for a in soup.find_all('select'):
+            for b in a.find_all('option'):
+#                print('select.option ---------\n' + str(a.option.contents[0]) + '\n ------------')
+#                print('option ---------\n' + str(b) + '\n -----------')
+                if a.option.contents[0] == 'Liste des Epreuves' and b['value']: #TODO: trouver pourquoi plusieurs chiffres sont detectés
+                    list_race_type.append(b['value'])
+        return list(set(list_race_type))
+
+def prettify_search(search_rst):
+    """ remove unnecessary elements in each tuple element and then create a set
+    of results
+    """
+    rstl = []
+    # add correct distance
+    for srst in search_rst:
+        # add pretty print of race format
+        format_ted = urllib.parse.unquote(srst[1]).replace('+',' ')
+        format_ted = format_ted.replace('TC','')
+        #[ID,race_format,race name,date,race_format_human}
+        race_name_pretty = srst[10].lower().title()
+        rstl.append([srst[0],srst[1],race_name_pretty,srst[11],format_ted])
+
+    return set([tuple(i) for i in rstl])
+
+
+if __name__ == "__main__":
+#        runner=design.Runner('528136','unknown','XX','X','DDDD')
+#        correct_records(extract_records(runner))
+#
+#        print(DBcolumn_to_dateracetype('record_10k_2015'))
+#        print(dateracetype_to_DBcolumn('2015','2015'))
+
+        yearnow = datetime.now().year
+        monthnow = datetime.now().month
+        monthnow = '09'
+        for race in extract_race_list('ARA','074',str(yearnow),str(monthnow)):
+            for race_type in extract_race_type(race):
+                print('race {}: format {}'.format(race,race_type))
+                race_temp = design.Race(race,race_type)
+#            print(extract_race_type('212125'))
