@@ -148,6 +148,7 @@ class Race:
             for r in self.results:
                 rw=r['rstl'][:] #shallow copy to preserve results
                 rw.pop(3)
+                rw.append(rw.pop(3))
                 f.write(';'.join(map(lambda x: str(x),rw))+'\n')
         f.close()
         return 'race_files/' + filename + '.csv'
@@ -176,16 +177,22 @@ class Race:
         print(self.race_stats)
 
 class RaceCollection:
-    def __init__(self):
+    def __init__(self, race_list = []):
         self.race_list = []
-        self.collect_racesDB()
+        if not race_list:
+            self.collect_racesDB()
+        else:
+            self.race_list = [ Race(race_ID,race_type) for race_ID,race_type in
+                              race_list ]
+        self.main_stats = {'runner_nb': len(self.race_list)}
 
     def collect_racesDB(self):
         self.race_list = [ Race(race[0],race[1]) for race in db.collect_races()]
 
     def show(self):
+        print('Runner number: {}'.format(self.main_stats['runner_nb']))
         for race in self.race_list:
-            print('Race ID: {} Race type: {} Race date: {} Race name: {}\n'.format(race.ID,race.racetype,race.date,race.name))
+            print('Race ID: {} Race type: {} Race date: {} Race name: {} '.format(race.ID,race.racetype,race.date,race.name))
 
     def update_races(self):
         """ if new column is created in the DB, all races can be updated thanks
@@ -199,12 +206,21 @@ class RaceCollection:
             race.pushDB()
 
 if __name__ == '__main__':
+
+    race_list = [('225157', '15+km'), ('223631', '22+km')]
     race_collection = RaceCollection()
-    db.reset_races()
-    race_collection.update_races()
-    race_collection.collect_racesDB()
     race_collection.show()
-#    race_1 = Race('209915','10+km')
+
+
+
+#    race_collection = RaceCollection()
+#    db.reset_races()
+#    race_collection.update_races()
+#    race_collection.collect_racesDB()
+#    race_collection.show()
+
+
+##    race_1 = Race('209915','10+km')
 #    race_1.resetDB()
 #    race_1.show()
     #db.delete_race(race_1)

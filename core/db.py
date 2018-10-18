@@ -129,7 +129,7 @@ def runnerDB_to_runner(runner):
 def search_DB(text):
         cursor,connexion=db_initiate()
         if text:
-            cursor.execute("SELECT * from races WHERE to_tsvector('french',race_name) @@ plainto_tsquery('french',%s);",(text,))
+            cursor.execute("SELECT * from races WHERE to_tsvector('french',race_name||' '||racetype) @@ plainto_tsquery('french',%s);",(text,))
         else:
             cursor.execute("SELECT * from races")
         search_rst = cursor.fetchall()
