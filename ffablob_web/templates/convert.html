@@ -6,9 +6,14 @@
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
-          <label for="exampleFormControlFile1">Selectionner un fichier (format pdf)</label>
-          <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file'>
+        <label for="exampleFormControlFile1">Selectionner un fichier (format pdf)</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file'>
+        <b> ou </b>
+        <input type="text" class="form-control form-control-sm"
+        placeholder="Url du fichier PDF (ex: https://www.l-chrono.com/resultats2018/trail_de_la_valserine_35.pdf)" name="PDFfile">
     </div>
+
+
     <label for="SelectControl">Société de chronométrage:</label>
     <select class="form-control" id="SelectControl" name="timecompany">
               <option>L-Chrono</option>

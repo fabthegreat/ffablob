@@ -50,7 +50,6 @@ def reload_race(request,race_ID,race_type):
     searchresults = request.session['searchresults']
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
 
-
 def compare(request):
     tab_comparison = []
     races = []
@@ -60,8 +59,9 @@ def compare(request):
             if 'option_' in i:
                 races.append(design.Race(v.split('/')[0],v.split('/')[1]))
                 strc.std_stat_table(races)
+    searchresults = request.session['searchresults']
 
-    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'selected_races':races})
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'selected_races':races,'searchresults':searchresults})
 
 def convert(request):
     file_link = ''
@@ -69,14 +69,25 @@ def convert(request):
     error_log = []
     tabfl = []
 
-    if request.method == 'POST' and 'file' in request.FILES:
-            file = request.FILES['file']
+    if request.method == 'POST' and ('file' in request.FILES or
+                                     request.POST['PDFfile']):
             orga = request.POST['timecompany']
+
             error_log = ['Le fichier de {} a été correctement converti.'.format(orga)]
             file_fullpath = root_path + project_path + static_path + '/pdf_files'
             #TODO: handle files that are not pdf: remove them from harddisk
-            if orgapdf.handle_uploaded_file(file_fullpath,file):
-                for l in orgapdf.lines_from_pdf(file_fullpath,file.name):
+
+            if 'file' in request.FILES:
+                file = request.FILES['file']
+                test_file = orgapdf.handle_uploaded_file(file_fullpath,file)
+                file_name = file.name
+            elif 'PDFfile' in request.POST:
+                test_file = orgapdf.handle_remote_file(request.POST['PDFfile'],file_fullpath)
+                file_name = request.POST['PDFfile'].split('/')[-1]
+
+            #if orgapdf.handle_uploaded_file(file_fullpath,file):
+            if test_file:
+                for l in orgapdf.lines_from_pdf(file_fullpath,file_name):
                     fl = orgapdf.filter_line(l)
                     if fl:
                         #TODO: add protiming orga with dict
@@ -90,14 +101,18 @@ def convert(request):
                             error_log.append('ATTENTION: vérifiez la ligne {} du fichier.'.format(errors[0]))
 
                         tabfl.append(fl)
-                        file_name = file.name[:-4]
-                        file_link = orgapdf.write_to_csv(tabfl,file_fullpath,file.name[:-4])
+
+                file_name = file_name[:-4]
+                file_link = orgapdf.write_to_csv(tabfl,file_fullpath,file_name[:-4])
+                #TODO: file name is truncated...
+                error_log = ['Nom de fichier {} a été correctement converti.'.format(file_name)]
             else:
                 error_log = ['Le fichier envoyé n\'est pas un pdf valide.']
 
     return render(request,'convert.html',{'convert':True,'error_log':error_log,'file':file_link,'test_chunks':file_name})
 
 def load_race(request):
+    searchresults = request.session['searchresults']
     if request.method == 'POST' and 'urlFFA' in request.POST and \
     request.POST['urlFFA']:
         # check URL
@@ -106,19 +121,20 @@ def load_race(request):
             race_ID,racetype = utils.extract_race_from_url(urlFFA)
             race = design.Race(race_ID,racetype)
             error_msg_url=append_race_to_list(request,race)
-            return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results})
+            return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
         else:
             error_msg_url = 'Veuillez renseigner une URL valide'
-            return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
+            return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'searchresults':searchresults})
 
     error_msg_url = 'Veuillez renseigner une URL dans la boîte de dialogue'
-    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'searchresults':searchresults})
 
 def flush_cart(request):
-    request.session.clear()
+    searchresults = request.session['searchresults']
+    request.session['races'].clear()
     request.session.modified = True
     error_msg_url = "Liste de course supprimée!"
-    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'searchresults':searchresults})
 
 def remove_race(request,race_ID,race_type):
     if request.session.get('races') and utils.index_shortlist_in_list([race_ID,race_type],request.session['races']) is not None:
@@ -127,7 +143,8 @@ def remove_race(request,race_ID,race_type):
         error_msg_url = 'Course supprimée avec succès!'
     else:
         error_msg_url = "La course n'appartient pas à votre liste!"
-    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races')})
+    searchresults = request.session['searchresults']
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'searchresults':searchresults})
 
 def append_race_to_list(request,race):
     if request.session.get('races'):
@@ -146,7 +163,8 @@ def show_race(request,race_ID,race_type):
     # TODO: check Race_ID & racetype are in DB
     race = design.Race(race_ID,race_type)
     error_msg_url = 'Course affichée'
-    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results})
+    searchresults = request.session['searchresults']
+    return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
 
 def load_analysis(request,race_ID,race_type):
     if request.method == 'POST' and 'RaceType' in request.POST and \

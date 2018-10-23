@@ -1,6 +1,9 @@
 import re
 import os.path
 from subprocess import Popen, PIPE
+import shutil
+import tempfile
+import urllib.request
 
 def check_file(path,file_name):
     with Popen(['/usr/bin/file','-b',path + '/' + file_name], stdout=PIPE) as p:
@@ -24,12 +27,26 @@ def handle_uploaded_file(path,file):
     else:
         return False
 
+def handle_remote_file(url,path,file_name=''):
+    if not file_name:
+        file_name = url.split('/')[-1]
+
+    with urllib.request.urlopen(url) as response:
+        with open(path + '/' + file_name, 'wb+') as out_file:
+            shutil.copyfileobj(response, out_file)
+    if check_file(path,file_name):
+        return True
+    else:
+        return False
 
 def lines_from_pdf(path,file_name):
     with Popen(['pdftotext','-layout',path + '/' + file_name,'-'], stdout=PIPE, bufsize=1) as p:
             for line in p.stdout:
                 yield line.decode('utf-8')
                 #yield line.decode('ISO_8859-1')
+
+
+
 
 def filter_line(line):
     l=line[:]

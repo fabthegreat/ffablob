@@ -55,7 +55,6 @@
                     <h4>Courses</h4>
                     <hr>
 
-
                         {% block raceload %}
                         {% endblock %}
                         <div style="margin:5px;text-align:center"><b>ou</b></div>
@@ -72,21 +71,116 @@
                 </div>
 
                 <div class="col-sm-8"> <!-- Contenu principal -->
+
                     {% block message %}
                     {% endblock %}
 
-                    {% block searchresults %}
-                    {% endblock %}
+                    <div class="accordion" id="accordionExample">
 
-                    {% block content %}
-                    {% endblock %}
+                    {% if selected_races %}
+                    <div class="card">
+                            <div class="card-header" id="headingOne">
+                                      <h5 class="mb-0">
+                                                  <button class="btn btn-link"
+                                                      type="button"
+                                                      data-toggle="collapse"
+                                                      data-target="#collapseOne"
+                                                      aria-expanded="true"
+                                                      aria-controls="collapseOne">
+                                                      Statistiques
+                                                  </button>
+                                        </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {% block stats %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                    </div>
+                    {% endif %}
+
+
+                    {% if searchresults %}
+                    <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                      <h5 class="mb-0">
+                                                  <button class="btn btn-link"
+                                                      type="button"
+                                                      data-toggle="collapse"
+                                                      data-target="#collapseTwo"
+                                                      aria-expanded="true"
+                                                      aria-controls="collapseTwo">
+                                                      Résultats de recherche
+                                                  </button>
+                                        </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {% block searchresults %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                    </div>
+                    {% endif %}
+
+
+                    {% if results %}
+                    <div class="card">
+                            <div class="card-header" id="headingThree">
+                                      <h5 class="mb-0">
+                                                  <button class="btn btn-link"
+                                                      type="button"
+                                                      data-toggle="collapse"
+                                                      data-target="#collapseThree"
+                                                      aria-expanded="true"
+                                                      aria-controls="collapseThree">
+                                                      Résultats de la course
+                                                  </button>
+                                        </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {% block results %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                    </div>
+                    {% endif %}
+
+                       {% if tab_records %}
+                    <div class="card">
+                            <div class="card-header" id="headingFour">
+                                      <h5 class="mb-0">
+                                                  <button class="btn btn-link"
+                                                      type="button"
+                                                      data-toggle="collapse"
+                                                      data-target="#collapseFour"
+                                                      aria-expanded="true"
+                                                      aria-controls="collapseFour">
+                                                      Records des coureurs de la course
+                                                  </button>
+                                        </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    {% block records %}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                    </div>
+                    {% endif %}
+
+                    </div>
 
                     {% block help %}
                     {% endblock %}
-            {% endif %}
+
                 </div>
+            {% endif %}
 
             </div> <!-- /row -->
+
        </div><!-- /container -->
 
 
