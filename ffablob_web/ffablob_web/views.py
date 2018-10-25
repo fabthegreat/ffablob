@@ -3,6 +3,7 @@ import os
 import copy
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
+import urllib.request
 
 
 root_path="/var/www"
@@ -82,8 +83,13 @@ def convert(request):
                 test_file = orgapdf.handle_uploaded_file(file_fullpath,file)
                 file_name = file.name
             elif 'PDFfile' in request.POST:
-                test_file = orgapdf.handle_remote_file(request.POST['PDFfile'],file_fullpath)
-                file_name = request.POST['PDFfile'].split('/')[-1]
+                try:
+                    test_file = orgapdf.handle_remote_file(request.POST['PDFfile'],file_fullpath)
+                    file_name = request.POST['PDFfile'].split('/')[-1]
+                except:
+                    error_log = ['L\'URL n\'est pas utilisable.']
+                    test_file = False
+
 
             #if orgapdf.handle_uploaded_file(file_fullpath,file):
             if test_file:
@@ -103,9 +109,9 @@ def convert(request):
                         tabfl.append(fl)
 
                 file_name = file_name[:-4]
-                file_link = orgapdf.write_to_csv(tabfl,file_fullpath,file_name[:-4])
+                file_link = orgapdf.write_to_csv(tabfl,file_fullpath,file_name)
+                error_log = ['La cible {} a été correctement convertie.'.format(file_name)]
                 #TODO: file name is truncated...
-                error_log = ['Nom de fichier {} a été correctement converti.'.format(file_name)]
             else:
                 error_log = ['Le fichier envoyé n\'est pas un pdf valide.']
 

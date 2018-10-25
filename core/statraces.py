@@ -1,8 +1,8 @@
 import design
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from numpy.random import rand
+#import pandas as pd
+#import numpy as np
+#import matplotlib.pyplot as plt
+#from numpy.random import rand
 
 
 def std_stat_table(races=[]):
@@ -32,8 +32,8 @@ def sort_races(sample_size=None,sort_key='meantime',*races):
 if __name__ == '__main__':
     a = rand(100)
     b = rand(100)
-    plt.scatter(a, b)
-    plt.savefig('/home/ftg/python/ffablob/foo.png')
+#    plt.scatter(a, b)
+#    plt.savefig('/home/ftg/python/ffablob/foo.png')
 #    race_1 = design.Race('207883','10+km+TC')
 #    race_2 = design.Race('205515','10+Km+Route')
 #    print(sort_races(None,'meantime',race_1,race_2))

@@ -15,17 +15,11 @@ def check_file(path,file_name):
             return False
 
 def handle_uploaded_file(path,file):
-    #if os.path.isfile(path + '/' + file.name):
-    #    file.name = '_' + file.name
-
     destination = open(path + '/' + file.name, 'wb+')
     for chunk in file.chunks():
         destination.write(chunk)
     destination.close()
-    if check_file(path,file.name):
-        return True
-    else:
-        return False
+    return check_file(path,file.name)
 
 def handle_remote_file(url,path,file_name=''):
     if not file_name:
@@ -34,19 +28,13 @@ def handle_remote_file(url,path,file_name=''):
     with urllib.request.urlopen(url) as response:
         with open(path + '/' + file_name, 'wb+') as out_file:
             shutil.copyfileobj(response, out_file)
-    if check_file(path,file_name):
-        return True
-    else:
-        return False
+    return check_file(path,file_name)
 
 def lines_from_pdf(path,file_name):
     with Popen(['pdftotext','-layout',path + '/' + file_name,'-'], stdout=PIPE, bufsize=1) as p:
             for line in p.stdout:
                 yield line.decode('utf-8')
                 #yield line.decode('ISO_8859-1')
-
-
-
 
 def filter_line(line):
     l=line[:]
