@@ -84,10 +84,18 @@ def extract_resultlines(soup,urlFFA):
                     # detect all tr wherein td has a td with datas0 or 1 class
                     for b in a.find_all('td'):
                         if b.get_attribute_list('class')[0] in ('datas0','datas1'):
+#                            print(b.contents)
                             # loop within a runner row
                             result_line.append(b.contents)
                     # Transform each result line in a runner
-                    result_line_flat=[i[0] for i in result_line]
+                    result_line_flat=[] #[i[0] for i in result_line]
+                    for i,r in enumerate(result_line):
+                        if i==1 and len(r)>1:
+                            result_line_flat.append(r[1])
+                        else:
+                            result_line_flat.append(r[0])
+
+
                     result_lines.append(result_line_flat)
 
         return result_lines #list of flat lists of results
@@ -130,7 +138,8 @@ def correct_resultlines(result_lines):
             result_line.pop(6)
             result_line.insert(6,result_line[5][2:])
             result_line[5]=result_line[5][:2]
-            result_line[1]=design.TimeNew.time_from_string(result_line[1]) # transform string
+            result_line[1]=design.TimeNew.time_from_string(result_line[1].lstrip(' (').rstrip(')')) # transform string
+#            print(result_line[1])
             #into Time object
             rls.append({'rstl':result_line,'errcode':error_code})
         return rls
@@ -217,19 +226,48 @@ def prettify_search(search_rst):
 
     return set([tuple(i) for i in rstl])
 
+#TODO decorators? for all type of pattern?
+def check_pattern(patterns, string, search = False):
+
+    if not search:
+        for p in patterns:
+            if re.match(p,string):
+                return True
+        print(string,p) # prints false value (for debug)
+        return False
+    else:
+        for p in patterns:
+            if re.search(p,string):
+                return True
+                print(string,p) # prints true value (for debug)
+        return False
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
+    # import  importlib
+    # importlib.reload(module)
+    urlFFA='http://bases.athle.com/asp.net/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=205519&frmepreuve=1%2f2+Marathon+TC'
+    soup=extract_soup(urlFFA)
+    results=extract_resultlines(soup,urlFFA)
+    print(results)
+
 #        runner=design.Runner('528136','unknown','XX','X','DDDD')
 #        correct_records(extract_records(runner))
 #
 #        print(DBcolumn_to_dateracetype('record_10k_2015'))
 #        print(dateracetype_to_DBcolumn('2015','2015'))
 
-        yearnow = datetime.now().year
-        monthnow = datetime.now().month
-        monthnow = '09'
-        for race in extract_race_list('ARA','074',str(yearnow),str(monthnow)):
-            for race_type in extract_race_type(race):
-                print('race {}: format {}'.format(race,race_type))
-                race_temp = design.Race(race,race_type)
+#        yearnow = datetime.now().year
+#        monthnow = datetime.now().month
+#        monthnow = '09'
+#        for race in extract_race_list('ARA','074',str(yearnow),str(monthnow)):
+#            for race_type in extract_race_type(race):
+#                print('race {}: format {}'.format(race,race_type))
+#                race_temp = design.Race(race,race_type)
 #            print(extract_race_type('212125'))

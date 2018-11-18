@@ -12,9 +12,9 @@ class TimeNew:
     def __str__(self):
             s=self.time.total_seconds()
             if int(s//3600) == 0:
-                return "{}'{}''".format(int(s % 3600 // 60),int(s % 60))
+                return "{:02}'{:02}''".format(int(s % 3600 // 60),int(s % 60))
             else:
-                return "{:02}h{}'{}''".format(int(s//3600),int(s % 3600 //60),int(s % 60))
+                return "{:02}h{:02}'{:02}''".format(int(s//3600),int(s % 3600 //60),int(s % 60))
 
     @classmethod
     def time_from_string(cls,str_time):
@@ -131,6 +131,9 @@ class Race:
         db.delete_race(self)
         self.pullDB()
 
+    def delete_raceDB(self):
+        db.delete_race(self)
+
     def extract_runners_from_race(self):
         for rl in self.results:
                 _runner = Runner(rl['rstl'][3],rl['rstl'][2],rl['rstl'][5],rl['rstl'][6],rl['rstl'][4])
@@ -206,10 +209,11 @@ class RaceCollection:
             race.pushDB()
 
 if __name__ == '__main__':
-
-    race_list = [('225157', '15+km'), ('223631', '22+km')]
-    race_collection = RaceCollection()
-    race_collection.show()
+    race = Race('205519','1%2f2+Marathon+TC&frmposition=3')
+    race.resetDB()
+#    race_list = [('225157', '15+km'), ('223631', '22+km')]
+#    race_collection = RaceCollection()
+#    race_collection.show()
 
 
 

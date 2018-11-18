@@ -20,6 +20,8 @@
               <option>Protiming</option>
               <option>Sportips</option>
               <option>Yaka-Events</option>
+              <option>JMG-Chrono</option>
+              <option>E-Run63</option>
               <option>Fichier générique</option>
           <!--<option>Autre</option>-->
     </select>
@@ -55,6 +57,7 @@
             </div>
 {% endif %}
 
+{% if file %}
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -81,6 +84,8 @@
         </div>
     </div>
 </div>
+{% endif %}
+
 {% endblock %}
 
 

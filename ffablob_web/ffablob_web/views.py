@@ -37,21 +37,31 @@ def search(request,sort_key='race_name'):
 
 def add_race(request,race_ID,race_type):
     # check if race_ID, racetype exist indeed in DB
+    if 'searchresults' in request.session:
+        searchresults = request.session['searchresults']
+    else:
+        searchresults = []
     race = design.Race(race_ID,race_type)
     error_msg_url=append_race_to_list(request,race)
-    searchresults = request.session['searchresults']
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
 
 def reload_race(request,race_ID,race_type):
     # check if race_ID, racetype exist indeed in DB
+    if 'searchresults' in request.session:
+        searchresults = request.session['searchresults']
+    else:
+        searchresults = []
     race = design.Race(race_ID,race_type)
     race.resetDB()
     #error_msg_url=append_race_to_list(request,race)
     error_msg_url="Course mise à jour dans la base de données!"
-    searchresults = request.session['searchresults']
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
 
 def compare(request):
+    if 'searchresults' in request.session:
+        searchresults = request.session['searchresults']
+    else:
+        searchresults = []
     tab_comparison = []
     races = []
     error_msg_url=''
@@ -60,9 +70,26 @@ def compare(request):
             if 'option_' in i:
                 races.append(design.Race(v.split('/')[0],v.split('/')[1]))
                 strc.std_stat_table(races)
-    searchresults = request.session['searchresults']
 
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'selected_races':races,'searchresults':searchresults})
+
+def check(request):
+    error_log = []
+    file_link = ''
+    file_name = ''
+
+    if request.method == 'POST' and ('file' in request.FILES):
+            file_fullpath = root_path + project_path + static_path + '/csv_files'
+
+            if 'file' in request.FILES:
+                file = request.FILES['file']
+                test_file = orgapdf.handle_uploaded_file(file_fullpath,file,'text')
+                file_name = file.name
+
+            if test_file:
+                error_log = orgapdf.check_csv_kikourou(file_fullpath,file_name)
+
+    return render(request,'check.html',{'convert':True,'error_log':error_log,'file':file_link,'test_chunks':file_name})
 
 def convert(request):
     file_link = ''
@@ -74,15 +101,16 @@ def convert(request):
                                      request.POST['PDFfile']):
             orga = request.POST['timecompany']
 
-            error_log = ['Le fichier de {} a été correctement converti.'.format(orga)]
             file_fullpath = root_path + project_path + static_path + '/pdf_files'
             #TODO: handle files that are not pdf: remove them from harddisk
+
+            error_log = ['Le fichier envoyé n\'est pas un pdf valide.']
 
             if 'file' in request.FILES:
                 file = request.FILES['file']
                 test_file = orgapdf.handle_uploaded_file(file_fullpath,file)
                 file_name = file.name
-            elif 'PDFfile' in request.POST:
+            elif request.POST['PDFfile']:
                 try:
                     test_file = orgapdf.handle_remote_file(request.POST['PDFfile'],file_fullpath)
                     file_name = request.POST['PDFfile'].split('/')[-1]
@@ -90,13 +118,10 @@ def convert(request):
                     error_log = ['L\'URL n\'est pas utilisable.']
                     test_file = False
 
-
-            #if orgapdf.handle_uploaded_file(file_fullpath,file):
             if test_file:
                 for l in orgapdf.lines_from_pdf(file_fullpath,file_name):
                     fl = orgapdf.filter_line(l)
                     if fl:
-                        #TODO: add protiming orga with dict
                         try:
                             fl,errors = orgapdf.organize_columns(fl,orga.lower())
                         except:
@@ -111,14 +136,15 @@ def convert(request):
                 file_name = file_name[:-4]
                 file_link = orgapdf.write_to_csv(tabfl,file_fullpath,file_name)
                 error_log = ['La cible {} a été correctement convertie.'.format(file_name)]
-                #TODO: file name is truncated...
-            else:
-                error_log = ['Le fichier envoyé n\'est pas un pdf valide.']
 
     return render(request,'convert.html',{'convert':True,'error_log':error_log,'file':file_link,'test_chunks':file_name})
 
 def load_race(request):
-    searchresults = request.session['searchresults']
+    if 'searchresults' in request.session:
+        searchresults = request.session['searchresults']
+    else:
+        searchresults = []
+
     if request.method == 'POST' and 'urlFFA' in request.POST and \
     request.POST['urlFFA']:
         # check URL
@@ -167,9 +193,12 @@ def append_race_to_list(request,race):
 
 def show_race(request,race_ID,race_type):
     # TODO: check Race_ID & racetype are in DB
+    if 'searchresults' in request.session:
+        searchresults = request.session['searchresults']
+    else:
+        searchresults = []
     race = design.Race(race_ID,race_type)
     error_msg_url = 'Course affichée'
-    searchresults = request.session['searchresults']
     return render(request,'index.html',{'error_msg_url':error_msg_url,'racelist':request.session.get('races'),'results':race.results,'searchresults':searchresults})
 
 def load_analysis(request,race_ID,race_type):

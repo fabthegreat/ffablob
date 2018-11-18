@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.urls import path,re_path
 from django.contrib import admin
 
-from ffablob_web.views import main,flush_cart,load_race,remove_race,show_race,load_analysis,csv_export,convert,compare,search,add_race,reload_race
+from ffablob_web.views import main,flush_cart,load_race,remove_race,show_race,load_analysis,csv_export,convert,compare,search,add_race,reload_race,check
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('removerace/<race_ID>/<race_type>', remove_race),
     path('loadrace/', load_race),
     path('convert/', convert),
+    path('check/', check),
     path('compare/', compare),
     path('search/<sort_key>', search),
     path('reloadrace/<race_ID>/<race_type>', reload_race),
