@@ -63,6 +63,8 @@ def raceDB_to_race(race):
         #fetch race_name based on the first result line
         race.name = rls[0][10]
         race.date = rls[0][11]
+#        test
+#        race.date = rls[0][12]
         for rl in rls:
             rank = rl[2]
             time = design.TimeNew.time_from_timedelta(rl[3])

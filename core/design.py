@@ -1,4 +1,4 @@
-from datetime import datetime,timedelta
+from datetime import date,datetime,timedelta
 import urllib.parse
 import utils
 import db
@@ -96,7 +96,8 @@ class Race:
         self.racetype = racetype #string
         self.racetype_human = urllib.parse.unquote(self.racetype).replace('+',' ')
         self.name = ''
-        self.date = ''
+        #TODO: convert date into Date format (strtotime() and date())
+        self.date = datetime.today()
         self.results = []
         self.race_stats = {}
         self.pullDB() #pull results either from FFA DB or internal
@@ -112,7 +113,10 @@ class Race:
             print('This race is being processed from FFA database...')
             self.name, self.results=self.pullFFA()#a homogeneiser avec runner.pullFFA 
             #xtraire la date du nom
-            self.date = self.name.split(' - ')[0]
+            date_str = self.name.split(' - ')[0]
+            date_str = [int(b) for b in date_str.split('/')[::-1]]
+            date_str[0] = date_str[0] + 2000
+            self.date = date(*date_str)
             self.name = self.name.split(' - ')[1]
             self.pushDB()
             #self.pullDB() #to retrieve correct timedelta...TODO: convert timedelta into time object
@@ -190,7 +194,7 @@ class RaceCollection:
         self.main_stats = {'runner_nb': len(self.race_list)}
 
     def collect_racesDB(self):
-        self.race_list = [ Race(race[0],race[1]) for race in db.collect_races()]
+        self.race_list = [Race(race[0],race[1]) for race in db.collect_races()]
 
     def show(self):
         print('Runner number: {}'.format(self.main_stats['runner_nb']))
@@ -209,19 +213,20 @@ class RaceCollection:
             race.pushDB()
 
 if __name__ == '__main__':
-    race = Race('205519','1%2f2+Marathon+TC&frmposition=3')
-    race.resetDB()
+#    race = Race('207678','10+km')
+#    race.show()
+    #race.resetDB()
 #    race_list = [('225157', '15+km'), ('223631', '22+km')]
 #    race_collection = RaceCollection()
 #    race_collection.show()
 
 
-
-#    race_collection = RaceCollection()
-#    db.reset_races()
-#    race_collection.update_races()
-#    race_collection.collect_racesDB()
-#    race_collection.show()
+# Remise à jour de toutes les courses
+    race_collection = RaceCollection()
+    db.reset_races()
+    race_collection.update_races()
+    race_collection.collect_racesDB()
+    race_collection.show()
 
 
 ##    race_1 = Race('209915','10+km')

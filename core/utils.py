@@ -222,7 +222,9 @@ def prettify_search(search_rst):
         format_ted = format_ted.replace('TC','')
         #[ID,race_format,race name,date,race_format_human}
         race_name_pretty = srst[10].lower().title()
-        rstl.append([srst[0],srst[1],race_name_pretty,srst[11],format_ted])
+        #rstl.append([srst[0],srst[1],race_name_pretty,srst[11],format_ted])
+        # test pour inclure un vrai format de date
+        rstl.append([srst[0],srst[1],race_name_pretty,srst[11].strftime('%Y/%m/%d'),format_ted])
 
     return set([tuple(i) for i in rstl])
 
